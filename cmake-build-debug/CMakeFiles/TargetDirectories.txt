@@ -1,3 +1,0 @@
-C:/Users/shnai/CLionProjects/COS214/cmake-build-debug/CMakeFiles/COS214.dir
-C:/Users/shnai/CLionProjects/COS214/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/shnai/CLionProjects/COS214/cmake-build-debug/CMakeFiles/rebuild_cache.dir
