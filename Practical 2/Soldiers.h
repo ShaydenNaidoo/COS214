@@ -16,6 +16,7 @@ private:
     virtual void engage() = 0;
     virtual void disengage() = 0;
     virtual Soldiers* clonis() = 0;
+
 private:
     virtual void prepare() = 0;
     virtual void execute() = 0;
