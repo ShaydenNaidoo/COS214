@@ -7,6 +7,8 @@
 
 class SoldierFactory{
     friend class InfantryFactory;
+    friend class ShieldBearerFactory; 
+    friend class BoatmanFactory;
 
     private:
         std::vector<Soldiers*> soldiers;
