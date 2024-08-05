@@ -13,6 +13,7 @@ class InfantryFactory: protected SoldierFactory {
         int calculateTotalDammagePerUnit();
         int calculateTotalDefencePerUnit();
 
+    
 };
 
 #endif

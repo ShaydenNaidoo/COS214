@@ -2,11 +2,14 @@
 #ifndef SOLDIERFACTORY_H
 #define SOLDIERFACTORY_H
 
+#include <vector>
 #include "Soldiers.h"
 
 class SoldierFactory{
+    friend class InfantryFactory;
+
     private:
-        Soldiers *soldiers;
+        std::vector<Soldiers*> soldiers;
 
     protected:
         virtual Soldiers* createUnit(int healthPerSoldier, int dammagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName) = 0;
