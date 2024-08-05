@@ -1,3 +1,4 @@
+//CREATOR
 #ifndef SOLDIERFACTORY_H
 #define SOLDIERFACTORY_H
 
@@ -8,10 +9,10 @@ class SoldierFactory{
         Soldiers *soldiers;
 
     protected:
-        virtual Soldiers* createUnit();
-        virtual int calculateTotalHealthPerUnit();
-        virtual int calculateTotalDammagePerUnit();
-        virtual int calculateTotalDefencePerUnit();
+        virtual Soldiers* createUnit(int healthPerSoldier, int dammagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName) = 0;
+        virtual int calculateTotalHealthPerUnit() = 0;
+        virtual int calculateTotalDammagePerUnit() = 0;
+        virtual int calculateTotalDefencePerUnit() = 0;
 
 };
 

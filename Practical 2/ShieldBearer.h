@@ -1,17 +1,17 @@
-//PRODUCT
-#ifndef SOLDIERS_H
-#define SOLDIERS_H
+//CONCRETE_PRODUCT
+#ifndef SHIELDBEARER_H
+#define SHIELDBEARER_H
 
 #include <iostream>
+#include "Soldiers.h"
 
-class Soldiers{
+class ShieldBearer: public Soldiers{
     private:
         int healthPerSoldier;
         int dammagePerSoldier;
-        int defencePerSoldier;
+        int defencePerSoldiersPerUnit;
         int amountOfSoldiersPerUnit;
         std::string unitName;
-
 
 };
 
