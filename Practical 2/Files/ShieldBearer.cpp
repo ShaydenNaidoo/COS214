@@ -42,10 +42,6 @@ void ShieldBearer::disengage(){
     }
 }
 void ShieldBearer::execute(){
-    if(retreat == true){
-      cout<<"cannot execute while retreating\n";
-        return;
-    }
     if(unitName == "defensiveBearers")
         cout << "Executing: blocks enemy attacks \n";
     else if (unitName == "offensiveBearers")
