@@ -8,7 +8,7 @@
 class Boatman: protected Soldiers{
 public:
 Boatman();
-Boatman( Boatman* ShieldBearer);// added copy constructor -Shayden for Clone method
+Boatman( Boatman* boatMan);// added copy constructor -Shayden for Clone method
 Boatman(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName);
 Soldiers* clonis();
 Boatman();

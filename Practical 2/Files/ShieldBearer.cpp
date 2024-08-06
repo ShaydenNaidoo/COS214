@@ -21,7 +21,6 @@ ShieldBearer::ShieldBearer(int healthPerSoldier, int damagePerSoldier, int defen
     this->damagePerSoldier = damagePerSoldier;
     this->defencePerSoldier = defencePerSoldier;
     this->unitName = unitName;
-
 }
 Soldiers* ShieldBearer::clonis(){
     return new ShieldBearer(*this);

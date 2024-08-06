@@ -25,7 +25,7 @@ Boatman::Boatman(int healthPerSoldier, int damagePerSoldier, int defencePerSoldi
 
 }
 Soldiers* Boatman::clonis(){
-    return new Infantry(*this);
+    return new Boatman(*this);
 }
 
 void Boatman::engage(){
@@ -54,12 +54,12 @@ std::string Boatman::getUnitName(){
 int Boatman::getDamagePerSoldier(){
     return this->damagePerSoldier;
 }
-int ShieldBearer::getDefencePerSoldier(){
+int Boatman::getDefencePerSoldier(){
     return this->defencePerSoldier;
 }
-int ShieldBearer::getHealthPerSoldier(){
+int Boatman::getHealthPerSoldier(){
     return this->healthPerSoldier;
 }
-int ShieldBearer::getAmountOfSoldiersPerUnit(){
+int Boatman::getAmountOfSoldiersPerUnit(){
     return this->amountOfSoldiersPerUnit;
 }
