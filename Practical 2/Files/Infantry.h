@@ -15,6 +15,7 @@ class Infantry: public Soldiers{
 
     public:
         Infantry(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName);
+        ~Infantry();
         Soldiers* clonis();
         void engage();
         void disengage();

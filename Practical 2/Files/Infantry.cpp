@@ -50,9 +50,4 @@ int Infantry::getHealthPerSoldier(){
 int Infantry::getAmountOfSoldiersPerUnit(){
     return this->amountOfSoldiersPerUnit;
 }
-void Infantry::setUnitName(std::string unitName){
-    this->unitName = unitName;
-}
-void Infantry::setDamagePerSoldier(int damagePerSoldier){
-    this->damagePerSoldier = damagePerSoldier;
-}
+
