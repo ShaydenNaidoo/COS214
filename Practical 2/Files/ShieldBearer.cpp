@@ -8,6 +8,7 @@ ShieldBearer::ShieldBearer():Soldiers(){ //default constructor just in case -- c
     this->defencePerSoldier = 0;
     this->unitName = "";
     this->amountOfSoldiersPerUnit = 0;
+      bRetreat = false; //default value
 }
 ShieldBearer::ShieldBearer(const ShieldBearer &shieldBearer){
     this->healthPerSoldier = infantry.healthPerSoldier;
@@ -15,12 +16,15 @@ ShieldBearer::ShieldBearer(const ShieldBearer &shieldBearer){
     this->defencePerSoldier = infantry.defencePerSoldier;
     this->unitName = infantry.unitName;
     this->amountOfSoldiersPerUnit = infantry.amountOfSoldiersPerUnit;
+    this->bRetreat = infantry.bRetreat;
 }
 ShieldBearer::ShieldBearer(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, string unitName):Soldiers(amountOfSoldiersPerUnit){
     this->healthPerSoldier = healthPerSoldier;
     this->damagePerSoldier = damagePerSoldier;
     this->defencePerSoldier = defencePerSoldier;
     this->unitName = unitName;
+    this->amountOfSoldiersPerUnit = amountOfSoldiersPerUnit;
+    this->bRetreat = false; //default value
 }
 Soldiers* ShieldBearer::clonis(){
     return new ShieldBearer(*this);
@@ -28,26 +32,13 @@ Soldiers* ShieldBearer::clonis(){
 
 
 void ShieldBearer::engage(){
-    if(retreat == true){
-        cout<<"cannot engage while retreating\n";
-        return;
-    }else{
-        execute();
-    }
+prepare();
+execute();
 }
 
 void ShieldBearer::disengage(){
-    char ans;
-    cout <<"retreat? [Y]/[n]\n";
-       cin>>ans;
-    if(toUpper(ans) == 'Y')
-    retreat = true;
-        this->retreat();
-    else{
-        cout << "Screams: For Titus!!!\n";
-        cout<<"...we may rest but we shall not retreat!!!\n";
-        retreat = false;
-        rest();
+    retreat();
+    rest();
     }
 }
 void ShieldBearer::execute(){

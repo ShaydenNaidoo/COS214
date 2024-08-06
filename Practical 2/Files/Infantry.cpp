@@ -25,7 +25,26 @@ Infantry::Infantry(int healthPerSoldier, int damagePerSoldier, int defencePerSol
 Soldiers* Infantry::clonis(){
     return new Infantry(*this);
 }
-
+void Infantry::engage(){
+    prepare();
+    execute();
+}
+void Infantry::disengage(){
+        if(unitName == 'Archers'){
+        cout << "Disengaging: lowers bow\n";
+    }
+    else if(unitName =='Spearmen'){
+        cout << "Disengaging: lowers spear\n";
+    }
+    else if(unitName =='Swordsmen'){
+        cout << "Disengaging: lowers sword\n";
+    }
+    else{
+        cout << "Disengaging: lowers fists\n";
+    }
+    retreat();
+    rest();
+}
 void Infantry::execute(){
 
     if(unitName == 'Archers'){
@@ -42,20 +61,7 @@ void Infantry::execute(){
     }
 }
 
-void Infantry::disengage(){
-        if(unitName == 'Archers'){
-        cout << "Disengaging: lowers bow\n";
-    }
-    else if(unitName =='Spearmen'){
-        cout << "Disengaging: lowers spear\n";
-    }
-    else if(unitName =='Swordsmen'){
-        cout << "Disengaging: lowers sword\n";
-    }
-    else{
-        cout << "Disengaging: lowers fists\n";
-    }
-}
+
 
 void Infantry::prepare(){
         if(unitName == 'Archers'){
@@ -67,7 +73,7 @@ void Infantry::prepare(){
  
 }
 void Infantry::rest(){
-    cout << "Resting: rests at the Infantry camp\n";
+    cout << "Resting: recooparates at the Infantry camp\n";
 }
 
 Infantry::~Infantry(){
