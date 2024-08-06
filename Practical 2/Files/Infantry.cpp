@@ -26,19 +26,19 @@ Soldiers* Infantry::clonis(){
     return new Infantry(*this);
 }
 
-void Infantry::engage(){
+void Infantry::execute(){
 
     if(unitName == 'Archers'){
-        cout << "Engaging: shoots enemy with a bow\n";
+        cout << "Execute: shoots enemy with a bow\n";
     }
     else if(unitName =='Spearmen'){
-        cout << "Engaging: charges enemy with a spear\n";
+        cout << "Execute: charges enemy with a spear\n";
     }
     else if(unitName =='Swordsmen'){
-        cout << "Engaging: charges enemy with a sword\n";
+        cout << "Execute: charges enemy with a sword\n";
     }
     else{
-        cout << "Engaging: charges enemy with fists\n";
+        cout << "Execute: charges enemy with fists\n";
     }
 }
 

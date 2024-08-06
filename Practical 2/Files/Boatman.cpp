@@ -28,14 +28,25 @@ Soldiers* Boatman::clonis(){
     return new Boatman(*this);
 }
 
-void Boatman::engage(){
-    cout << "Engaging: fires cannonball O=***\n ";
-}
+
 
 void Boatman::disengage(){
     cout << "Disengaging: Disengages from the cannon\n";
 }
+void Boatman::execute(){
+    if(unitName == "Cannonmen"){
+        cout << "Executing attack: fires cannonball at the enemy O=***\n ";
+    }
+    else if(unitName == "Musketeers"){
+        cout << "Executing attack: fires musket at the enemy\n ";
+    }
+    else if(unitName == "bukaniers"){
+        cout << "Executing attack: slashes enemy with Cutless\n ";
 
+    }else{
+        cout << "Executing attack: charges enemy with boat paddel\n ";
+    }
+}
 void Boatman::prepare(){
   cout<<"Perparing: sail ship toward enemy territory\n";
 }

@@ -26,14 +26,22 @@ Soldiers* ShieldBearer::clonis(){
     return new ShieldBearer(*this);
 }
 
-void ShieldBearer::engage(){
-    cout << "Engaging: block enemy attacks\n";
-}
+
 
 void ShieldBearer::disengage(){
     cout << "Disengaging: lowers shield\n";
 }
-
+void ShieldBearer::execute(){
+    if(unitName == "defensiveBearers")
+        cout << "Executing: blocks enemy attacks \n";
+    else if (unitName == "offensiveBearers")
+        cout << "Executing: knocks enemy with shield\n";
+    else if (unitName == "aggressiveBearers")
+        cout << "Executing: uses shield to push enemy back\n";
+    else{
+        cout << "Executing: uses body to block enemy\n";
+    }
+}
 void ShieldBearer::prepare(){
   cout<<"Perparing: form \n";
 }
