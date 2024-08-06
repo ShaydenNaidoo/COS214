@@ -43,12 +43,21 @@ void ShieldBearer::execute(){
     }
 }
 void ShieldBearer::prepare(){
-  cout<<"Perparing: form \n";
+      if(unitName == "defensiveBearers")
+        cout << "Preparing: protects other troop members\n";
+    else if (unitName == "offensiveBearers")
+        cout << "Preparing: moves into blocking attack formation in front of infantry troops\n";
+    else if (unitName == "aggressiveBearers")
+        cout << "Preparing: pushes to the frontline\n";
+    else{
+        cout << "Preparing: stands at the frontlines\n";
+    }
 }
 
 ShieldBearer::~ShieldBearer(){
    
 }
+
 std::string ShieldBearer::getUnitName(){
     return this->unitName;
 }
