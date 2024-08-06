@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-Infantry::Infantry(){
+Infantry::Infantry(){ //default constructor just in case -- can be removed
     this->healthPerSoldier = 0;
     this->damagePerSoldier = 0;
     this->defencePerSoldier = 0;
