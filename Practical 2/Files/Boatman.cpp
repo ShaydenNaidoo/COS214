@@ -48,10 +48,22 @@ void Boatman::execute(){
         cout << "Executing attack: slashes enemy with Cutless\n ";
 
     }else{
-        cout << "Executing attack: charges enemy with boat paddel\n ";
+        cout << "Executing attack: smacks enemy with boat paddel\n ";
     }
 }
 void Boatman::prepare(){
+        if(unitName == "Cannonmen"){
+        cout << "Perparing attack: loads cannonball into cannon O=\n ";
+    }
+    else if(unitName == "Musketeers"){
+        cout << "Executing attack: loads musket\n ";
+    }
+    else if(unitName == "bukaniers"){
+        cout << "Executing attack: draws Cutless sword\n ";
+
+    }else{
+        cout << "Executing attack: charges enemy with boat paddel\n ";
+    }
   cout<<"Perparing: sail ship toward enemy territory\n";
 }
 void Boatman::rest(){

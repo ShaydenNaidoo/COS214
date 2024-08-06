@@ -48,9 +48,16 @@ void Infantry::disengage(){
 void Infantry::prepare(){
         if(unitName == 'Archers'){
         cout << "Preparing: gets onto highground\n";
+        cout << "Preparing: aims at enemy\n";
+    }
+        else if(unitName =='Spearmen'){
+        cout << "Preparing: aims spear at enemy\n";
+    }
+    else if(unitName =='Swordsmen'){
+        cout << "Preparing: draws sword\n";
     }
     else{
-           cout << "Preparing: forms attacking formation around enemy\n";
+        cout << "Disengaging: takes a fighting stance\n";
     }
  
 void Infantry::execute(){
