@@ -17,6 +17,7 @@ protected:
 void engage();
 void disengage();
 void prepare();
+void defend();
 void execute();
 void retreat();
 void rest();

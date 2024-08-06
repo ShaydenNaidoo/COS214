@@ -29,7 +29,14 @@ Soldiers* ShieldBearer::clonis(){
 
 
 void ShieldBearer::disengage(){
-    cout << "Disengaging: lowers shield\n";
+    cout << "Disengaging: moves back to allow other troop members to engage\n";
+    char ans;
+    cout <<"retreat? [Y]/[n]\n";
+       cin>>ans;
+    if(toUpper(ans) == 'Y')
+        this->retreat();
+    else
+        cout << "Screams: For Titus...we shall not retreat!!!\n";
 }
 void ShieldBearer::execute(){
     if(unitName == "defensiveBearers")
@@ -52,6 +59,20 @@ void ShieldBearer::prepare(){
     else{
         cout << "Preparing: stands at the frontlines as a human shield\n";
     }
+}
+void ShieldBearer::defend(){
+    if(unitName == "defensiveBearers")
+        cout << "Defending: moves back in formation to protect other troop members from archers or other enemy attacks\n";
+    else if (unitName == "offensiveBearers")
+        cout << "Defending: moves back in formation to protect infantry troops\n";
+    else if (unitName == "aggressiveBearers")
+        cout << "Defending: moves back in formation to protect other troop members from archers or other enemy attacks\n";
+    else{
+        cout << "Defending: moves back in formation to protect other troop members from archers or other enemy attacks\n";
+    }
+}
+void ShieldBearer::retreat(){
+    cout << "Retreating: secures exit path and waits for other troop members to retreat before retreating back to base\n";
 }
 
 ShieldBearer::~ShieldBearer(){

@@ -20,6 +20,7 @@ class Soldiers {
         virtual int getAmountOfSoldiersPerUnit() = 0;
         virtual std::string getUnitName() = 0;
         virtual void engage() = 0;
+        bool bRetreat = false;
         virtual void disengage() = 0;
         virtual Soldiers* clonis() = 0;m
         virtual void prepare() = 0;
