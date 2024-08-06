@@ -34,49 +34,54 @@ void Infantry::disengage(){
     rest();
 }
 void Infantry::prepare(){
-        if(getUnitName() == 'Archers'){
-        cout << "Preparing: gets onto highground\n";
-        cout << "Preparing: aims at enemy\n";
+    switch(getUnitName()){
+        case 'Archers':
+            cout << "Preparing: gets onto highground\n";
+            cout << "Preparing: aims at enemy\n";
+            break;
+        case 'Spearmen':
+            cout << "Preparing: aims spear at enemy\n";
+            break;
+        case 'Swordsmen':
+            cout << "Preparing: draws sword\n";
+            break;
+        default:
+            cout << "Preparing: takes a fighting stance\n";
+            break;
     }
-        else if(getUnitName() =='Spearmen'){
-        cout << "Preparing: aims spear at enemy\n";
-    }
-    else if(getUnitName() =='Swordsmen'){
-        cout << "Preparing: draws sword\n";
-    }
-    else{
-        cout << "Preparing: takes a fighting stance\n";
-    }
+}
  
 void Infantry::execute(){
-
-    if(getUnitName() == 'Archers'){
-        cout << "Execute: shoots enemy with a bow\n";
-    }
-    else if(getUnitName() =='Spearmen'){
-        cout << "Execute: charges enemy with a spear\n";
-    }
-    else if(getUnitName() =='Swordsmen'){
-        cout << "Execute: slashes enemy with a sword\n";
-    }
-    else{
-        cout << "Execute: attacks enemy with fists\n";
+switch(getUnitName()){
+        case 'Archers':
+            cout << "Execute: shoots enemy with a bow\n";
+            break;
+        case 'Spearmen':
+            cout << "Execute: charges enemy with a spear\n";
+            break;
+        case 'Swordsmen':
+            cout << "Execute: slashes enemy with a sword\n";
+            break;
+        default:
+            cout << "Execute: attacks enemy with fists\n";
+            break;
     }
 }
 void Infantry::retreat(){
-          if(getUnitName()== 'Archers'){
-        cout << "Disengaging: lowers bow\n";
+    switch(getUnitName()){
+        case 'Archers':
+            cout << "Retreating: lowers bow\n";
+            break;
+        case 'Spearmen':
+            cout << "Retreating: lowers spear\n";
+            break;
+        case 'Swordsmen':
+            cout << "Retreating: lowers sword\n";
+            break;
+        default:
+            cout << "Retreating: lowers fists\n";
+            break;
     }
-    else if(getUnitName() =='Spearmen'){
-        cout << "Disengaging: lowers spear\n";
-    }
-    else if(getUnitName() =='Swordsmen'){
-        cout << "Disengaging: lowers sword\n";
-    }
-    else{
-        cout << "Disengaging: lowers fists\n";
-    }
-
     cout << "Retreating: runs back to the Infantry camp\n";
 }
 void Infantry::rest(){
