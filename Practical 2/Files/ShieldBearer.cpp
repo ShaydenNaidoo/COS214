@@ -44,13 +44,13 @@ void ShieldBearer::execute(){
 }
 void ShieldBearer::prepare(){
       if(unitName == "defensiveBearers")
-        cout << "Preparing: protects other troop members\n";
+        cout << "Preparing: moves into blocking and defensive formation to protect other troop members from archers or other enemy attacks\n";
     else if (unitName == "offensiveBearers")
-        cout << "Preparing: moves into blocking attack formation in front of infantry troops\n";
+        cout << "Preparing: moves into blocking and attack formation in front of infantry troops to prepare to charge the enemy head-on\n";
     else if (unitName == "aggressiveBearers")
-        cout << "Preparing: pushes to the frontline\n";
+        cout << "Preparing: pushes to the frontline for full on press at the enemy\n";
     else{
-        cout << "Preparing: stands at the frontlines\n";
+        cout << "Preparing: stands at the frontlines as a human shield\n";
     }
 }
 
