@@ -5,14 +5,22 @@
 #include <iostream>
 #include "Soldiers.h"
 
-class Boatman: public Soldiers{
-    private:
-        int healthPerSoldier;
-        int dammagePerSoldier;
-        int defencePerSoldier;
-        int amountOfSoldiersPerUnit;
-        std::string unitName;
+class Boatman: protected Soldiers{
+public:
+Boatman();
+Boatman( Boatman* ShieldBearer);// added copy constructor -Shayden for Clone method
+Boatman(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName);
+Soldiers* clonis();
+Boatman();
+~Boatman();
 
+protected:
+void engage();
+void disengage();
+void prepare();
+void execute();
+void retreat();
+void rest();
 };
 
 #endif
