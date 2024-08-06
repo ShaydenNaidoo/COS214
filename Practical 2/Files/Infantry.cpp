@@ -21,7 +21,6 @@ Infantry::Infantry(int healthPerSoldier, int damagePerSoldier, int defencePerSol
     this->damagePerSoldier = damagePerSoldier;
     this->defencePerSoldier = defencePerSoldier;
     this->unitName = unitName;
-
 }
 Soldiers* Infantry::clonis(){
     return new Infantry(*this);
