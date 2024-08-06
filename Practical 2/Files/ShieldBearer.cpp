@@ -44,8 +44,10 @@ void ShieldBearer::disengage(){
     retreat = true;
         this->retreat();
     else{
-        cout << "Screams: For Titus...we shall not retreat!!!\n";
+        cout << "Screams: For Titus!!!\n";
+        cout<<"...we may rest but we shall not retreat!!!\n";
         retreat = false;
+        rest();
     }
 }
 void ShieldBearer::execute(){
@@ -89,7 +91,9 @@ void ShieldBearer::retreat(){
     retreat = true;
     cout << "Retreating: secures exit path and waits for other troop members to retreat before retreating back to base\n";
 }
-
+void ShieldBearer::rest(){
+    cout << "Resting: takes a break and waits for orders\n";
+}
 ShieldBearer::~ShieldBearer(){
    
 }
