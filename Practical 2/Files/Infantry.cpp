@@ -29,5 +29,30 @@ void Infantry::disengage(){
 }
 
 void Infantry::prepare(){
-    cout << "Preparing\n";
+  
+}
+
+Infantry::~Infantry(){
+   
+}
+std::string Infantry::getUnitName(){
+    return this->unitName;
+}
+int Infantry::getDamagePerSoldier(){
+    return this->damagePerSoldier;
+}
+int Infantry::getDefencePerSoldier(){
+    return this->defencePerSoldier;
+}
+int Infantry::getHealthPerSoldier(){
+    return this->healthPerSoldier;
+}
+int Infantry::getAmountOfSoldiersPerUnit(){
+    return this->amountOfSoldiersPerUnit;
+}
+void Infantry::setUnitName(std::string unitName){
+    this->unitName = unitName;
+}
+void Infantry::setDamagePerSoldier(int damagePerSoldier){
+    this->damagePerSoldier = damagePerSoldier;
 }
