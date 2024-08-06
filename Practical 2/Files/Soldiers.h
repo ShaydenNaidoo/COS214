@@ -7,7 +7,12 @@
 
 class Soldiers { 
     protected:
+     int healthPerSoldier;
+        int damagePerSoldier;
+        int defencePerSoldier;
         int amountOfSoldiersPerUnit;
+        std::string unitName;
+    public:
         Soldiers(int amountOfSoldiersPerUnit){this->amountOfSoldiersPerUnit = amountOfSoldiersPerUnit;}
         virtual int getHealthPerSoldier() = 0;
         virtual int getDamagePerSoldier() = 0;

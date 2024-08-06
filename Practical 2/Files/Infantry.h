@@ -5,14 +5,14 @@
 #include <iostream>
 #include "Soldiers.h"
 
-class Infantry: public Soldiers{
-    private:
-        int healthPerSoldier;
-        int damagePerSoldier;
-        int defencePerSoldier;
-        std::string unitName;
+class Infantry: protected Soldiers{
 
     public:
+    int healthPerSoldier;
+    int damagePerSoldier;
+    int defencePerSoldier;
+    int amountOfSoldiersPerUnit;
+    std::string unitName;
         Infantry();
         Infantry( Infantry* infantry);// added copy constructor -Shayden for Clone method
         Infantry(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName);

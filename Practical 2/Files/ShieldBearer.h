@@ -5,14 +5,16 @@
 #include <iostream>
 #include "Soldiers.h"
 
-class ShieldBearer: public Soldiers{
+class ShieldBearer: protected Soldiers{
     private:
         int healthPerSoldier;
         int damagePerSoldier;
         int defencePerSoldiersPerUnit;
         int amountOfSoldiersPerUnit;
         std::string unitName;
-
+    public:
+    protected:
+    
 };
 
 #endif
