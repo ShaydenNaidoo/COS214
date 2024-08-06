@@ -29,9 +29,13 @@ Soldiers* Boatman::clonis(){
 }
 
 
-
+void Boatman::engage(){
+    prepare();
+    execute();
+}
 void Boatman::disengage(){
-    cout << "Disengaging: Disengages from the cannon\n";
+    retreat();
+    rest();
 }
 void Boatman::execute(){
     if(unitName == "Cannonmen"){
@@ -51,7 +55,17 @@ void Boatman::prepare(){
   cout<<"Perparing: sail ship toward enemy territory\n";
 }
 void Boatman::rest(){
-    cout << "Resting: drinks rum at the ship's bar\n";
+    if(unitName == "Cannonmen"){
+        cout << "Resting: rests in ship deck\n";
+    }
+    else if(unitName == "Musketeers"){
+        cout << "Resting: sleeps in cabin quaters\n";
+    }
+    else if(unitName == "bukaniers"){
+        cout << "Resting: drinks rum at the ship's bar\n";
+    }else{  
+        cout << "Resting: rests in crew quaters\n";
+    }
 }
 void Boatman::retreat(){
     cout << "Reatreating: helps the crew return the ship to shore \n";

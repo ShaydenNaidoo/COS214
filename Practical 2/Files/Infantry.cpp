@@ -45,6 +45,14 @@ void Infantry::disengage(){
     retreat();
     rest();
 }
+void Infantry::prepare(){
+        if(unitName == 'Archers'){
+        cout << "Preparing: gets onto highground\n";
+    }
+    else{
+           cout << "Preparing: forms attacking formation around enemy\n";
+    }
+ 
 void Infantry::execute(){
 
     if(unitName == 'Archers'){
@@ -61,16 +69,6 @@ void Infantry::execute(){
     }
 }
 
-
-
-void Infantry::prepare(){
-        if(unitName == 'Archers'){
-        cout << "Preparing: gets onto highground\n";
-    }
-    else{
-           cout << "Preparing: forms attacking formation around enemy\n";
-    }
- 
 }
 void Infantry::rest(){
     cout << "Resting: recooparates at the Infantry camp\n";
