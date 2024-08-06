@@ -27,3 +27,4 @@ int InfantryFactory::calculateTotalDefencePerUnit(Soldiers *soldier){
 
 }
 
+

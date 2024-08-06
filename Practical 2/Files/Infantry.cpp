@@ -22,7 +22,7 @@ void Infantry::disengage(){
 }
 
 void Infantry::prepare(){
-  
+  cout<<"Perparing\n";
 }
 
 Infantry::~Infantry(){
