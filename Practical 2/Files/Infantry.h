@@ -22,11 +22,7 @@ class Infantry: public Soldiers{
         void execute();
         void retreat();
         void rest();
-        int getHealthPerSoldier();
-        int getDamagePerSoldier();
-        int getDefencePerSoldier();
-        int getAmountOfSoldiersPerUnit();
-        std::string getUnitName();
+   
        
 
 };
