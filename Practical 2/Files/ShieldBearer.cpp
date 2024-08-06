@@ -27,18 +27,32 @@ Soldiers* ShieldBearer::clonis(){
 }
 
 
+void ShieldBearer::engage(){
+    if(retreat == true){
+        cout<<"cannot engage while retreating\n";
+        return;
+    }else{
+        execute();
+    }
+}
 
 void ShieldBearer::disengage(){
-    cout << "Disengaging: moves back to allow other troop members to engage\n";
     char ans;
     cout <<"retreat? [Y]/[n]\n";
        cin>>ans;
     if(toUpper(ans) == 'Y')
+    retreat = true;
         this->retreat();
-    else
+    else{
         cout << "Screams: For Titus...we shall not retreat!!!\n";
+        retreat = false;
+    }
 }
 void ShieldBearer::execute(){
+    if(retreat == true){
+      cout<<"cannot execute while retreating\n";
+        return;
+    }
     if(unitName == "defensiveBearers")
         cout << "Executing: blocks enemy attacks \n";
     else if (unitName == "offensiveBearers")
@@ -72,6 +86,7 @@ void ShieldBearer::defend(){
     }
 }
 void ShieldBearer::retreat(){
+    retreat = true;
     cout << "Retreating: secures exit path and waits for other troop members to retreat before retreating back to base\n";
 }
 
