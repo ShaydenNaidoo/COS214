@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 Soldiers* Infantry::clonis(){
     return new Infantry(*this);
 }
@@ -17,7 +18,7 @@ void Infantry::disengage(){
 }
 
 void Infantry::prepare(){
-  
+  cout<<"Perparing\n";
 }
 
 Infantry::~Infantry(){
