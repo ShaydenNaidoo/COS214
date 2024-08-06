@@ -13,17 +13,17 @@ Soldiers* InfantryFactory::getIndex(std::size_t x){
 }
     
 int InfantryFactory::calculateTotalHealthPerUnit(Soldiers *soldier){
-    return soldier->getHealthPerSoldier() * soldier->getAmountOfSoldiers();
+    return soldier->getHealthPerSoldier() * soldier->getAmountOfSoldiersPerUnit();
 
 }
 
 int InfantryFactory::calculateTotalDamagePerUnit(Soldiers *soldier){
-    return soldier->getDammagePerSoldier() * soldier->getAmountOfSoldiers();
+    return soldier->getDamagePerSoldier() * soldier->getAmountOfSoldiersPerUnit();
 
 }
 
 int InfantryFactory::calculateTotalDefencePerUnit(Soldiers *soldier){
-    return soldier->getHealthPerSoldier() * soldier->getAmountOfSoldiers();
+    return soldier->getHealthPerSoldier() * soldier->getAmountOfSoldiersPerUnit();
 
 }
 

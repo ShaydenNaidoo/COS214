@@ -11,7 +11,7 @@ int main(){
     Soldiers *unit;
     unit = x.createUnit(10,20,30,40,"Test Unit");
     
-    cout << "start\n" << unit->getUnitName() << "\nend\n";
+    cout << unit->getUnitName()<<endl;
 
     delete unit;
     unit = nullptr;

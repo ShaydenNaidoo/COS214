@@ -29,6 +29,12 @@ class Infantry: public Soldiers{
             << "Unit Name: " << this->unitName << "\n";
         }
 
+        int getHealthPerSoldier(){return healthPerSoldier;}
+        int getDamagePerSoldier(){return damagePerSoldier;}
+        int getDefencePerSoldier(){return defencePerSoldier;}
+        int getAmountOfSoldiersPerUnit(){return amountOfSoldiersPerUnit;}
+        std::string getUnitName(){return unitName;}
+
 
 };
 
