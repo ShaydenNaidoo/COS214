@@ -28,15 +28,41 @@ Soldiers* Infantry::clonis(){
 }
 
 void Infantry::engage(){
-    cout << "Engaging\n";
+
+    if(unitName == 'Archers'){
+        cout << "Engaging: shoots enemy with a bow\n";
+    }
+    else if(unitName =='Spearmen'){
+        cout << "Engaging: charges enemy with a spear\n";
+    }
+    else if(unitName =='Swordsmen'){
+        cout << "Engaging: charges enemy with a sword\n";
+    }
+    else{
+        cout << "Engaging: charges enemy with fists\n";
+    }
 }
 
 void Infantry::disengage(){
-    cout << "Disengaging\n";
+        if(unitName == 'Archers'){
+        cout << "Disengaging: lowers bow\n";
+    }
+    else if(unitName =='Spearmen'){
+        cout << "Disengaging: lowers spear\n";
+    }
+    else if(unitName =='Swordsmen'){
+        cout << "Disengaging: lowers sword\n";
+    }
+    else{
+        cout << "Disengaging: lowers fists\n";
+    }
 }
 
 void Infantry::prepare(){
-  cout<<"Perparing\n";
+  cout<<"Perparing: move into attacking formation\n";
+}
+void Infantry::rest(){
+    cout << "Resting: rests at the Infantry camp\n";
 }
 
 Infantry::~Infantry(){

@@ -9,6 +9,7 @@ Boatman::Boatman():Soldiers(){ //default constructor just in case -- can be remo
     this->unitName = "";
     this->amountOfSoldiersPerUnit = 0;
 }
+
 Boatman::Boatman(const ShieldBearer &shieldBearer){
     this->healthPerSoldier = infantry.healthPerSoldier;
     this->damagePerSoldier = infantry.damagePerSoldier;

@@ -24,19 +24,19 @@ ShieldBearer::ShieldBearer(int healthPerSoldier, int damagePerSoldier, int defen
 
 }
 Soldiers* ShieldBearer::clonis(){
-    return new Infantry(*this);
+    return new ShieldBearer(*this);
 }
 
 void ShieldBearer::engage(){
-    cout << "Engaging\n";
+    cout << "Engaging: block enemy attacks\n";
 }
 
 void ShieldBearer::disengage(){
-    cout << "Disengaging\n";
+    cout << "Disengaging: lowers shield\n";
 }
 
 void ShieldBearer::prepare(){
-  cout<<"Perparing\n";
+  cout<<"Perparing: form \n";
 }
 
 ShieldBearer::~ShieldBearer(){
