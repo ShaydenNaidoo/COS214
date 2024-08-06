@@ -36,10 +36,10 @@ void Boatman::disengage(){
 }
 
 void Boatman::prepare(){
-  cout<<"Perparing: mops the poopdeck\n";
+  cout<<"Perparing: sail ship toward enemy territory\n";
 }
 void Boatman::rest(){
-    cout << "Resting: camps in ship quarters\n";
+    cout << "Resting: drinks rum at the ship's bar\n";
 }
 void Boatman::retreat(){
     cout << "Reatreating: helps the crew return the ship to shore \n";
