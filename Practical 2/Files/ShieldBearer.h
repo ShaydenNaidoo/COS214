@@ -6,15 +6,20 @@
 #include "Soldiers.h"
 
 class ShieldBearer: protected Soldiers{
-    private:
-        int healthPerSoldier;
-        int damagePerSoldier;
-        int defencePerSoldiersPerUnit;
-        int amountOfSoldiersPerUnit;
-        std::string unitName;
-    public:
+      public:
+ShieldBearer();
+ShieldBearer( ShieldBearer* ShieldBearer);// added copy constructor -Shayden for Clone method
+ShieldBearer(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName);
+Soldiers* clonis();
+ShieldBearer();
+~ShieldBearer();
     protected:
-    
+void engage();
+void disengage();
+void prepare();
+void execute();
+void retreat();
+void rest();
 };
 
 #endif
