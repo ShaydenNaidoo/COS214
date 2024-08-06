@@ -8,7 +8,7 @@
 
 class InfantryFactory: protected SoldierFactory {
     public:
-        Soldiers* createUnit(int healthPerSoldier, int dammagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName);
+        Soldiers* createUnit();
         Soldiers* getIndex(std::size_t x);
         int calculateTotalHealthPerUnit(Soldiers *soldier);
         int calculateTotalDamagePerUnit(Soldiers *soldier);

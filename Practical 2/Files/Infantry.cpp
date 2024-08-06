@@ -2,19 +2,12 @@
 #include <iostream>
 #include <string>
 using namespace std;
-Infantry::Infantry(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, string unitName){
-     this->healthPerSoldier = healthPerSoldier;
-            this->damagePerSoldier = damagePerSoldier;
-            this->defencePerSoldier = defencePerSoldier;
-            this->amountOfSoldiersPerUnit = amountOfSoldiersPerUnit;
-            this->unitName = unitName;
-            
+Infantry::Infantry(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, string unitName):Soldiers(amountOfSoldiersPerUnit){
+    this->healthPerSoldier = healthPerSoldier;
+    this->damagePerSoldier = damagePerSoldier;
+    this->defencePerSoldier = defencePerSoldier;
+    this->unitName = unitName;
 
-            std::cout << "Health: " << this->healthPerSoldier << "\n"
-            << "Dammage: " << this->damagePerSoldier << "\n"
-            << "Defence: " << this->defencePerSoldier << "\n"
-            << "Amount: " << this->amountOfSoldiersPerUnit << "\n"
-            << "Unit Name: " << this->unitName << "\n";
 }
 Soldiers* Infantry::clonis(){
     return new Infantry(*this);

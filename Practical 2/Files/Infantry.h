@@ -10,7 +10,6 @@ class Infantry: public Soldiers{
         int healthPerSoldier;
         int damagePerSoldier;
         int defencePerSoldier;
-        int amountOfSoldiersPerUnit;
         std::string unitName;
 
     public:
