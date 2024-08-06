@@ -38,13 +38,13 @@ void Boatman::disengage(){
     rest();
 }
 void Boatman::execute(){
-    if(unitName == "Cannonmen"){
+    if(getUnitName() == "Cannonmen"){
         cout << "Executing attack: fires cannonball at the enemy O=***\n ";
     }
-    else if(unitName == "Musketeers"){
+    else if(getUnitName() == "Musketeers"){
         cout << "Executing attack: fires musket at the enemy\n ";
     }
-    else if(unitName == "bukaniers"){
+    else if(getUnitName() == "bukaniers"){
         cout << "Executing attack: slashes enemy with Cutless\n ";
 
     }else{
@@ -52,13 +52,13 @@ void Boatman::execute(){
     }
 }
 void Boatman::prepare(){
-        if(unitName == "Cannonmen"){
+        if(getUnitName() == "Cannonmen"){
         cout << "Perparing attack: loads cannonball into cannon O=\n ";
     }
-    else if(unitName == "Musketeers"){
+    else if(getUnitName() == "Musketeers"){
         cout << "Executing attack: loads musket\n ";
     }
-    else if(unitName == "bukaniers"){
+    else if(getUnitName() == "bukaniers"){
         cout << "Executing attack: draws Cutless sword\n ";
 
     }else{
@@ -67,13 +67,13 @@ void Boatman::prepare(){
   cout<<"Perparing: sail ship toward enemy territory\n";
 }
 void Boatman::rest(){
-    if(unitName == "Cannonmen"){
+    if(getUnitName() == "Cannonmen"){
         cout << "Resting: rests in ship deck\n";
     }
-    else if(unitName == "Musketeers"){
+    else if(getUnitName() == "Musketeers"){
         cout << "Resting: sleeps in cabin quaters\n";
     }
-    else if(unitName == "bukaniers"){
+    else if(getUnitName() == "bukaniers"){
         cout << "Resting: drinks rum at the ship's bar\n";
     }else{  
         cout << "Resting: rests in crew quaters\n";

@@ -34,14 +34,14 @@ void Infantry::disengage(){
     rest();
 }
 void Infantry::prepare(){
-        if(unitName == 'Archers'){
+        if(getUnitName() == 'Archers'){
         cout << "Preparing: gets onto highground\n";
         cout << "Preparing: aims at enemy\n";
     }
-        else if(unitName =='Spearmen'){
+        else if(getUnitName() =='Spearmen'){
         cout << "Preparing: aims spear at enemy\n";
     }
-    else if(unitName =='Swordsmen'){
+    else if(getUnitName() =='Swordsmen'){
         cout << "Preparing: draws sword\n";
     }
     else{
@@ -50,13 +50,13 @@ void Infantry::prepare(){
  
 void Infantry::execute(){
 
-    if(unitName == 'Archers'){
+    if(getUnitName() == 'Archers'){
         cout << "Execute: shoots enemy with a bow\n";
     }
-    else if(unitName =='Spearmen'){
+    else if(getUnitName() =='Spearmen'){
         cout << "Execute: charges enemy with a spear\n";
     }
-    else if(unitName =='Swordsmen'){
+    else if(getUnitName() =='Swordsmen'){
         cout << "Execute: slashes enemy with a sword\n";
     }
     else{
@@ -64,13 +64,13 @@ void Infantry::execute(){
     }
 }
 void Infantry::retreat(){
-          if(unitName == 'Archers'){
+          if(getUnitName()== 'Archers'){
         cout << "Disengaging: lowers bow\n";
     }
-    else if(unitName =='Spearmen'){
+    else if(getUnitName() =='Spearmen'){
         cout << "Disengaging: lowers spear\n";
     }
-    else if(unitName =='Swordsmen'){
+    else if(getUnitName() =='Swordsmen'){
         cout << "Disengaging: lowers sword\n";
     }
     else{
