@@ -10,6 +10,8 @@ int main(){
     InfantryFactory x;
     Soldiers *unit;
     unit = x.createUnit(10,20,30,40,"Test Unit");
+    
+    cout << "start\n" << unit->getUnitName() << "\nend\n";
 
     delete unit;
     unit = nullptr;

@@ -9,9 +9,11 @@
 class InfantryFactory: protected SoldierFactory {
     public:
         Soldiers* createUnit(int healthPerSoldier, int dammagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName);
-        int calculateTotalHealthPerUnit();
-        int calculateTotalDammagePerUnit();
-        int calculateTotalDefencePerUnit();
+        Soldiers* getIndex(std::size_t x);
+        int calculateTotalHealthPerUnit(Soldiers *soldier);
+        int calculateTotalDamagePerUnit(Soldiers *soldier);
+        int calculateTotalDefencePerUnit(Soldiers *soldier);
+
 
     
 };

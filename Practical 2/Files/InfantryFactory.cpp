@@ -2,22 +2,28 @@
 
 Soldiers* InfantryFactory::createUnit(int healthPerSoldier, int dammagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName){
     Soldiers *product =  new Infantry(healthPerSoldier,dammagePerSoldier,defencePerSoldier,amountOfSoldiersPerUnit,unitName);
+    this->soldiers.push_back(product);
+
+    return product;
+
+}
+
+Soldiers* InfantryFactory::getIndex(std::size_t x){
+    return SoldierFactory::getIndex(x);
+}
     
+int InfantryFactory::calculateTotalHealthPerUnit(Soldiers *soldier){
+    return soldier->getHealthPerSoldier() * soldier->getAmountOfSoldiers();
 
-    return nullptr;
 }
 
-int InfantryFactory::calculateTotalHealthPerUnit()
-{
-    return 0;
+int InfantryFactory::calculateTotalDamagePerUnit(Soldiers *soldier){
+    return soldier->getDammagePerSoldier() * soldier->getAmountOfSoldiers();
+
 }
 
-int InfantryFactory::calculateTotalDammagePerUnit()
-{
-    return 0;
+int InfantryFactory::calculateTotalDefencePerUnit(Soldiers *soldier){
+    return soldier->getHealthPerSoldier() * soldier->getAmountOfSoldiers();
+
 }
 
-int InfantryFactory::calculateTotalDefencePerUnit()
-{
-    return 0;
-}

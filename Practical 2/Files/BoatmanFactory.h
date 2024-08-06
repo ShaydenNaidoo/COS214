@@ -9,7 +9,7 @@ class BoatmanFactory: protected SoldierFactory{
     public:
         Soldiers* createUnit();
         int calculateTotalHealthPerUnit();
-        int calculateTotalDammagePerUnit();
+        int calculateTotalDamagePerUnit();
         int calculateTotalDefencePerUnit();
 
 };

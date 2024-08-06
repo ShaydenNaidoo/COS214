@@ -6,22 +6,21 @@
 #include <string>
 
 class Soldiers {
-private:
-    int healthPerSoldier;
-    int damagePerSoldier;
-    int defencePerSoldier;
-    int amountOfSoldiers;
-    std::string unitName;
+    friend class Infantry;
+    friend class ShieldBearer;
+    friend class Boatman;
 
-public:
-    Soldiers() {};
-    // virtual void engage() = 0;
-    // virtual void disengage() = 0;
-    // virtual Soldiers* clonis() = 0;
-    // virtual void prepare() = 0;
-    // virtual void execute() = 0;
-    // virtual void retreat() =0;
-    // virtual void rest() = 0;
+    private:
+  
+
+    public:
+        virtual void engage() = 0;
+        virtual void disengage() = 0;
+        virtual Soldiers* clonis() = 0;
+        virtual void prepare() = 0;
+        virtual void execute() = 0;
+        virtual void retreat() =0;
+        virtual void rest() = 0;
 
 };
 

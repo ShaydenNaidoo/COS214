@@ -14,10 +14,18 @@ class SoldierFactory{
         std::vector<Soldiers*> soldiers;
 
     protected:
+        Soldiers* getIndex(std::size_t x){
+            if(!(x >= 0 && x < soldiers.size())) return nullptr;
+            
+            return soldiers[x];
+
+        }
+
         virtual Soldiers* createUnit(int healthPerSoldier, int dammagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName) = 0;
-        virtual int calculateTotalHealthPerUnit() = 0;
-        virtual int calculateTotalDammagePerUnit() = 0;
-        virtual int calculateTotalDefencePerUnit() = 0;
+        virtual int calculateTotalHealthPerUnit(Soldiers *soldier) = 0;
+        virtual int calculateTotalDamagePerUnit(Soldiers *soldier) = 0;
+        virtual int calculateTotalDefencePerUnit(Soldiers *soldier) = 0;
+
 
 };
 

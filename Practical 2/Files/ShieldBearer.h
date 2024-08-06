@@ -8,7 +8,7 @@
 class ShieldBearer: public Soldiers{
     private:
         int healthPerSoldier;
-        int dammagePerSoldier;
+        int damagePerSoldier;
         int defencePerSoldiersPerUnit;
         int amountOfSoldiersPerUnit;
         std::string unitName;

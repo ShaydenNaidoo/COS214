@@ -8,21 +8,22 @@
 class Infantry: public Soldiers{
     private:
         int healthPerSoldier;
-        int dammagePerSoldier;
+        int damagePerSoldier;
         int defencePerSoldier;
         int amountOfSoldiersPerUnit;
         std::string unitName;
 
     public:
-        Infantry(int healthPerSoldier, int dammagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName){
+        Infantry(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName){
             this->healthPerSoldier = healthPerSoldier;
-            this->dammagePerSoldier = dammagePerSoldier;
+            this->damagePerSoldier = damagePerSoldier;
             this->defencePerSoldier = defencePerSoldier;
             this->amountOfSoldiersPerUnit = amountOfSoldiersPerUnit;
             this->unitName = unitName;
+            
 
             std::cout << "Health: " << this->healthPerSoldier << "\n"
-            << "Dammage: " << this->dammagePerSoldier << "\n"
+            << "Dammage: " << this->damagePerSoldier << "\n"
             << "Defence: " << this->defencePerSoldier << "\n"
             << "Amount: " << this->amountOfSoldiersPerUnit << "\n"
             << "Unit Name: " << this->unitName << "\n";
