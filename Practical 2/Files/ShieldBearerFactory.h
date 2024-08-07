@@ -3,14 +3,15 @@
 #define SHIELDBEARERFACTORY_H
 
 #include <iostream>
-#include "SoldierFactory.h"
 
-class ShieldBearer: protected SoldierFactory{
+#include "SoldierFactory.h"
+#include "ShieldBearer.h"
+
+class ShieldBearerFactory: public SoldierFactory{
     public:
-        Soldiers* createUnit();
-        int calculateTotalHealthPerUnit();
-        int calculateTotalDamagePerUnit();
-        int calculateTotalDefencePerUnit();
+        ShieldBearerFactory(int amountOfSoldiersPerUnit);
+        Soldiers* createUnit(int health, int damage, int defence, std::string name);
+ 
 
 };
 

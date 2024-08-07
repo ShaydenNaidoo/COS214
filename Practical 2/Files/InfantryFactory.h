@@ -3,16 +3,15 @@
 #define INFANTRYFACTORY_H
 
 #include <iostream>
+
 #include "SoldierFactory.h"
 #include "Infantry.h"
 
-class InfantryFactory: protected SoldierFactory {
+class InfantryFactory: public SoldierFactory {
     public:
-        Soldiers* createUnit();
-        Soldiers* getIndex(std::size_t x);
-        int calculateTotalHealthPerUnit(Soldiers *soldier);
-        int calculateTotalDamagePerUnit(Soldiers *soldier);
-        int calculateTotalDefencePerUnit(Soldiers *soldier);
+        InfantryFactory(int amountOfSoldiersPerUnit);
+        Soldiers* createUnit(int health, int damage, int defence, std::string name);
+    
 
 
     

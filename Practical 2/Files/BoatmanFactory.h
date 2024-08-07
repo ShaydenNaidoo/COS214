@@ -3,14 +3,15 @@
 #define BOATMANFACTORY_H
 
 #include <iostream>
-#include "SoldierFactory.h"
 
-class BoatmanFactory: protected SoldierFactory{
+#include "SoldierFactory.h"
+#include "Boatman.h"
+
+class BoatmanFactory: public SoldierFactory{
     public:
-        Soldiers* createUnit();
-        int calculateTotalHealthPerUnit();
-        int calculateTotalDamagePerUnit();
-        int calculateTotalDefencePerUnit();
+        BoatmanFactory(int amountOfSoldiersPerUnit);
+        Soldiers* createUnit(int health, int damage, int defence, std::string name);
+   
 
 };
 
