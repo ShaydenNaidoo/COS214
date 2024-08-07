@@ -7,8 +7,15 @@
 
 class ShieldBearer: public Soldiers{
     public:
-        ShieldBearer(int health, int damage, int defence, std::string name);
-
+    ShieldBearer(int health, int damage, int defence, std::string name);
+    ShieldBearer(const ShieldBearer& s);
+    Soldiers* clonis();
+    
+    private:
+        void prepare();
+        void execute();
+        void retreat();
+        void rest();
 };
 
 #endif

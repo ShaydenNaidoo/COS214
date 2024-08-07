@@ -5,7 +5,7 @@ Infantry::Infantry(int health, int damage, int defence, std::string name)
 :Soldiers(health, damage, defence, name, 'I'){
 }
 
-Infantry::Infantry(const Infantry &infantry):Soldiers(*this){}
+Infantry::Infantry(const Infantry &i):Soldiers(*this){}
 
 Infantry::clonis(){
     //validation

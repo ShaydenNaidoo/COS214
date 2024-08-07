@@ -7,8 +7,9 @@
 
 class Infantry: public Soldiers{
     public:
-        Infantry( Infantry* infantry);// added copy constructor -Shayden for Clone method
+        
         Infantry(int health, int damage, int defence, std::string name);  
+        Infantry(const Infantry &i); // added copy constructor -Shayden for Clone method
         Soldiers* clonis();
     private:
         void prepare();

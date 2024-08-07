@@ -4,15 +4,14 @@
 ShieldBearer::ShieldBearer(int health, int damage, int defence, std::string name)
 :Soldiers(health,damage,defence,name,'S'){}
 
-ShieldBearer::ShieldBearer(const Boatman &boatman):Soldiers(*this){}
+ShieldBearer::ShieldBearer(const ShieldBearer &s):Soldiers(*this){}
 
 ShieldBearer::clonis(){
     //validation
     if(this == nullptr){ //if the current obj is null
         return nullptr; 
     }
-
- return new ShieldBearer(*this);
+    return new ShieldBearer(*this);
 }
 
 void ShieldBearer::execute() override { 
