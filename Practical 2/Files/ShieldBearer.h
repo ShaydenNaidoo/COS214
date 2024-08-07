@@ -8,9 +8,8 @@
 class ShieldBearer: public Soldiers{
     public:
     ShieldBearer(int health, int damage, int defence, std::string name);
-    ShieldBearer(const ShieldBearer& s);
     Soldiers* clonis();
-    
+     ShieldBearer(const ShieldBearer& s);
     private:
         void prepare();
         void execute();
