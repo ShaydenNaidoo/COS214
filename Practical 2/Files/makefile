@@ -1,10 +1,10 @@
-files = main.o SoldierFactory.o Soldiers.o InfantryFactory.o ShieldBearerFactory.o BoatmanFactory.o Infantry.o ShieldBearer.o Boatman.o
+files = main.o SoldierFactory.o Soldiers.o InfantryFactory.o ShieldBearerFactory.o BoatmanFactory.o Infantry.o ShieldBearer.o Boatman.o FactoryManager.o
 gpp = g++ -c
 
 main: $(files)
 	g++ $(files) -o main
 
-main.o: main.cpp InfantryFactory.h ShieldBearerFactory.h BoatmanFactory.h
+main.o: main.cpp SoldierFactory.o InfantryFactory.h ShieldBearerFactory.h BoatmanFactory.h Infantry.h ShieldBearer.h Boatman.h 
 	$(gpp) main.cpp
 
 Soldiers.o: Soldiers.cpp Soldiers.h
@@ -30,7 +30,10 @@ ShieldBearer.o: ShieldBearer.cpp ShieldBearer.h Soldiers.h
 
 Boatman.o: Boatman.cpp Boatman.h Soldiers.h
 	$(gpp) Boatman.cpp
-	
+
+FactoryManager.o: FactoryManager.cpp FactoryManager.h SoldierFactory.h Soldiers.h
+	$(gpp) FactoryManager.cpp
+		
 run:
 	./main
 
