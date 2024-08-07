@@ -7,8 +7,15 @@
 
 class Infantry: public Soldiers{
     public:
+        Infantry( Infantry* infantry);// added copy constructor -Shayden for Clone method
         Infantry(int health, int damage, int defence, std::string name);  
-       
+        Soldiers* clonis();
+        bool retreated;
+    private:
+        void prepare();
+        void execute();
+        void retreat();
+        void rest();
 
 };
 
