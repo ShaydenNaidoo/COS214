@@ -9,20 +9,6 @@ class ShieldBearer: public Soldiers{
     public:
         ShieldBearer(int health, int damage, int defence, std::string name);
 
-
-        // ShieldBearer( ShieldBearer* ShieldBearer);// added copy constructor -Shayden for Clone method
-        // ShieldBearer(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName);
-        // Soldiers* clonis();
-        // ShieldBearer();
-        // ~ShieldBearer();
-        // protected:
-        // void engage();
-        // void disengage();
-        // void prepare();
-        // void defend();
-        // void execute();
-        // void retreat();
-        // void rest();
 };
 
 #endif

@@ -7,20 +7,7 @@
 
 class Infantry: public Soldiers{
     public:
-        Infantry(int health, int damage, int defence, std::string name);
-
-
-        // Infantry( Infantry* infantry);// added copy constructor -Shayden for Clone method
-        // Infantry(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, std::string unitName);
-        // ~Infantry();
-        // Soldiers* clonis();
-        // void engage();
-        // void disengage();
-        // void prepare();
-        // void execute();
-        // void retreat();
-        // void rest();
-   
+        Infantry(int health, int damage, int defence, std::string name);  
        
 
 };

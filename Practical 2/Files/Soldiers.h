@@ -20,16 +20,6 @@ class Soldiers {
         std::string getUnitName();
         char getType();
 
-
-
-        // virtual void engage() = 0;
-        // virtual void disengage() = 0;
-        // virtual Soldiers* clonis() = 0;
-        // virtual void prepare() = 0;
-        // virtual void execute() = 0;
-        // virtual void retreat() =0;
-        // virtual void rest() = 0;
-
 };
 
 
