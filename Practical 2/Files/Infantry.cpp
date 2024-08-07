@@ -3,7 +3,6 @@
 
 Infantry::Infantry(int health, int damage, int defence, std::string name)
 :Soldiers(health, damage, defence, name, 'I'){
-    this->retreated = false;
 }
 
 Infantry::Infantry(const Infantry &infantry):Soldiers(*this){}
