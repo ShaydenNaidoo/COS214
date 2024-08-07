@@ -40,16 +40,16 @@ void Boatman::disengage(){
 void Boatman::execute(){
     switch (getUnitName()){
         case "Cannonmen":
-            cout << "Executing attack: fires cannonball at the enemy O=***\n ";
+            cout << "Executing attack: Boatmen fire cannonball at the enemy O=***\n ";
             break;
         case "Musketeers":
-            cout << "Perparing attack: fires musket at the enemy\n ";
+            cout << "Perparing attack: Boatmen fire  musket at the enemy\n ";
             break;
-        case "bukaniers":
-            cout << "Executing attack: slashes enemy with Cutless\n ";
+        case "buccaneers":
+            cout << "Executing attack: Boatmen slash the enemy with a Cutless\n ";
             break;
         default:
-             cout<<"Perparing: sail ship toward enemy territory\n"
+                 cout << "Executing attack: Boatmen hit the enemy with a Boat paddle\n ";
             break;
     }
 }
@@ -61,7 +61,7 @@ void Boatman::prepare(){
         case "Musketeers":
             cout << "Perparing attack: loads musket\n ";
             break;
-        case "bukaniers":
+        case "buccaneers":
             cout << "Perparing attack: draws Cutless sword\n ";
             break;
             case "Sailor":
