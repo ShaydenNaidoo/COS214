@@ -80,7 +80,7 @@ void Boatman::rest(){
         case "Musketeers":
             cout << "Resting: sleeps in cabin quaters\n";
             break;
-        case "bukaniers":
+        case "buccaneers":
             cout << "Resting: drinks rum at the ship's bar\n";
             break;
         default:
