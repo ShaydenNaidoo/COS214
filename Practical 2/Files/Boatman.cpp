@@ -38,45 +38,54 @@ void Boatman::disengage(){
     rest();
 }
 void Boatman::execute(){
-    if(getUnitName() == "Cannonmen"){
-        cout << "Executing attack: fires cannonball at the enemy O=***\n ";
-    }
-    else if(getUnitName() == "Musketeers"){
-        cout << "Executing attack: fires musket at the enemy\n ";
-    }
-    else if(getUnitName() == "bukaniers"){
-        cout << "Executing attack: slashes enemy with Cutless\n ";
-
-    }else{
-        cout << "Executing attack: smacks enemy with boat paddel\n ";
+    switch (getUnitName()){
+        case "Cannonmen":
+            cout << "Executing attack: fires cannonball at the enemy O=***\n ";
+            break;
+        case "Musketeers":
+            cout << "Perparing attack: fires musket at the enemy\n ";
+            break;
+        case "bukaniers":
+            cout << "Executing attack: slashes enemy with Cutless\n ";
+            break;
+        default:
+             cout<<"Perparing: sail ship toward enemy territory\n"
+            break;
     }
 }
 void Boatman::prepare(){
-        if(getUnitName() == "Cannonmen"){
-        cout << "Perparing attack: loads cannonball into cannon O=\n ";
+    switch (getUnitName()){
+        case "Cannonmen":
+            cout << "Perparing attack: loads cannonball into cannon O=\n ";
+            break;
+        case "Musketeers":
+            cout << "Perparing attack: loads musket\n ";
+            break;
+        case "bukaniers":
+            cout << "Perparing attack: draws Cutless sword\n ";
+            break;
+            case "Sailor":
+            cout << "Perparing: sail ship toward enemy territory\n";
+            break;
+        default:
+            cout << "Perparing attack: charges enemy with boat paddel\n ";
+            break;
     }
-    else if(getUnitName() == "Musketeers"){
-        cout << "Executing attack: loads musket\n ";
-    }
-    else if(getUnitName() == "bukaniers"){
-        cout << "Executing attack: draws Cutless sword\n ";
-
-    }else{
-        cout << "Executing attack: charges enemy with boat paddel\n ";
-    }
-  cout<<"Perparing: sail ship toward enemy territory\n";
 }
 void Boatman::rest(){
-    if(getUnitName() == "Cannonmen"){
-        cout << "Resting: rests in ship deck\n";
-    }
-    else if(getUnitName() == "Musketeers"){
-        cout << "Resting: sleeps in cabin quaters\n";
-    }
-    else if(getUnitName() == "bukaniers"){
-        cout << "Resting: drinks rum at the ship's bar\n";
-    }else{  
-        cout << "Resting: rests in crew quaters\n";
+    switch (getUnitName()){
+        case "Cannonmen":
+            cout << "Resting: rests in ship deck\n";
+            break;
+        case "Musketeers":
+            cout << "Resting: sleeps in cabin quaters\n";
+            break;
+        case "bukaniers":
+            cout << "Resting: drinks rum at the ship's bar\n";
+            break;
+        default:
+            cout << "Resting: rests in crew quaters\n";
+            break;
     }
 }
 void Boatman::retreat(){

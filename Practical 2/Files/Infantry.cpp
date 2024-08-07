@@ -37,7 +37,7 @@ void Infantry::prepare(){
     switch(getUnitName()){
         case 'Archers':
             cout << "Preparing: gets onto highground\n";
-            cout << "Preparing: aims at enemy\n";
+            cout << "Preparing: aims at the enemy\n";
             break;
         case 'Spearmen':
             cout << "Preparing: aims spear at enemy\n";
