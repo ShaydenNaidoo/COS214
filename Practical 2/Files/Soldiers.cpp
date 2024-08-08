@@ -1,6 +1,13 @@
 //PRODUCT
 #include "Soldiers.h"
-#include <iostream>
+Soldiers::Soldiers(){
+    this->healthPerSoldier = 0;
+    this->damagePerSoldier = 0;
+    this->defencePerSoldier = 0;
+    this->unitName = "";
+    this->type = '#';
+}
+
 Soldiers::Soldiers(int health, int damage, int defence, std::string name, char type){
     this->healthPerSoldier = health;
     this->damagePerSoldier = damage;
@@ -10,27 +17,27 @@ Soldiers::Soldiers(int health, int damage, int defence, std::string name, char t
 
 }
 
-int Soldiers::getHealthPerSoldier()const{
+int Soldiers::getHealthPerSoldier() const{
     return this->healthPerSoldier;
 
 }
 
-int Soldiers::getDamagePerSoldier()const{
+int Soldiers::getDamagePerSoldier() const{
     return this->damagePerSoldier;
 
 }
 
-int Soldiers::getDefencePerSoldier()const{
+int Soldiers::getDefencePerSoldier() const{
     return this->defencePerSoldier;
 
 }
 
-std::string Soldiers::getUnitName()const{
+std::string Soldiers::getUnitName() const{
     return this->unitName;
 
 }
 
-char Soldiers::getType()const{
+char Soldiers::getType() const{
     return this->type;
 
 }
@@ -43,6 +50,4 @@ void Soldiers::disengage(){
     retreat();
     rest();
 }
-
-
 

@@ -13,14 +13,15 @@ class Soldiers {
         std::string unitName;
 
     public:
+        Soldiers();
         Soldiers(int health, int damage, int defence, std::string name, char type);        
         int getHealthPerSoldier() const;
         int getDamagePerSoldier() const;
         int getDefencePerSoldier()const;
-        std::string getUnitName()const;
-        char getType()const;
-         void engage();
-          void disengage();
+        std::string getUnitName() const;
+        char getType() const;
+        void engage();
+        void disengage();
         virtual Soldiers* clonis() = 0;
         virtual void prepare() = 0;
         virtual void execute() = 0;

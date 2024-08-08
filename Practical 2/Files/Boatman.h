@@ -8,7 +8,8 @@
 class Boatman: public Soldiers{
     public:
     Boatman(int health, int damage, int defence, std::string name);  
-        Soldiers* clonis();
+    Boatman(const Boatman& other);
+    Soldiers* clonis();
 
     private:
         void engage();
