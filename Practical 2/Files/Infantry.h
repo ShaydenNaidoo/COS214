@@ -9,13 +9,13 @@ class Infantry: public Soldiers{
     public:
         
         Infantry(int health, int damage, int defence, std::string name);  
-        Infantry(const Infantry &i); // added copy constructor -Shayden for Clone method
-        Soldiers* clonis();
+        Infantry(const Infantry& other);
+        Soldiers* clonis() override;
     private:
-        void prepare();
-        void execute();
-        void retreat();
-        void rest();
+        void prepare() override;
+        void execute() override;
+        void retreat() override;
+        void rest() override;
 
 };
 

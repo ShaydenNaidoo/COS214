@@ -11,10 +11,10 @@ class ShieldBearer: public Soldiers{
     Soldiers* clonis();
      ShieldBearer(const ShieldBearer& s);
     private:
-        void prepare();
-        void execute();
-        void retreat();
-        void rest();
+        void prepare() override;
+        void execute() override;
+        void retreat() override;
+        void rest() override;
 };
 
 #endif

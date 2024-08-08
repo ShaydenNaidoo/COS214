@@ -4,38 +4,34 @@
 ShieldBearer::ShieldBearer(int health, int damage, int defence, std::string name)
 :Soldiers(health,damage,defence,name,'S'){}
 
-ShieldBearer::ShieldBearer(const ShieldBearer &s):Soldiers(*this){}
+ShieldBearer::ShieldBearer(const ShieldBearer& other)
+:Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType()){
 
-ShieldBearer::clonis(){
-    //validation
-    if(this == nullptr){ //if the current obj is null
+}
+
+Soldiers* ShieldBearer::clonis(){
+    if(this == nullptr){ 
         return nullptr; 
     }
+    int health = this->getHealthPerSoldier();
+    int damage = this->getDamagePerSoldier();
+    int defence = this->getDefencePerSoldier();
+    std::string name = this->getUnitName();
+    char type = this->getType();
     return new ShieldBearer(*this);
 }
 
-void ShieldBearer::execute() override { 
-    if(this!=nullptr){
+void ShieldBearer::execute()  { 
+ 
     std::cout << "ShieldBearers: " << this->getUnitName() << " are blocking enemy attacks\n" << std::endl;
-}else{
-    return;
 }
-}
-void ShieldBearer::prepare() override{
-    if(this==nullptr){
-        return;
-    }
+void ShieldBearer::prepare() {
+ 
     std::cout << "ShieldBearers: " << this->getUnitName() << " are forming a defensive position in front of infantry\n" << std::endl;
 }
-void ShieldBearer::retreat() override{
-      if(this==nullptr){
-        return;
-    }
+void ShieldBearer::retreat() {
     std::cout << "ShieldBearers: " << this->getUnitName() << "are retreating with shields raised high\n" << std::endl;
 }
-void ShieldBearer::rest() override {
-      if(this==nullptr){
-        return;
-    }
+void ShieldBearer::rest(){
     std::cout << "ShieldBearers: " << this->getUnitName() << " are resting under their shields\n" << std::endl;
 }

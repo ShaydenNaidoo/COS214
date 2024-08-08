@@ -1,12 +1,6 @@
 //PRODUCT
 #include "Soldiers.h"
-Soldiers::Soldiers(){
-    this->healthPerSoldier = 0;
-    this->damagePerSoldier = 0;
-    this->defencePerSoldier = 0;
-    this->unitName = "";
-    this->type = 'I';
-}
+#include <iostream>
 Soldiers::Soldiers(int health, int damage, int defence, std::string name, char type){
     this->healthPerSoldier = health;
     this->damagePerSoldier = damage;
@@ -15,47 +9,28 @@ Soldiers::Soldiers(int health, int damage, int defence, std::string name, char t
     this->type = type;
 
 }
-Soldiers::Soldiers(const Soldiers& s ){ //copy constructor for clone method
-  
-  //validation
-  if(s==nullptr){
-  return nullptr
-  }
-if(this == nullptr){
-    return nullptr;
-}
-   if(this != &s){
-    this->healthPerSoldier = s.healthPerSoldier;
-    this->damagePerSoldier = s.damagePerSoldier;
-    this->defencePerSoldier = s.defencePerSoldier;
-    this->unitName = s.unitName;
-    this->type = s.type;
-   }
-   return *this;
 
-}
-
-int Soldiers::getHealthPerSoldier(){
+int Soldiers::getHealthPerSoldier()const{
     return this->healthPerSoldier;
 
 }
 
-int Soldiers::getDamagePerSoldier(){
+int Soldiers::getDamagePerSoldier()const{
     return this->damagePerSoldier;
 
 }
 
-int Soldiers::getDefencePerSoldier(){
+int Soldiers::getDefencePerSoldier()const{
     return this->defencePerSoldier;
 
 }
 
-std::string Soldiers::getUnitName(){
+std::string Soldiers::getUnitName()const{
     return this->unitName;
 
 }
 
-char Soldiers::getType(){
+char Soldiers::getType()const{
     return this->type;
 
 }
@@ -68,4 +43,6 @@ void Soldiers::disengage(){
     retreat();
     rest();
 }
+
+
 

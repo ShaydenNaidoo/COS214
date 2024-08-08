@@ -7,17 +7,16 @@
 
 class Boatman: public Soldiers{
     public:
-    Boatman(int health, int damage, int defence, std::string name);
-    Boatman(const Boatman& b);  
+    Boatman(int health, int damage, int defence, std::string name);  
         Soldiers* clonis();
 
     private:
         void engage();
         void disengage();
-        void prepare();
-        void execute();
-        void retreat();
-        void rest();
+        void prepare() override;
+        void execute() override;
+        void retreat() override;
+        void rest() override;
 };
 
 #endif
