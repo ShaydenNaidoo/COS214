@@ -21,6 +21,7 @@ class FactoryManager{
         bool createUnit(std::size_t type, int  health, int damage, int defence, std::string unitName);  
         int getAmountOfSoldiersPerUnit();
         void appendSoldier(Soldiers *soldier);
+        Soldiers* operator[](std::size_t x);
         void printUnits();
         void printSummary();
         

@@ -31,6 +31,11 @@ void FactoryManager::appendSoldier(Soldiers *soldier){
 
 }
 
+Soldiers *FactoryManager::operator[](std::size_t x){
+    if(x < 0 || x >= soldiers.size()) return nullptr;
+    return soldiers[x];
+}
+
 void FactoryManager::printUnits(){
     std::cout << "\033[1;4;37mInfantry:\033[0m\n" ;
     for(Soldiers* x : soldiers){
