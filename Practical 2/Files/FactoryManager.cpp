@@ -26,6 +26,11 @@ int FactoryManager::getAmountOfSoldiersPerUnit(){
 
 }
 
+void FactoryManager::appendSoldier(Soldiers *soldier){
+    soldiers.push_back(soldier);
+
+}
+
 void FactoryManager::printUnits(){
     std::cout << "\033[1;4;37mInfantry:\033[0m\n" ;
     for(Soldiers* x : soldiers){
