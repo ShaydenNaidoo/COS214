@@ -25,6 +25,7 @@ class FactoryManager{
         void cloneSoldier(std::size_t x);
         void printUnits();
         void printSummary();
+        void titusComands();
 };
 
 
