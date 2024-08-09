@@ -10,7 +10,7 @@ Boatman::Boatman(const Boatman& other)
 :Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType()){
 }
 
-Soldiers* Boatman::clonis():{
+Soldiers* Boatman::clonis(){
         if(this == nullptr){ 
         return nullptr; 
     }
