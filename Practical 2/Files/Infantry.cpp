@@ -10,7 +10,6 @@ Infantry::Infantry(int health, int damage, int defence, std::string name)
 
 Infantry::Infantry(const Infantry& other)
 :Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType()){
-
 }
 
 Soldiers* Infantry::clonis(){

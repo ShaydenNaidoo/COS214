@@ -1,17 +1,17 @@
 //CONCRETE_PRODUCT
 #include "Boatman.h"
 #include "Soldiers.h"
+#include "FactoryManager.h"
 Boatman::Boatman(int health, int damage, int defence, std::string name)
 :Soldiers(health,damage,defence,name,'B'){}
 
 
 Boatman::Boatman(const Boatman& other)
 :Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType()){
-
 }
 
-Soldiers* Boatman::clonis(){
-    if(this == nullptr){ 
+Soldiers* Boatman::clonis():{
+        if(this == nullptr){ 
         return nullptr; 
     }
     int health = this->getHealthPerSoldier();
@@ -19,6 +19,7 @@ Soldiers* Boatman::clonis(){
     int defence = this->getDefencePerSoldier();
     std::string name = this->getUnitName();
     char type = this->getType();
+
     return new Boatman(*this);
 }
 

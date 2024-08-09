@@ -11,8 +11,6 @@ class ShieldBearerFactory: public SoldierFactory{
     public:
         ShieldBearerFactory(int amountOfSoldiersPerUnit);
         Soldiers* createUnit(int health, int damage, int defence, std::string name);
- 
-
 };
 
 #endif

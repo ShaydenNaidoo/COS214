@@ -44,9 +44,7 @@ void FactoryManager::printUnits(){
             << "\tTotal Health: \033[32m" << factory[0]->calculateTotalHealthPerUnit(x) << "\033[0m" <<  std::endl
             << "\tTotal Damage: \033[31m" << factory[0]->calculateTotalDamagePerUnit(x) << "\033[0m" << std::endl
             << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl << std::endl;        
-
         }
-
     }
 
     std::cout << "\n\033[1;4;37mShield Bearers:\033[0m\n" ;
@@ -56,9 +54,7 @@ void FactoryManager::printUnits(){
             << "\tTotal Health: \033[32m" << factory[0]->calculateTotalHealthPerUnit(x) << "\033[0m" <<  std::endl
             << "\tTotal Damage: \033[31m" << factory[0]->calculateTotalDamagePerUnit(x) << "\033[0m" << std::endl
             << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl << std::endl;        
-
         }
-
     }
 
     std::cout << "\n\033[1;4;37mBoatman:\033[0m\n" ;
@@ -68,20 +64,16 @@ void FactoryManager::printUnits(){
             << "\tTotal Health: \033[32m" << factory[0]->calculateTotalHealthPerUnit(x) << "\033[0m" <<  std::endl
             << "\tTotal Damage: \033[31m" << factory[0]->calculateTotalDamagePerUnit(x) << "\033[0m" << std::endl
             << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl << std::endl;        
-
         }
-
     }
 }
 
 void FactoryManager::printSummary(){
     int I = 0, S = 0, B = 0;
-
     for(Soldiers *x : soldiers){
         if(x->getType() == 'I') I++;
         else if(x->getType() == 'S') S++;
         else if(x->getType() == 'B') B++;
-
     }
 
     std::cout << "\033[1;4;37mArmy Summary:\033[0m\n\tNumber of Soldiers per Unit: \033[36m" << this->getAmountOfSoldiersPerUnit() << "\033[0m" << std::endl
@@ -89,6 +81,11 @@ void FactoryManager::printSummary(){
     << "\tTotal NUmber of Shield Bearers: \033[36m" << S << "\033[0m" << std::endl
     << "\tTotal Number of Boatman: \033[36m" << B << "\033[0m" << std::endl
     << "\t\033[1;37mTotal Number of Units:\033[0m\033[1;36m " << I + S + B << "\033[0m" << std::endl << std::endl;
+}
 
+void FactoryManager::cloneSoldier(std::size_t x){
+    if(x < 0 || x >= soldiers.size()) return;
+    Soldiers *clone = soldiers[x]->clonis();
+    soldiers.push_back(clone);
 }
 

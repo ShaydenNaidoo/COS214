@@ -44,11 +44,8 @@ int main(){
     soldiers5->disengage();
     soldiers6->disengage();
     cout<<"||||||||||End of Prototype tests:||||||||||"<<endl;  
-
     cout << "\n\n/////////////////////Start Factory Manager Testing//////////////////////////////////\n\n";
-
-        FactoryManager factory(100);
-
+    FactoryManager factory(100);
     factory.createUnit(1,25,15,50,"Hi-Shin Unit");
     factory.createUnit(0,10,25,5,"Gyoko-Hou Unit");
     factory.createUnit(0,10,25,5,"Ousen Unit");

@@ -22,10 +22,9 @@ class FactoryManager{
         int getAmountOfSoldiersPerUnit();
         void appendSoldier(Soldiers *soldier);
         Soldiers* operator[](std::size_t x);
+        void cloneSoldier(std::size_t x);
         void printUnits();
         void printSummary();
-        
-
 };
 
 
