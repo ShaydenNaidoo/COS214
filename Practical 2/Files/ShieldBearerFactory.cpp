@@ -6,6 +6,8 @@ ShieldBearerFactory::ShieldBearerFactory(int amountOfSoldiersPerUnit)
 
 
 Soldiers* ShieldBearerFactory::createUnit(int health, int damage, int defence, std::string name){
+    if((damage >= defence || damage >= health)) return nullptr;
+
     return new ShieldBearer(health, damage, defence, name);
 
 }

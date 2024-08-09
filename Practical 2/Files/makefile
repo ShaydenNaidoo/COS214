@@ -34,7 +34,7 @@ Boatman.o: Boatman.cpp Boatman.h Soldiers.h
 FactoryManager.o: FactoryManager.cpp FactoryManager.h SoldierFactory.h Soldiers.h
 	$(gpp) FactoryManager.cpp
 		
-run:
+run: main
 	./main
 
 clean:

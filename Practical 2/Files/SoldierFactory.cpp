@@ -2,6 +2,8 @@
 #include "SoldierFactory.h"
 
 SoldierFactory::SoldierFactory(int amountOfSoldiersPerUnit){
+    if(amountOfSoldiersPerUnit < 0) amountOfSoldiersPerUnit = 0;
+    
     this->amountOfSoldiersPerUnit = amountOfSoldiersPerUnit;
 
 }

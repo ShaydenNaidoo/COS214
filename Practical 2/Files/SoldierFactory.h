@@ -13,8 +13,7 @@ class SoldierFactory{
         int calculateTotalHealthPerUnit(Soldiers *soldier);
         int calculateTotalDamagePerUnit(Soldiers *soldier);
         int calculateTotalDefencePerUnit(Soldiers *soldier);
-
-    protected:
+        int getAmountOfSoldiersPerUnit(){return this->amountOfSoldiersPerUnit;}
         virtual Soldiers* createUnit(int health, int damage, int defence, std::string name) = 0;
 
 
