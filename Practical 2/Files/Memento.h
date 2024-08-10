@@ -18,6 +18,7 @@ class Memento{
         int getDamagePerSoldier();
         int getDefencePerSoldier();
         char getType();
+        int getCurrNumSoldiers();
         std::string getUnitName();
         bool operator==(Memento* mem);
 
