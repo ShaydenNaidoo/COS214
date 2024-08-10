@@ -17,7 +17,7 @@ class MainManager{
     private:
         std::vector<SoldierFactory*> factory;
         std::vector<Soldiers*> soldiers;
-        std::map<std::string, std::vector<Memento*>> mStack;
+        std::map<std::size_t, std::vector<Memento*>> mStack;
 
     public:
         MainManager(int amountOfSoldiersPerUnit);     
@@ -25,6 +25,7 @@ class MainManager{
         int getAmountOfSoldiersPerUnit();
         void appendSoldier(Soldiers *soldier);
         Soldiers* operator[](std::size_t x);
+        std::size_t getIndex(Soldiers* soldier);
         std::size_t numberOfUnits();
         void cloneSoldier(std::size_t x);
         void cloneSoldier();

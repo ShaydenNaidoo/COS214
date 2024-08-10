@@ -12,14 +12,8 @@ MainManager::MainManager(int amountOfSoldiersPerUnit){
 bool MainManager::createUnit(std::size_t type, int health, int damage, int defence, std::string unitName){
     if(type >= 3 || type < 0) return false;
 
-    std::map<std::string,std::vector<Memento*>>::iterator x;
-    for(x = mStack.begin(); x != mStack.end(); x++){
-        if(x->first == unitName) return false;
-
-    }
-
     Soldiers *product = factory[type]->createUnit(health,damage,defence,unitName);
-    mStack[unitName];
+    mStack[getIndex(product)];
 
     if(product == nullptr) return false;
     else soldiers.push_back(product);
@@ -41,6 +35,18 @@ void MainManager::appendSoldier(Soldiers *soldier){
 Soldiers *MainManager::operator[](std::size_t x){
     if(x < 0 || x >= soldiers.size()) return nullptr;
     return soldiers[x];
+}
+
+std::size_t MainManager::getIndex(Soldiers *soldier){
+    std::size_t i = 0;
+    for(Soldiers* x : soldiers){
+        if(soldier == x) return  i;
+        i++;
+
+    }
+
+    return -1;
+
 }
 
 std::size_t MainManager::numberOfUnits(){
@@ -107,10 +113,12 @@ void MainManager::cloneSoldier(std::size_t x){
 }
 
 void MainManager::cloneSoldier(){
-    for(std::size_t x = 0; x < soldiers.size(); x++ ) {
+    for(std::size_t x = soldiers.size()-1; x > 0; x-- ) {
         std::cout << "\n" << x << "\n";
         cloneSoldier(x); 
     }
+
+    cloneSoldier(0);
 
 }
 
@@ -139,12 +147,12 @@ void MainManager::militusMemento(){
 }
 
 bool MainManager::militusMemento(Soldiers *soldier){
-    for(Memento* x : mStack[soldier->getUnitName()]){
+    for(Memento* x : mStack[getIndex(soldier)]){
         if(x == soldier->militusMemento()) return false;
    
     }
 
-    mStack[soldier->getUnitName()].push_back(soldier->militusMemento());
+    mStack[getIndex(soldier)].push_back(soldier->militusMemento());
 
     return true;
 
@@ -159,10 +167,10 @@ void MainManager::vivifaMemento(){
 }
 
 bool MainManager::vivifaMemento(Soldiers *soldier){
-    if(mStack[soldier->getUnitName()].empty() == true) return false;
+    if(mStack[getIndex(soldier)].empty() == true) return false;
 
-    soldier->vivificaMemento(mStack[soldier->getUnitName()].back());
-    mStack[soldier->getUnitName()].pop_back();
+    soldier->vivificaMemento(mStack[getIndex(soldier)].back());
+    mStack[getIndex(soldier)].pop_back();
 
     return true;
 

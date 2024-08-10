@@ -24,8 +24,9 @@ int main(){
     int opt = 4;
 
 
-    // manager.createUnit(0,10,15,5,"I_Unit");
-    // manager.createUnit(1,25,25,15,"")
+    manager.createUnit(0,10,15,5,"I_Unit");
+    manager.createUnit(1,25,10,25,"S_Unit");
+    manager.createUnit(2,15,14,5,"B_Unit");
 
     
 
@@ -93,7 +94,7 @@ int main(){
         
     }
 
-/*                                                     Factory Method                                                                     */
+/*                                                     Prototype                                                                     */
     cout << "\t\t\t\t\t\t\t\033[1;37mPrototype\033[0m\n"
     << "After a significant victory, Titus uses the spoils to clone elite units, swiftly bolstering his forces without waiting for\n"
     << "new recruits.";
@@ -129,14 +130,14 @@ int main(){
         if(opt == 2){
             cout << "\n\n";
             for(size_t x = 0; x < manager.numberOfUnits(); x++){
-                cout << x+1 << ".) \033[1;37m" << manager[x]->getUnitName() << "(" << manager[x]->getType() << ")\n";
+                cout << "\033[1;37m" << x+1 << ".) " << manager[x]->getUnitName() << "\t(" << manager[x]->getType() << ")\n";
             }  
 
-            cout << "\033[0m\033[7;37mPlease enter a index from above to clone:\033[0m ";
+            cout << "\n\033[0m\033[7;37mPlease enter a index from above to clone:\033[0m ";
 
             cin >> x;
 
-            manager.cloneSoldier(x);
+            manager.cloneSoldier(x-1);
 
             cout << "\n\n\033[1;37m Titus's new army\033[0m\n\n";
             manager.printUnits();
@@ -148,6 +149,7 @@ int main(){
             cout << "\n\n";
             manager.printUnits();
             cout << "\n\n";
+            continue;
             
         }
    
@@ -165,6 +167,149 @@ int main(){
 
 
     }
+
+/*                                                     Template Method                                                                     */
+    cout << "\t\t\t\t\t\t\t\033[1;37mTemplate Method\033[0m\n"
+    << "As Titus commands diverse legions, each type of soldier must respond uniquely to the commands of attack and retreat,\n"
+    << "yet follow a general pattern of behavior.\n";
+
+    flag = true;
+
+    while(flag){
+        int x;
+        cout << "\nCommand Titus's legion:\n"
+        << "\t-Enter 1 to command all units\n"
+        << "\t-Enter 2 to command one unit\n"
+        << "\t-Enter 3 to cancel\n\n"
+        << "\033[7;37mPlease enter an option:\033[0m ";
+
+        cin >> opt;
+
+        if(opt == 3) break;
+
+
+        if(opt == 2){
+            cout << "\n\n";
+            for(size_t x = 0; x < manager.numberOfUnits(); x++){
+                cout << "\033[1;37m" << x+1 << ".) " << manager[x]->getUnitName() << "\t(" << manager[x]->getType() << ")\n";
+            }  
+
+            cout << "\n\033[0m\033[7;37mPlease enter a index from above to command:\033[0m ";
+
+            cin >> x;
+
+            cout << "\nEngage or disengage the enemy:\n"
+            << "\t-Enter 1 to command the unit to engage\n"
+            << "\t-Enter 2 to command the unit to disengage\n\n"
+            << "\033[7;37mPlease enter an option:\033[0m ";
+
+            cin >> opt;
+
+            cout << "\n";
+
+            if(opt == 1) manager[x-1]->engage();
+            else manager[x-1]->disengage();            
+
+            opt = 2;
+        }
+
+        if(opt == 1){
+            cout << "\nEngage or disengage the enemy:\n"
+            << "\t-Enter 1 to command all units to engage\n"
+            << "\t-Enter 2 to command all units to disengage\n\n"
+            << "\033[7;37mPlease enter an option:\033[0m ";
+
+            cin >> opt;
+
+            for(size_t x = 0; x < manager.numberOfUnits(); x++){
+                cout << "\n";
+                if(opt == 1) manager[x]->engage();
+                else manager[x]->disengage();
+                cout << "\n\n";
+
+            } 
+
+        }
+
+        cout << "\n\n\033[7;37mWould you like to give the legion another command? (1/0):\033[0m ";
+
+        cin >> opt;
+
+        if(opt != 1) {
+            flag = false;
+
+        }
+
+    }
+
+/*                                                     Memento                                                                     */
+    cout << "\t\t\t\t\t\t\t\033[1;37mMemento\033[0m\n"
+    << "Titus uses this system to refine his strategies, learning from past encounters to optimize future engagements.\n\n";
+
+    flag = true;
+
+    while(flag){
+        int x;
+        cout << "\nSave current state of army:\n"
+        << "\t-Enter 1 to save all unit's states\n"
+        << "\t-Enter 2 to save one unit's state\n"
+        << "\t-Enter 3 to restore all unit's sates\n"
+        << "\t-Enter 4 to restore one unit's state\n"
+        << "\t-Enter 5 to kill half of your army\n"
+        << "\t-Enter 6 to kill half of a unit\n"
+        << "\t-Enter 7 to cancel\n\n"
+        << "\033[7;37mPlease enter an option:\033[0m ";
+
+        cin >> opt;
+
+        if(opt == 7) break;
+
+        if(opt == 1){
+            manager.militusMemento();
+            continue;
+        
+        }
+
+        if(opt == 2){
+            cout << "\n\n";
+            for(size_t x = 0; x < manager.numberOfUnits(); x++){
+                cout << "\033[1;37m" << x+1 << ".) " << manager[x]->getUnitName() << "\t(" << manager[x]->getType() << ")\n";
+            }  
+
+            cout << "\n\033[0m\033[7;37mPlease enter a index from above to command:\033[0m ";
+
+            cin >> x;
+
+            manager.militusMemento(manager[x-1]);
+            continue;            
+
+        }
+
+        if(opt == 3){
+            manager.vivifaMemento();
+            continue;
+        
+        }
+
+        if(opt == 4){
+            cout << "\n\n";
+            for(size_t x = 0; x < manager.numberOfUnits(); x++){
+                cout << "\033[1;37m" << x+1 << ".) " << manager[x]->getUnitName() << "\t(" << manager[x]->getType() << ")\n";
+            }  
+
+            cout << "\n\033[0m\033[7;37mPlease enter a index from above to command:\033[0m ";
+
+            cin >> x;
+
+            manager.vivifaMemento(manager[x-1]);
+            continue;            
+
+        }
+
+    
+    }
+
+
 
     return 0;
 }
