@@ -24,17 +24,24 @@ Soldiers* Boatman::clonis(){
 }
 
 void Boatman::execute()  { 
-    std::cout << "Boatmen: " << this->getUnitName() << " are firing cannons at the enemy" << std::endl;
+    std::cout << "\033[1;31mBoatmen: \033[0m\033[1;37m" << this->getUnitName() << "\033[0m\033[1;31m are firing cannons at the enemy!\033[0m" << std::endl;
 }
-void Boatman::prepare(){
-    std::cout << "Boatmen: " << this->getUnitName() << " are setting the sails for battle" << std::endl;
-}
-void Boatman::retreat() {
-    std::cout << "Boatmen: " << this->getUnitName() << " are retreating back toward to the base shore" << std::endl;
-}
-void Boatman::rest() {
 
-    std::cout << "Boatmen: " << this->getUnitName() << " are resting in the ships quaters" << std::endl;
+void Boatman::prepare() {
+    std::cout << "\033[1;34mBoatmen: \033[0m\033[1;37m" << this->getUnitName() << "\033[0m\033[1;34m are setting the sails for battle!\033[0m" << std::endl;
 }
+
+void Boatman::retreat() {
+    std::cout << "\033[1;33mBoatmen: \033[0m\033[1;37m" << this->getUnitName() << "\033[0m\033[1;33m are retreating back toward the base shore!\033[0m" << std::endl;
+}
+
+void Boatman::rest() {
+    std::cout << "\033[1;32mBoatmen: \033[0m\033[1;37m" << this->getUnitName() << "\033[0m\033[1;32m are resting in the ship's quarters!\033[0m" << std::endl;
+}
+
+Boatman::~Boatman(){
+    
+}
+
 
 

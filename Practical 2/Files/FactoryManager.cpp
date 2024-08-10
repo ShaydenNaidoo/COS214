@@ -67,6 +67,10 @@ void FactoryManager::printUnits(){
         }
     }
 }
+Soldiers* FactoryManager::getSoldiers(std::size_t x){
+    if(x < 0 || x >= soldiers.size()) return nullptr;
+    return soldiers[x];
+}
 
 void FactoryManager::printSummary(){
     int I = 0, S = 0, B = 0;
@@ -95,20 +99,16 @@ void FactoryManager::cloneSoldier(std::size_t x){
 }
 void FactoryManager::titusComands(){
  std::cout << "\n\033[1;33m+------------------------------------------------------------------------------+\033[0m" << std::endl;
- //
+ 
     std::cout <<   "\033[1;33m|                              \033[1;4;35mTITUS COMMANDS\033[0m\033[1;33m                                  |\033[0m" << std::endl;
     std::cout <<   "\033[1;33m+------------------------------------------------------------------------------+\033[0m" << std::endl;
-
     for(Soldiers *x : soldiers) {
          std::cout <<   "\033[1;33m|------------------------------------------------------------------------------|\033[0m" << std::endl;
         std::cout << "\033[1;31m| \033[1;34mTitus: \033[1;36m" << x->getUnitName() << " engage with the enemy now!                               \033[1;31m|\033[0m" << std::endl;
         x->engage();
-        
          std::cout <<   "\033[1;33m|------------------------------------------------------------------------------|\033[0m" << std::endl;
-
         std::cout << "\033[1;31m| \033[1;34mTitus: \033[1;36m" << x->getUnitName() << " disengage and fall back to base!                         \033[1;31m|\033[0m" << std::endl;
         x->disengage();
-        
         std::cout << "\033[1;31m+------------------------------------------------------------------------------+\033[0m" << std::endl;
     }
 }
