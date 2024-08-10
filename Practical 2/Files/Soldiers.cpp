@@ -8,12 +8,13 @@ Soldiers::Soldiers(){
     this->type = '#';
 }
 
-Soldiers::Soldiers(int health, int damage, int defence, std::string name, char type){
+Soldiers::Soldiers(int health, int damage, int defence, std::string name, char type, int currSold){
     this->healthPerSoldier = health;
     this->damagePerSoldier = damage;
     this->defencePerSoldier = defence;
     this->unitName = name;
     this->type = type;
+    this->currSold = currSold;
 
 }
 
@@ -22,9 +23,25 @@ int Soldiers::getHealthPerSoldier() const{
 
 }
 
+int Soldiers::getCurrNumSoldiers() const{
+    return this->currSold;
+}
+
 int Soldiers::getDamagePerSoldier() const{
     return this->damagePerSoldier;
 
+}
+void Soldiers::setCurrNumSoldiers(int num){
+    this->currSold = num;
+}
+void Soldiers::setHealthPerSoldier(int health){
+    this->healthPerSoldier = health;
+}
+void Soldiers::setDamagePerSoldier(int damage){
+    this->damagePerSoldier = damage;
+}
+void Soldiers::setDefencePerSoldier(int defence){
+    this->defencePerSoldier = defence;
 }
 
 int Soldiers::getDefencePerSoldier() const{
