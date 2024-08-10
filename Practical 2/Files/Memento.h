@@ -1,10 +1,24 @@
+//MEMENTO
+#ifndef MEMENTO_H
+#define MEMENTO_H
 
+#include <iostream>
 
-#ifndef COS214_MEMENTO_H
-#define COS214_MEMENTO_H
+class Memento{
+    private:
+        int healthPerSoldier;
+        int damagePerSoldier;
+        int defencePerSoldier;
+        char type;
+        std::string unitName;
 
-
-class Memento {
+    public:
+        Memento(int health, int damage, int defence, char type, std::string name);   
+        int getHealthPerSoldier();
+        int getDamagePerSoldier();
+        int getDefencePerSoldier();
+        char getType();
+        std::string getUnitName();
 
 };
 

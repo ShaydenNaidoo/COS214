@@ -1,4 +1,4 @@
-files = main.o SoldierFactory.o Soldiers.o InfantryFactory.o ShieldBearerFactory.o BoatmanFactory.o Infantry.o ShieldBearer.o Boatman.o FactoryManager.o PrototypeRegistry.o
+files = main.o SoldierFactory.o Soldiers.o InfantryFactory.o ShieldBearerFactory.o BoatmanFactory.o Infantry.o ShieldBearer.o Boatman.o FactoryManager.o PrototypeRegistry.o Memento.o
 gpp = g++ -c
 
 main: $(files)
@@ -31,12 +31,16 @@ ShieldBearer.o: ShieldBearer.cpp ShieldBearer.h Soldiers.h
 Boatman.o: Boatman.cpp Boatman.h Soldiers.h
 	$(gpp) Boatman.cpp
 
-FactoryManager.o: FactoryManager.cpp FactoryManager.h SoldierFactory.h Soldiers.h
+FactoryManager.o: FactoryManager.cpp FactoryManager.h SoldierFactory.h Soldiers.h Memento.h
 	$(gpp) FactoryManager.cpp
+
 PrototypeRegistry.o: PrototypeRegistry.cpp PrototypeRegistry.h Soldiers.h Infantry.h ShieldBearer.h Boatman.h
 	$(gpp) PrototypeRegistry.cpp
 
-run:
+Memento.o: Memento.cpp Memento.h
+	$(gpp) Memento.cpp
+
+run: main
 	./main
 
 clean:

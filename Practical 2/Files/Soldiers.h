@@ -3,6 +3,7 @@
 #define SOLDIERS_H
 
 #include <iostream>
+#include "Memento.h"
 
 class Soldiers { 
     private:
@@ -22,6 +23,8 @@ class Soldiers {
         char getType() const;
         void engage();
         void disengage();
+        Memento* militusMemento();
+        void vivificaMemento(Memento* mem);
         virtual Soldiers* clonis() = 0;
         virtual void prepare() = 0;
         virtual void execute() = 0;

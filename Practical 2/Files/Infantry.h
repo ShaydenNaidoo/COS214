@@ -7,10 +7,10 @@
 
 class Infantry: public Soldiers{
     public:
-        
         Infantry(int health, int damage, int defence, std::string name);  
         Infantry(const Infantry& other);
         Soldiers* clonis() override;
+
     private:
         void prepare() override;
         void execute() override;
