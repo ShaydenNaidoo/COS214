@@ -60,7 +60,8 @@ void MainManager::printUnits(){
             std::cout << "\n\033[1;37m" << x->getUnitName() << ":\033[0m" << std::endl 
             << "\tTotal Health: \033[32m" << factory[0]->calculateTotalHealthPerUnit(x) << "\033[0m" <<  std::endl
             << "\tTotal Damage: \033[31m" << factory[0]->calculateTotalDamagePerUnit(x) << "\033[0m" << std::endl
-            << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl << std::endl;        
+            << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl
+            << "\tCurrent Number of Soldiers: \033[35m" << x->getCurrNumSoldiers() << "\033[0m" << std::endl << std::endl;        
         }
     }
 
@@ -70,7 +71,8 @@ void MainManager::printUnits(){
             std::cout << "\n\033[1;37m" << x->getUnitName() << ":\033[0m" << std::endl 
             << "\tTotal Health: \033[32m" << factory[0]->calculateTotalHealthPerUnit(x) << "\033[0m" <<  std::endl
             << "\tTotal Damage: \033[31m" << factory[0]->calculateTotalDamagePerUnit(x) << "\033[0m" << std::endl
-            << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl << std::endl;        
+            << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl
+            << "\tCurrent Number of Soldiers: \033[35m" << x->getCurrNumSoldiers() << "\033[0m" << std::endl << std::endl;               
         }
     }
 
@@ -80,20 +82,25 @@ void MainManager::printUnits(){
             std::cout << "\n\033[1;37m" << x->getUnitName() << ":\033[0m" << std::endl 
             << "\tTotal Health: \033[32m" << factory[0]->calculateTotalHealthPerUnit(x) << "\033[0m" <<  std::endl
             << "\tTotal Damage: \033[31m" << factory[0]->calculateTotalDamagePerUnit(x) << "\033[0m" << std::endl
-            << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl << std::endl;        
+            << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl
+            << "\tCurrent Number of Soldiers: \033[35m" << x->getCurrNumSoldiers() << "\033[0m" << std::endl << std::endl;        
+
         }
     }
 }
 
 void MainManager::printSummary(){
-    int I = 0, S = 0, B = 0;
+    int I = 0, S = 0, B = 0, T = 0;
     for(Soldiers *x : soldiers){
         if(x->getType() == 'I') I++;
         else if(x->getType() == 'S') S++;
         else if(x->getType() == 'B') B++;
+
+        T += x->getCurrNumSoldiers();
+
     }
 
-    std::cout << "\033[1;4;37mArmy Summary:\033[0m\n\tNumber of Soldiers per Unit: \033[36m" << this->getAmountOfSoldiersPerUnit() << "\033[0m" << std::endl
+    std::cout << "\033[1;4;37mArmy Summary:\033[0m\n\tCurrent Number of Soldiers: \033[36m" << T << "\033[0m" << std::endl
     << "\tTotal Number of Infantry: \033[36m" << I << "\033[0m" << std::endl
     << "\tTotal Number of Shield Bearers: \033[36m" << S << "\033[0m" << std::endl
     << "\tTotal Number of Boatman: \033[36m" << B << "\033[0m" << std::endl

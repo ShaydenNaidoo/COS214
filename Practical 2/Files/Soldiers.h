@@ -13,6 +13,7 @@ class Soldiers {
         char type;
         int currSold;
         std::string unitName;
+        int totalDamageTaken = 0;
 
     public:
         Soldiers();
@@ -23,12 +24,15 @@ class Soldiers {
         std::string getUnitName() const;
         char getType() const;
         void setCurrNumSoldiers(int num);
+        int getCurrNumSoldiers() const;
+        void incrementDamage(int damage);
+        void heal();
+        int getDamageTaken();
         //tHESE SETTERS ARE FOR THE MEMENTO TESTING
         void setHealthPerSoldier(int health);
         void setDamagePerSoldier(int damage);
         void setDefencePerSoldier(int defence);
         ////////////////////////////////////////
-        int getCurrNumSoldiers() const;
         void engage();
         void disengage();
         Memento* militusMemento();
