@@ -7,13 +7,16 @@ SoldierFactory::SoldierFactory(int amountOfSoldiersPerUnit){
 }
 
 int SoldierFactory::calculateTotalHealthPerUnit(Soldiers *soldier){    
-    return soldier->getCurrNumSoldiers() * soldier->getHealthPerSoldier();
+    return this->amountOfSoldiersPerUnit * soldier->getHealthPerSoldier();
 }
 
 int SoldierFactory::calculateTotalDamagePerUnit(Soldiers *soldier){
-    return soldier->getCurrNumSoldiers() * soldier->getDamagePerSoldier();
+    return this->amountOfSoldiersPerUnit * soldier->getDamagePerSoldier();
 }
 
 int SoldierFactory::calculateTotalDefencePerUnit(Soldiers *soldier){
-    return soldier->getCurrNumSoldiers() * soldier->getDefencePerSoldier();
+    return this->amountOfSoldiersPerUnit * soldier->getDefencePerSoldier();
+}
+int SoldierFactory::currNumSoldiers(Soldiers *soldier){
+    return soldier->getCurrNumSoldiers();
 }
