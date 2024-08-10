@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 
-Infantry::Infantry(int health, int damage, int defence, std::string name)
-:Soldiers(health, damage, defence, name, 'I'){
+Infantry::Infantry(int health, int damage, int defence, std::string name, int currSold)
+:Soldiers(health, damage, defence, name, 'I', currSold){
 }
 
 Infantry::Infantry(const Infantry& other)
