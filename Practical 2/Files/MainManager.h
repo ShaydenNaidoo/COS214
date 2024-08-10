@@ -25,7 +25,9 @@ class MainManager{
         int getAmountOfSoldiersPerUnit();
         void appendSoldier(Soldiers *soldier);
         Soldiers* operator[](std::size_t x);
+        std::size_t numberOfUnits();
         void cloneSoldier(std::size_t x);
+        void cloneSoldier();
         void printUnits();
         void printSummary();
         void titusComands();

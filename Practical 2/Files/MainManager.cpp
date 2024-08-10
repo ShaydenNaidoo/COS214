@@ -43,6 +43,10 @@ Soldiers *MainManager::operator[](std::size_t x){
     return soldiers[x];
 }
 
+std::size_t MainManager::numberOfUnits(){
+    return soldiers.size();
+}
+
 void MainManager::printUnits(){
     std::cout << "\033[1;4;37mInfantry:\033[0m\n" ;
     for(Soldiers* x : soldiers){
@@ -85,9 +89,10 @@ void MainManager::printSummary(){
 
     std::cout << "\033[1;4;37mArmy Summary:\033[0m\n\tNumber of Soldiers per Unit: \033[36m" << this->getAmountOfSoldiersPerUnit() << "\033[0m" << std::endl
     << "\tTotal Number of Infantry: \033[36m" << I << "\033[0m" << std::endl
-    << "\tTotal NUmber of Shield Bearers: \033[36m" << S << "\033[0m" << std::endl
+    << "\tTotal Number of Shield Bearers: \033[36m" << S << "\033[0m" << std::endl
     << "\tTotal Number of Boatman: \033[36m" << B << "\033[0m" << std::endl
     << "\t\033[1;37mTotal Number of Units:\033[0m\033[1;36m " << I + S + B << "\033[0m" << std::endl << std::endl;
+
 }
 
 MainManager::~MainManager()
@@ -100,8 +105,17 @@ void MainManager::cloneSoldier(std::size_t x){
     soldiers.push_back(clone);
     
 }
+
+void MainManager::cloneSoldier(){
+    for(std::size_t x = 0; x < soldiers.size(); x++ ) {
+        std::cout << "\n" << x << "\n";
+        cloneSoldier(x); 
+    }
+
+}
+
 void MainManager::titusComands(){
- std::cout << "\n\033[1;33m+------------------------------------------------------------------------------+\033[0m" << std::endl;
+    std::cout << "\n\033[1;33m+------------------------------------------------------------------------------+\033[0m" << std::endl;
  
     std::cout <<   "\033[1;33m|                              \033[1;4;35mTITUS COMMANDS\033[0m\033[1;33m                                  |\033[0m" << std::endl;
     std::cout <<   "\033[1;33m+------------------------------------------------------------------------------+\033[0m" << std::endl;
