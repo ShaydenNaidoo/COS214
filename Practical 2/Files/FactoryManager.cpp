@@ -83,10 +83,15 @@ void FactoryManager::printSummary(){
     << "\t\033[1;37mTotal Number of Units:\033[0m\033[1;36m " << I + S + B << "\033[0m" << std::endl << std::endl;
 }
 
+FactoryManager::~FactoryManager()
+{
+}
+
 void FactoryManager::cloneSoldier(std::size_t x){
     if(x < 0 || x >= soldiers.size()) return;
     Soldiers *clone = soldiers[x]->clonis();
     soldiers.push_back(clone);
+    
 }
 void FactoryManager::titusComands(){
  std::cout << "\n\033[1;33m+------------------------------------------------------------------------------+\033[0m" << std::endl;

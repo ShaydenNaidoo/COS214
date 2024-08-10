@@ -26,6 +26,7 @@ class FactoryManager{
         void printUnits();
         void printSummary();
         void titusComands();
+        ~FactoryManager();
 };
 
 
