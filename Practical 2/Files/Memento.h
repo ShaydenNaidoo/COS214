@@ -9,14 +9,17 @@ class Memento{
         int healthPerSoldier;
         int damagePerSoldier;
         int defencePerSoldier;
+        int currSold;
         char type;
         std::string unitName;
+        
 
     public:
         Memento(int health, int damage, int defence, char type, std::string name);   
         int getHealthPerSoldier();
         int getDamagePerSoldier();
         int getDefencePerSoldier();
+        int getCurrNumSoldiers();
         char getType();
         std::string getUnitName();
         bool operator==(Memento* mem);
