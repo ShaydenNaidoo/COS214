@@ -1,6 +1,6 @@
 //FACTORY_MANAGER
-#ifndef FACTORYMANAGER_H
-#define FACTORYMANAGER_H
+#ifndef MainManager_H
+#define MainManager_H
 
 #include <iostream>
 #include <vector>
@@ -13,14 +13,14 @@
 #include "ShieldBearerFactory.h"
 #include "BoatmanFactory.h"
 
-class FactoryManager{
+class MainManager{
     private:
         std::vector<SoldierFactory*> factory;
         std::vector<Soldiers*> soldiers;
         std::map<std::string, std::vector<Memento*>> mStack;
 
     public:
-        FactoryManager(int amountOfSoldiersPerUnit);     
+        MainManager(int amountOfSoldiersPerUnit);     
         bool createUnit(std::size_t type, int  health, int damage, int defence, std::string unitName);  
         int getAmountOfSoldiersPerUnit();
         void appendSoldier(Soldiers *soldier);
@@ -33,7 +33,7 @@ class FactoryManager{
         bool militusMemento(Soldiers* soldier);
         void vivifaMemento();
         bool vivifaMemento(Soldiers* soldier);
-        ~FactoryManager();
+        ~MainManager();
 };
 
 

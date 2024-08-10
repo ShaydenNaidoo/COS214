@@ -1,7 +1,7 @@
 //CONCRETE_PRODUCT
 #include "Boatman.h"
 #include "Soldiers.h"
-#include "FactoryManager.h"
+#include "MainManager.h"
 Boatman::Boatman(int health, int damage, int defence, std::string name)
 :Soldiers(health,damage,defence,name,'B'){}
 

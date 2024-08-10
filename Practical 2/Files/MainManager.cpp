@@ -1,7 +1,7 @@
 //FACTORY_MANAGER
-#include "FactoryManager.h"
+#include "MainManager.h"
 
-FactoryManager::FactoryManager(int amountOfSoldiersPerUnit){
+MainManager::MainManager(int amountOfSoldiersPerUnit){
     factory.push_back(new InfantryFactory(amountOfSoldiersPerUnit));
     factory.push_back(new ShieldBearerFactory(amountOfSoldiersPerUnit));
     factory.push_back(new BoatmanFactory(amountOfSoldiersPerUnit));
@@ -9,7 +9,7 @@ FactoryManager::FactoryManager(int amountOfSoldiersPerUnit){
 
 }
 
-bool FactoryManager::createUnit(std::size_t type, int health, int damage, int defence, std::string unitName){
+bool MainManager::createUnit(std::size_t type, int health, int damage, int defence, std::string unitName){
     if(type >= 3 || type < 0) return false;
 
     std::map<std::string,std::vector<Memento*>>::iterator x;
@@ -28,22 +28,22 @@ bool FactoryManager::createUnit(std::size_t type, int health, int damage, int de
 
 }
 
-int FactoryManager::getAmountOfSoldiersPerUnit(){
+int MainManager::getAmountOfSoldiersPerUnit(){
     return factory[0]->getAmountOfSoldiersPerUnit();
 
 }
 
-void FactoryManager::appendSoldier(Soldiers *soldier){
+void MainManager::appendSoldier(Soldiers *soldier){
     soldiers.push_back(soldier);
 
 }
 
-Soldiers *FactoryManager::operator[](std::size_t x){
+Soldiers *MainManager::operator[](std::size_t x){
     if(x < 0 || x >= soldiers.size()) return nullptr;
     return soldiers[x];
 }
 
-void FactoryManager::printUnits(){
+void MainManager::printUnits(){
     std::cout << "\033[1;4;37mInfantry:\033[0m\n" ;
     for(Soldiers* x : soldiers){
         if(x->getType() == 'I'){
@@ -75,7 +75,7 @@ void FactoryManager::printUnits(){
     }
 }
 
-void FactoryManager::printSummary(){
+void MainManager::printSummary(){
     int I = 0, S = 0, B = 0;
     for(Soldiers *x : soldiers){
         if(x->getType() == 'I') I++;
@@ -90,17 +90,17 @@ void FactoryManager::printSummary(){
     << "\t\033[1;37mTotal Number of Units:\033[0m\033[1;36m " << I + S + B << "\033[0m" << std::endl << std::endl;
 }
 
-FactoryManager::~FactoryManager()
+MainManager::~MainManager()
 {
 }
 
-void FactoryManager::cloneSoldier(std::size_t x){
+void MainManager::cloneSoldier(std::size_t x){
     if(x < 0 || x >= soldiers.size()) return;
     Soldiers *clone = soldiers[x]->clonis();
     soldiers.push_back(clone);
     
 }
-void FactoryManager::titusComands(){
+void MainManager::titusComands(){
  std::cout << "\n\033[1;33m+------------------------------------------------------------------------------+\033[0m" << std::endl;
  
     std::cout <<   "\033[1;33m|                              \033[1;4;35mTITUS COMMANDS\033[0m\033[1;33m                                  |\033[0m" << std::endl;
@@ -116,7 +116,7 @@ void FactoryManager::titusComands(){
     }
 }
 
-void FactoryManager::militusMemento(){
+void MainManager::militusMemento(){
     for(Soldiers* x : soldiers){
         militusMemento(x);
     
@@ -124,7 +124,7 @@ void FactoryManager::militusMemento(){
 
 }
 
-bool FactoryManager::militusMemento(Soldiers *soldier){
+bool MainManager::militusMemento(Soldiers *soldier){
     for(Memento* x : mStack[soldier->getUnitName()]){
         if(x == soldier->militusMemento()) return false;
    
@@ -136,7 +136,7 @@ bool FactoryManager::militusMemento(Soldiers *soldier){
 
 }
 
-void FactoryManager::vivifaMemento(){
+void MainManager::vivifaMemento(){
     for(Soldiers* x : soldiers){
         vivifaMemento(x);
     
@@ -144,7 +144,7 @@ void FactoryManager::vivifaMemento(){
 
 }
 
-bool FactoryManager::vivifaMemento(Soldiers *soldier){
+bool MainManager::vivifaMemento(Soldiers *soldier){
     if(mStack[soldier->getUnitName()].empty() == true) return false;
 
     soldier->vivificaMemento(mStack[soldier->getUnitName()].back());

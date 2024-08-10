@@ -1,4 +1,4 @@
-files = DemoMain.o SoldierFactory.o Soldiers.o InfantryFactory.o ShieldBearerFactory.o BoatmanFactory.o Infantry.o ShieldBearer.o Boatman.o FactoryManager.o PrototypeRegistry.o Memento.o
+files = DemoMain.o SoldierFactory.o Soldiers.o InfantryFactory.o ShieldBearerFactory.o BoatmanFactory.o Infantry.o ShieldBearer.o Boatman.o MainManager.o PrototypeRegistry.o Memento.o BattleManager.o
 gpp = g++ -c
 
 DemoMain: $(files)
@@ -31,14 +31,17 @@ ShieldBearer.o: ShieldBearer.cpp ShieldBearer.h Soldiers.h
 Boatman.o: Boatman.cpp Boatman.h Soldiers.h
 	$(gpp) Boatman.cpp
 
-FactoryManager.o: FactoryManager.cpp FactoryManager.h SoldierFactory.h Soldiers.h Memento.h
-	$(gpp) FactoryManager.cpp
+MainManager.o: MainManager.cpp MainManager.h SoldierFactory.h Soldiers.h Memento.h
+	$(gpp) MainManager.cpp
 
 PrototypeRegistry.o: PrototypeRegistry.cpp PrototypeRegistry.h Soldiers.h Infantry.h ShieldBearer.h Boatman.h
 	$(gpp) PrototypeRegistry.cpp
 
 Memento.o: Memento.cpp Memento.h
 	$(gpp) Memento.cpp
+
+BattleManager.o: BattleManager.cpp BattleManager.h MainManager.h
+	$(gpp) BattleManager.cpp
 
 run: DemoMain
 	./DemoMain
