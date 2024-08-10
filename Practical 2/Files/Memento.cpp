@@ -26,7 +26,6 @@ int Memento::getDefencePerSoldier(){
 
 char Memento::getType(){
     return this->type;
-
 }
 
 std::string Memento::getUnitName(){
