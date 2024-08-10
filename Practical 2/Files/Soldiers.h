@@ -23,7 +23,7 @@ class Soldiers {
         std::string getUnitName() const;
         char getType() const;
         void setCurrNumSoldiers(int num);
-        int getCurrNumSoldiers() const;
+        int getCurrNumSoldiers();
         void engage();
         void disengage();
         Memento* militusMemento();

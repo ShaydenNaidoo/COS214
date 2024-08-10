@@ -23,7 +23,7 @@ int Soldiers::getHealthPerSoldier() const{
 
 }
 
-int Soldiers::getCurrNumSoldiers() const{
+int Soldiers::getCurrNumSoldiers(){
     return this->currSold;
 }
 
