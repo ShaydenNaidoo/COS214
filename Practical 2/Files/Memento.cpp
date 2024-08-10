@@ -31,16 +31,13 @@ char Memento::getType(){
 std::string Memento::getUnitName(){
     return this->unitName;
 }
-int Memento::getCurrNumSoldiers(){
-    return this->currSold;
-}
 
 bool Memento::operator==(Memento * mem){
     if((mem->getUnitName() == this->unitName) &&
     (mem->getDamagePerSoldier() == this->damagePerSoldier) &&
     (mem->getDefencePerSoldier() == this->defencePerSoldier) &&
     (mem->getHealthPerSoldier() == this->healthPerSoldier) &&
-    (mem->getType() == this->type&&mem->getCurrNumSoldiers()==this->getCurrNumSoldiers())) return true;
+    (mem->getType() == this->type)) return true;
     else return false;
     
 }

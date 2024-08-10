@@ -23,8 +23,23 @@ int Soldiers::getHealthPerSoldier() const{
 
 }
 
-int Soldiers::getCurrNumSoldiers(){
+int Soldiers::getCurrNumSoldiers() const{
     return this->currSold;
+}
+
+void Soldiers::incrementDamage(int damage){
+    this->totalDamageTaken += damage;
+
+}
+
+void Soldiers::heal(){
+    this->totalDamageTaken -= 0.5 * this->totalDamageTaken;
+
+}
+
+int Soldiers::getDamageTaken(){
+    return this->totalDamageTaken;
+    
 }
 
 int Soldiers::getDamagePerSoldier() const{
@@ -33,6 +48,20 @@ int Soldiers::getDamagePerSoldier() const{
 }
 void Soldiers::setCurrNumSoldiers(int num){
     this->currSold = num;
+}
+void Soldiers::setHealthPerSoldier(int health){
+    this->healthPerSoldier = health;
+}
+void Soldiers::setDamagePerSoldier(int damage){
+    this->damagePerSoldier = damage;
+}
+void Soldiers::setDefencePerSoldier(int defence){
+    this->defencePerSoldier = defence;
+}
+
+int Soldiers::getDefencePerSoldier() const{
+    return this->defencePerSoldier;
+
 }
 
 std::string Soldiers::getUnitName() const{
