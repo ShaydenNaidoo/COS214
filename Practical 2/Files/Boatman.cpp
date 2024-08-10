@@ -2,24 +2,15 @@
 #include "Boatman.h"
 #include "Soldiers.h"
 #include "MainManager.h"
-Boatman::Boatman(int health, int damage, int defence, std::string name)
-:Soldiers(health,damage,defence,name,'B'){}
+Boatman::Boatman(int health, int damage, int defence, std::string name,int currSold)
+:Soldiers(health,damage,defence,name,'B',currSold){}
 
 
 Boatman::Boatman(const Boatman& other)
-:Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType()){
+:Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType(),other.getCurrNumSoldiers()){
 }
 
 Soldiers* Boatman::clonis(){
-        if(this == nullptr){ 
-        return nullptr; 
-    }
-    int health = this->getHealthPerSoldier();
-    int damage = this->getDamagePerSoldier();
-    int defence = this->getDefencePerSoldier();
-    std::string name = this->getUnitName();
-    char type = this->getType();
-
     return new Boatman(*this);
 }
 
@@ -38,6 +29,9 @@ void Boatman::retreat() {
 void Boatman::rest() {
     std::cout << "\033[1;32mBoatmen rest: \033[0m\033[1;37m" << this->getUnitName() << "\033[0m\033[1;32m are resting in the ship's quarters!\033[0m" << std::endl;
 }
+
+
+
 
 
 
