@@ -22,17 +22,17 @@ Soldiers* ShieldBearer::clonis(){
 }
 
 void ShieldBearer::execute()  { 
-    std::cout << "\033[1;32mShieldBearers: " << this->getUnitName() << " are blocking enemy attacks\033[0m" << std::endl;
+    std::cout << "\033[1;32mShieldBearers execute: " << this->getUnitName() << " are blocking enemy attacks\033[0m" << std::endl;
 }
 
 void ShieldBearer::prepare() {
-    std::cout << "\033[1;34mShieldBearers: " << this->getUnitName() << " are forming a defensive position in front of infantry\033[0m" << std::endl;
+    std::cout << "\033[1;34mShieldBearers prepare: " << this->getUnitName() << " are forming a defensive position in front of infantry\033[0m" << std::endl;
 }
 
 void ShieldBearer::retreat() {
-    std::cout << "\033[1;33mShieldBearers: " << this->getUnitName() << " are retreating with shields raised high\033[0m" << std::endl;
+    std::cout << "\033[1;33mShieldBearers retreat: " << this->getUnitName() << " are retreating with shields raised high\033[0m" << std::endl;
 }
 
 void ShieldBearer::rest() {
-    std::cout << "\033[1;37mShieldBearers: " << this->getUnitName() << " are resting under their shields\033[0m" << std::endl;
+    std::cout << "\033[1;37mShieldBearers rest: " << this->getUnitName() << " are resting under their shields\033[0m" << std::endl;
 }

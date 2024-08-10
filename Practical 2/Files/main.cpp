@@ -22,8 +22,8 @@ int main(){
     // factory.createUnit(0,55,35,10,"Dai Rei-butai Unit");
     // factory.createUnit(1,45,25,10,"Dai Ichi-butai Unit");
     // factory.createUnit(2,69,55,10,"Dai Ni-butai Unit");
+    
     factory.titusComands();
-    
-    
+
     return 0;
 }
