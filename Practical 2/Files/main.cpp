@@ -1,3 +1,7 @@
+
+//made by Shayden Naidoo
+//u23599236
+
 #include <iostream>
 
 #include "InfantryFactory.h"
@@ -8,7 +12,6 @@
 #include "PrototypeRegistry.h"
 
 using namespace std;
-
 
 int main(){
     MainManager factory(100);

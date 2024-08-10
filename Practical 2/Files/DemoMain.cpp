@@ -1,6 +1,6 @@
+//made Samvit Prakash
 #include <iostream>
 #include <string>
-
 #include "MainManager.h"
 
 using namespace std;

@@ -23,11 +23,6 @@ class Soldiers {
         std::string getUnitName() const;
         char getType() const;
         void setCurrNumSoldiers(int num);
-        //tHESE SETTERS ARE FOR THE MEMENTO TESTING
-        void setHealthPerSoldier(int health);
-        void setDamagePerSoldier(int damage);
-        void setDefencePerSoldier(int defence);
-        ////////////////////////////////////////
         int getCurrNumSoldiers() const;
         void engage();
         void disengage();
