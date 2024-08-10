@@ -39,9 +39,6 @@ void Boatman::rest() {
     std::cout << "\033[1;32mBoatmen: \033[0m\033[1;37m" << this->getUnitName() << "\033[0m\033[1;32m are resting in the ship's quarters!\033[0m" << std::endl;
 }
 
-Boatman::~Boatman(){
-    
-}
 
 
 

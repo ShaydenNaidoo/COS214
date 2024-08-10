@@ -36,6 +36,3 @@ void ShieldBearer::retreat() {
 void ShieldBearer::rest() {
     std::cout << "\033[1;37mShieldBearers: " << this->getUnitName() << " are resting under their shields\033[0m" << std::endl;
 }
-ShieldBearer::~ShieldBearer(){
-
-}

@@ -40,8 +40,6 @@ void Infantry::rest() {
     std::cout << "\033[1;34mInfantry: " << this->getUnitName() << " is resting at the base camp\033[0m" << std::endl;
 }
 
-Infantry::~Infantry(){
-    
-}
+
 
 
