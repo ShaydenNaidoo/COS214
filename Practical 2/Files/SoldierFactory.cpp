@@ -17,6 +17,3 @@ int SoldierFactory::calculateTotalDamagePerUnit(Soldiers *soldier){
 int SoldierFactory::calculateTotalDefencePerUnit(Soldiers *soldier){
     return this->amountOfSoldiersPerUnit * soldier->getDefencePerSoldier();
 }
-int SoldierFactory::currNumSoldiers(Soldiers *soldier){
-    return soldier->getCurrNumSoldiers();
-}

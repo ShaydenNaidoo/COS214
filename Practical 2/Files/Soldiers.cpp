@@ -27,21 +27,6 @@ int Soldiers::getCurrNumSoldiers(){
     return this->currSold;
 }
 
-void Soldiers::incrementDamage(int damage){
-    this->totalDamageTaken += damage;
-
-}
-
-void Soldiers::heal(){
-    this->totalDamageTaken -= 0.5 * this->totalDamageTaken;
-
-}
-
-int Soldiers::getDamageTaken(){
-    return this->totalDamageTaken;
-    
-}
-
 int Soldiers::getDamagePerSoldier() const{
     return this->damagePerSoldier;
 

@@ -13,7 +13,6 @@ class Soldiers {
         char type;
         int currSold;
         std::string unitName;
-        int totalDamageTaken = 0;
 
     public:
         Soldiers();
