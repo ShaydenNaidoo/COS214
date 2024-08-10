@@ -11,8 +11,15 @@ FactoryManager::FactoryManager(int amountOfSoldiersPerUnit){
 
 bool FactoryManager::createUnit(std::size_t type, int health, int damage, int defence, std::string unitName){
     if(type >= 3 || type < 0) return false;
-    
+
+    std::map<std::string,std::vector<Memento*>>::iterator x;
+    for(x = mStack.begin(); x != mStack.end(); x++){
+        if(x->first == unitName) return false;
+
+    }
+
     Soldiers *product = factory[type]->createUnit(health,damage,defence,unitName);
+    mStack[unitName];
 
     if(product == nullptr) return false;
     else soldiers.push_back(product);
@@ -67,10 +74,6 @@ void FactoryManager::printUnits(){
         }
     }
 }
-Soldiers* FactoryManager::getSoldiers(std::size_t x){
-    if(x < 0 || x >= soldiers.size()) return nullptr;
-    return soldiers[x];
-}
 
 void FactoryManager::printSummary(){
     int I = 0, S = 0, B = 0;
@@ -111,5 +114,43 @@ void FactoryManager::titusComands(){
         x->disengage();
         std::cout << "\033[1;31m+------------------------------------------------------------------------------+\033[0m" << std::endl;
     }
+}
+
+void FactoryManager::militusMemento(){
+    for(Soldiers* x : soldiers){
+        militusMemento(x);
+    
+    }
+
+}
+
+bool FactoryManager::militusMemento(Soldiers *soldier){
+    for(Memento* x : mStack[soldier->getUnitName()]){
+        if(x == soldier->militusMemento()) return false;
+   
+    }
+
+    mStack[soldier->getUnitName()].push_back(soldier->militusMemento());
+
+    return true;
+
+}
+
+void FactoryManager::vivifaMemento(){
+    for(Soldiers* x : soldiers){
+        vivifaMemento(x);
+    
+    }
+
+}
+
+bool FactoryManager::vivifaMemento(Soldiers *soldier){
+    if(mStack[soldier->getUnitName()].empty() == true) return false;
+
+    soldier->vivificaMemento(mStack[soldier->getUnitName()].back());
+    mStack[soldier->getUnitName()].pop_back();
+
+    return true;
+
 }
 

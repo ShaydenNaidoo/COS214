@@ -4,8 +4,10 @@
 
 #include <iostream>
 #include <vector>
+#include <map>
 
 #include "Soldiers.h"
+#include "Memento.h"
 #include "SoldierFactory.h"
 #include "InfantryFactory.h"
 #include "ShieldBearerFactory.h"
@@ -15,6 +17,7 @@ class FactoryManager{
     private:
         std::vector<SoldierFactory*> factory;
         std::vector<Soldiers*> soldiers;
+        std::map<std::string, std::vector<Memento*>> mStack;
 
     public:
         FactoryManager(int amountOfSoldiersPerUnit);     
@@ -23,10 +26,13 @@ class FactoryManager{
         void appendSoldier(Soldiers *soldier);
         Soldiers* operator[](std::size_t x);
         void cloneSoldier(std::size_t x);
-        Soldiers* getSoldiers();
         void printUnits();
         void printSummary();
         void titusComands();
+        void militusMemento();
+        bool militusMemento(Soldiers* soldier);
+        void vivifaMemento();
+        bool vivifaMemento(Soldiers* soldier);
         ~FactoryManager();
 };
 
