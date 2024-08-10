@@ -34,6 +34,5 @@ int main(){
     std::cout << "Vivifa Memento" << std::endl;
     factory.vivifaMemento();
     factory.printUnit(0);
-
     return 0;
 }
