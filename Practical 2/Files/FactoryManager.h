@@ -23,7 +23,6 @@ class FactoryManager{
         void appendSoldier(Soldiers *soldier);
         Soldiers* operator[](std::size_t x);
         void cloneSoldier(std::size_t x);
-        Soldiers* getSoldiers();
         void printUnits();
         void printSummary();
         void titusComands();
