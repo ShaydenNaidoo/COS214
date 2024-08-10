@@ -119,7 +119,6 @@ void MainManager::cloneSoldier(){
         std::cout << "\n" << x << "\n";
         cloneSoldier(x); 
     }
-
 }
 
 void MainManager::titusComands(){
