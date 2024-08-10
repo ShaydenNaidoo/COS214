@@ -49,20 +49,6 @@ int Soldiers::getDamagePerSoldier() const{
 void Soldiers::setCurrNumSoldiers(int num){
     this->currSold = num;
 }
-void Soldiers::setHealthPerSoldier(int health){
-    this->healthPerSoldier = health;
-}
-void Soldiers::setDamagePerSoldier(int damage){
-    this->damagePerSoldier = damage;
-}
-void Soldiers::setDefencePerSoldier(int defence){
-    this->defencePerSoldier = defence;
-}
-
-int Soldiers::getDefencePerSoldier() const{
-    return this->defencePerSoldier;
-
-}
 
 std::string Soldiers::getUnitName() const{
     return this->unitName;
