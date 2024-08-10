@@ -67,6 +67,10 @@ void FactoryManager::printUnits(){
         }
     }
 }
+Soldiers* FactoryManager::getSoldiers(std::size_t x){
+    if(x < 0 || x >= soldiers.size()) return nullptr;
+    return soldiers[x];
+}
 
 void FactoryManager::printSummary(){
     int I = 0, S = 0, B = 0;
