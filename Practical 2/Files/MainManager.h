@@ -30,6 +30,7 @@ class MainManager{
         void cloneSoldier(std::size_t x);
         void cloneSoldier();
         void printUnits();
+        void printUnit(std::size_t x);
         void printSummary();
         void titusComands();
         void militusMemento();

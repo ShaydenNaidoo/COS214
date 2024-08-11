@@ -10,14 +10,6 @@ ShieldBearer::ShieldBearer(const ShieldBearer& other)
 }
 
 Soldiers* ShieldBearer::clonis(){
-    if(this == nullptr){ 
-        return nullptr; 
-    }
-    int health = this->getHealthPerSoldier();
-    int damage = this->getDamagePerSoldier();
-    int defence = this->getDefencePerSoldier();
-    std::string name = this->getUnitName();
-    char type = this->getType();
     return new ShieldBearer(*this);
 }
 

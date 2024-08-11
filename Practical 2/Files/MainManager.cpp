@@ -196,3 +196,11 @@ bool MainManager::vivifaMemento(Soldiers *soldier){
 
 }
 
+void MainManager::printUnit(std::size_t x){
+    if(x < 0 || x >= soldiers.size()) return;
+    std::cout << "\n\033[1;37m" << soldiers[x]->getUnitName() << ":\033[0m" << std::endl 
+    << "\tTotal Health: \033[32m" << factory[0]->calculateTotalHealthPerUnit(soldiers[x]) << "\033[0m" <<  std::endl
+    << "\tTotal Damage: \033[31m" << factory[0]->calculateTotalDamagePerUnit(soldiers[x]) << "\033[0m" << std::endl
+    << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(soldiers[x]) << "\033[0m" << std::endl
+    << "\tCurrent Number of Soldiers: \033[35m" << soldiers[x]->getCurrNumSoldiers() << "\033[0m" << std::endl << std::endl;        
+}

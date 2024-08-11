@@ -9,6 +9,7 @@ class Memento{
         int healthPerSoldier;
         int damagePerSoldier;
         int defencePerSoldier;
+        int currSold;
         char type;
         std::string unitName;
         int currSold;
@@ -20,6 +21,7 @@ class Memento{
         int getHealthPerSoldier();
         int getDamagePerSoldier();
         int getDefencePerSoldier();
+        int getCurrNumSoldiers();
         char getType();
         std::string getUnitName();
         int getcurrSold();

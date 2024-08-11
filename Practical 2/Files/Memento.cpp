@@ -48,7 +48,8 @@ bool Memento::operator==(Memento * mem){
     (mem->getDamagePerSoldier() == this->damagePerSoldier) &&
     (mem->getDefencePerSoldier() == this->defencePerSoldier) &&
     (mem->getHealthPerSoldier() == this->healthPerSoldier) &&
-    (mem->getType() == this->type)) return true;
+    (mem->getType() == this->type&&
+    mem->getCurrNumSoldiers == this->currSold)) return true;
     else return false;
     
 }

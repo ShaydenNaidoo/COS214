@@ -8,18 +8,10 @@ Infantry::Infantry(int health, int damage, int defence, std::string name, int nu
 :Soldiers(health, damage, defence, name, 'I', num){}
 
 Infantry::Infantry(const Infantry& other)
-:Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType(), other.getCurrNumSoldiers()){
+:Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType(),other.getCurrNumSoldiers()){
 }
 
 Soldiers* Infantry::clonis(){
-    if(this == nullptr){ 
-        return nullptr; 
-    }
-    int health = this->getHealthPerSoldier();
-    int damage = this->getDamagePerSoldier();
-    int defence = this->getDefencePerSoldier();
-    std::string name = this->getUnitName();
-    char type = this->getType();
     return new Infantry(*this);
 }
 
