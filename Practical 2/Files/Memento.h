@@ -12,7 +12,6 @@ class Memento{
         int currSold;
         char type;
         std::string unitName;
-        int currSold;
         int totalDamageTaken = 0;
 
 
@@ -24,7 +23,6 @@ class Memento{
         int getCurrNumSoldiers();
         char getType();
         std::string getUnitName();
-        int getcurrSold();
         int getDamageTaken();
         bool operator==(Memento* mem);
 

@@ -34,7 +34,7 @@ std::string Memento::getUnitName(){
     return this->unitName;
 }
 
-int Memento::getcurrSold(){
+int Memento::getCurrNumSoldiers(){
     return this->currSold;
 
 }
@@ -49,7 +49,7 @@ bool Memento::operator==(Memento * mem){
     (mem->getDefencePerSoldier() == this->defencePerSoldier) &&
     (mem->getHealthPerSoldier() == this->healthPerSoldier) &&
     (mem->getType() == this->type&&
-    mem->getCurrNumSoldiers == this->currSold)) return true;
+    mem->getCurrNumSoldiers() == this->currSold)) return true;
     else return false;
     
 }

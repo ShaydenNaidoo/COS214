@@ -85,7 +85,7 @@ void Soldiers::vivificaMemento(Memento* mem){
     this->defencePerSoldier = mem->getDefencePerSoldier();
     this->type = mem->getType();
     this->unitName = mem->getUnitName();
-    this->currSold = mem->getcurrSold();
+    this->currSold = mem->getCurrNumSoldiers();
     this->totalDamageTaken = mem->getDamageTaken();
     
 }
