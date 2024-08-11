@@ -1,11 +1,11 @@
-files = main.o SoldierFactory.o Soldiers.o InfantryFactory.o ShieldBearerFactory.o BoatmanFactory.o Infantry.o ShieldBearer.o Boatman.o MainManager.o PrototypeRegistry.o Memento.o
+files = TestingMain.o SoldierFactory.o Soldiers.o InfantryFactory.o ShieldBearerFactory.o BoatmanFactory.o Infantry.o ShieldBearer.o Boatman.o MainManager.o PrototypeRegistry.o Memento.o
 gpp = g++ -c
 
-main: $(files)
-	g++ $(files) -o main
+TestingMain: $(files)
+	g++ $(files) -o TestingMain
 
-main.o: main.cpp SoldierFactory.o InfantryFactory.h ShieldBearerFactory.h BoatmanFactory.h Infantry.h ShieldBearer.h Boatman.h 
-	$(gpp) main.cpp
+TestingMain.o: TestingMain.cpp SoldierFactory.o InfantryFactory.h ShieldBearerFactory.h BoatmanFactory.h Infantry.h ShieldBearer.h Boatman.h 
+	$(gpp) TestingMain.cpp
 
 Soldiers.o: Soldiers.cpp Soldiers.h Memento.h
 	$(gpp) Soldiers.cpp
@@ -40,11 +40,11 @@ PrototypeRegistry.o: PrototypeRegistry.cpp PrototypeRegistry.h Soldiers.h Infant
 Memento.o: Memento.cpp Memento.h
 	$(gpp) Memento.cpp
 
-run: main
-	./main
+run: TestingMain
+	./TestingMain
 
 clean:
-	rm -f *.o main
+	rm -f *.o TestingMain
 
 valgrind:
-	valgrind --leak-check=full ./main
+	valgrind --leak-check=full ./TestingMain
