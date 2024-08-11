@@ -11,7 +11,7 @@ class BattleManager{
 
     public:
         BattleManager();
-        BattleManager(MainManager* enemy, MainManager* army);
+        BattleManager(MainManager* army);
         void Start();
 
 };

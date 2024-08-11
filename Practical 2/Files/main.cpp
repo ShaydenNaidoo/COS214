@@ -12,7 +12,7 @@ using namespace std;
 
 int main(){
     MainManager factory(100);
-  MainManager factory(100);
+    MainManager factory(100);
     factory.createUnit(1,25,15,50,"Dai Ichi-butai Unit");
     factory.createUnit(0,10,25,5,"Dai Rei-butai Unit");
     factory.createUnit(0,10,25,5,"Mina's Unit");

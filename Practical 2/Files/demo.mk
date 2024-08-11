@@ -1,8 +1,8 @@
 files = DemoMain.o SoldierFactory.o Soldiers.o InfantryFactory.o ShieldBearerFactory.o BoatmanFactory.o Infantry.o ShieldBearer.o Boatman.o MainManager.o PrototypeRegistry.o Memento.o BattleManager.o
-gpp = g++ -c
+gpp = g++ -c -g
 
 DemoMain: $(files)
-	g++ $(files) -o DemoMain
+	g++ -g $(files) -o DemoMain
 
 DemoMain.o: DemoMain.cpp SoldierFactory.o InfantryFactory.h ShieldBearerFactory.h BoatmanFactory.h Infantry.h ShieldBearer.h Boatman.h Memento.h
 	$(gpp) DemoMain.cpp
@@ -48,6 +48,9 @@ run: DemoMain
 
 clean:
 	rm -f *.o DemoMain
+
+debug:
+	gdb $(files) DemoMain
 
 valgrind:
 	valgrind --leak-check=full ./DemoMain

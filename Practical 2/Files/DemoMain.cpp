@@ -356,7 +356,7 @@ int main(){
     
     }
 
-    cout << "\n\n\033[1;35mThat Concludes the Demo\033[0m\n\n";
+    cout << "\n\n\033[7;37mThat Concludes the Demo\033[0m\n\n";
   
 
 
