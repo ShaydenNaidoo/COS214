@@ -13,6 +13,7 @@ class BattleManager{
 
     public:
         BattleManager();
+        BattleManager(MainManager *army, MainManager *enemy);
         void Battle();
 
 

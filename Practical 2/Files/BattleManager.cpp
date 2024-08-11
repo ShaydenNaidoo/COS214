@@ -35,6 +35,8 @@ BattleManager::BattleManager(){
 
 }
 
+BattleManager::BattleManager(MainManager *army, MainManager *enemy): army(army), enemy(enemy){}
+
 void BattleManager::Battle(){
     int VIC;
     for(std::size_t x = 0; x < this->enemy->numberOfUnits(); x++){
