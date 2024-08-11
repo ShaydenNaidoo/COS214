@@ -2,9 +2,7 @@
 #include <string>
 
 #include "MainManager.h"
-#include "Soldiers.h"
-#include "Infantry.h"
-#include "Memento.h"
+#include "BattleManager.h"
 
 using namespace std;
 
@@ -356,9 +354,13 @@ int main(){
     
     }
 
-    cout << "\n\n\033[7;37mThat Concludes the Demo\033[0m\n\n";
+    cout << "\n\n\033[7;37mThat Concludes the Specifications Demo\033[0m\n\n";
+    cout << "\n\n\033[7;37mBattle Manager Demo [Bonus Marks]\033[0m\n\n";
   
+    BattleManager system;
+    system.Battle();
 
+    cout << "\n\n\033[7;37mThat Concludes the Battle Manager Demo\033[0m\n\n";
 
 
     return 0;

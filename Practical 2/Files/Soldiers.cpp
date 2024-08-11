@@ -28,12 +28,28 @@ int Soldiers::getCurrNumSoldiers() const{
 }
 
 void Soldiers::incrementDamage(int damage){
+    if(this->currSold <= 0) return;
     this->totalDamageTaken += damage;
+
+    int x = this->totalDamageTaken/this->currSold;
+
+    this->setCurrNumSoldiers(this->currSold - x);  
+
+    x = x*this->healthPerSoldier;
+
+    this->totalDamageTaken -= x;
+
+    if(this->totalDamageTaken <= 0) this->totalDamageTaken = 0;
+    if(this->currSold <= 0) {
+        this->currSold = 0;
+
+    }
 
 }
 
 void Soldiers::heal(){
-    this->totalDamageTaken -= 0.5 * this->totalDamageTaken;
+    this->totalDamageTaken -= this->healthPerSoldier;
+    this->setCurrNumSoldiers(this->currSold + 1);
 
 }
 
@@ -69,6 +85,7 @@ void Soldiers::engage(){
     prepare();
     execute();
 }
+
 void Soldiers::disengage(){
     retreat();
     rest();

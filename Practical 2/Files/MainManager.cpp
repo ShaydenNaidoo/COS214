@@ -112,8 +112,23 @@ void MainManager::printSummary(){
 
 }
 
-MainManager::~MainManager()
-{
+MainManager::~MainManager(){
+    for(SoldierFactory* x :factory) {
+        delete x;
+        x = nullptr;
+
+    }
+
+    factory.clear();
+
+    for(Soldiers* x: soldiers){
+        delete x;
+        x = nullptr;
+
+    }
+
+    soldiers.clear();
+
 }
 
 void MainManager::cloneSoldier(std::size_t x){
@@ -188,6 +203,9 @@ bool MainManager::vivifaMemento(Soldiers *soldier){
 
 
     soldier->vivificaMemento(mStack[i].back());
+
+    delete mStack[i].back();
+    mStack[i].back() = nullptr;
     
     mStack[i].pop_back();
     

@@ -14,7 +14,6 @@ class Memento{
         std::string unitName;
         int totalDamageTaken = 0;
 
-
     public:
         Memento(int health, int damage, int defence, char type, std::string name, int num, int total);   
         int getHealthPerSoldier();
