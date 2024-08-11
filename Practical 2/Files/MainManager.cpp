@@ -13,7 +13,6 @@ bool MainManager::createUnit(std::size_t type, int health, int damage, int defen
     if(type >= 3 || type < 0) return false;
 
     Soldiers *product = factory[type]->createUnit(health,damage,defence,unitName);
-    mStack[getIndex(product)];
 
     if(product == nullptr) return false;
     else soldiers.push_back(product);
@@ -42,10 +41,11 @@ std::size_t MainManager::getIndex(Soldiers *soldier){
     for(Soldiers* x : soldiers){
         if(soldier == x) return  i;
         i++;
-
+        
     }
 
-    return -1;
+
+    return i;
 
 }
 
@@ -61,6 +61,7 @@ void MainManager::printUnits(){
             << "\tTotal Health: \033[32m" << factory[0]->calculateTotalHealthPerUnit(x) << "\033[0m" <<  std::endl
             << "\tTotal Damage: \033[31m" << factory[0]->calculateTotalDamagePerUnit(x) << "\033[0m" << std::endl
             << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl
+            << "\tTotal Damage Taken: \033[33m" << x->getDamageTaken() << "\033[0m" << std::endl
             << "\tCurrent Number of Soldiers: \033[35m" << x->getCurrNumSoldiers() << "\033[0m" << std::endl << std::endl;        
         }
     }
@@ -72,7 +73,9 @@ void MainManager::printUnits(){
             << "\tTotal Health: \033[32m" << factory[0]->calculateTotalHealthPerUnit(x) << "\033[0m" <<  std::endl
             << "\tTotal Damage: \033[31m" << factory[0]->calculateTotalDamagePerUnit(x) << "\033[0m" << std::endl
             << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl
+            << "\tTotal Damage Taken: \033[33m" << x->getDamageTaken() << "\033[0m" << std::endl
             << "\tCurrent Number of Soldiers: \033[35m" << x->getCurrNumSoldiers() << "\033[0m" << std::endl << std::endl;               
+        
         }
     }
 
@@ -83,6 +86,7 @@ void MainManager::printUnits(){
             << "\tTotal Health: \033[32m" << factory[0]->calculateTotalHealthPerUnit(x) << "\033[0m" <<  std::endl
             << "\tTotal Damage: \033[31m" << factory[0]->calculateTotalDamagePerUnit(x) << "\033[0m" << std::endl
             << "\tTotal Defence: \033[36m" << factory[0]->calculateTotalDefencePerUnit(x) << "\033[0m" << std::endl
+            << "\tTotal Damage Taken: \033[33m" << x->getDamageTaken() << "\033[0m" << std::endl
             << "\tCurrent Number of Soldiers: \033[35m" << x->getCurrNumSoldiers() << "\033[0m" << std::endl << std::endl;        
 
         }
@@ -121,7 +125,6 @@ void MainManager::cloneSoldier(std::size_t x){
 
 void MainManager::cloneSoldier(){
     for(std::size_t x = soldiers.size()-1; x > 0; x-- ) {
-        std::cout << "\n" << x << "\n";
         cloneSoldier(x); 
     }
 
@@ -154,18 +157,23 @@ void MainManager::militusMemento(){
 }
 
 bool MainManager::militusMemento(Soldiers *soldier){
-    for(Memento* x : mStack[getIndex(soldier)]){
-        if(x == soldier->militusMemento()) return false;
+    std::size_t i = getIndex(soldier);
+    Memento* state = soldier->militusMemento();
+
+    for(Memento* x : mStack[i]){
+        if(x == state) return false;
    
     }
 
-    mStack[getIndex(soldier)].push_back(soldier->militusMemento());
+    mStack[i].push_back(state);
+
 
     return true;
 
 }
 
 void MainManager::vivifaMemento(){
+
     for(Soldiers* x : soldiers){
         vivifaMemento(x);
     
@@ -174,10 +182,15 @@ void MainManager::vivifaMemento(){
 }
 
 bool MainManager::vivifaMemento(Soldiers *soldier){
-    if(mStack[getIndex(soldier)].empty() == true) return false;
+    std::size_t i = getIndex(soldier);
 
-    soldier->vivificaMemento(mStack[getIndex(soldier)].back());
-    mStack[getIndex(soldier)].pop_back();
+    if(mStack[i].empty() == true) return false;
+
+
+    soldier->vivificaMemento(mStack[i].back());
+    
+    mStack[i].pop_back();
+    
 
     return true;
 

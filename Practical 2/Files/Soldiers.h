@@ -17,7 +17,7 @@ class Soldiers {
 
     public:
         Soldiers();
-        Soldiers(int health, int damage, int defence, std::string name, char type,int currSold);        
+        Soldiers(int health, int damage, int defence, std::string name, char type, int currSold);        
         int getHealthPerSoldier() const;
         int getDamagePerSoldier() const;
         int getDefencePerSoldier()const;
@@ -28,15 +28,10 @@ class Soldiers {
         void incrementDamage(int damage);
         void heal();
         int getDamageTaken();
-        //tHESE SETTERS ARE FOR THE MEMENTO TESTING
-        void setHealthPerSoldier(int health);
-        void setDamagePerSoldier(int damage);
-        void setDefencePerSoldier(int defence);
-        ////////////////////////////////////////
         void engage();
         void disengage();
         Memento* militusMemento();
-        void vivificaMemento(Memento* mem);
+        void vivificaMemento(Memento *mem);
         virtual Soldiers* clonis() = 0;
         virtual void prepare() = 0;
         virtual void execute() = 0;

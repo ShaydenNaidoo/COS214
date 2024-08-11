@@ -7,7 +7,7 @@ main: $(files)
 main.o: main.cpp SoldierFactory.o InfantryFactory.h ShieldBearerFactory.h BoatmanFactory.h Infantry.h ShieldBearer.h Boatman.h 
 	$(gpp) main.cpp
 
-Soldiers.o: Soldiers.cpp Soldiers.h
+Soldiers.o: Soldiers.cpp Soldiers.h Memento.h
 	$(gpp) Soldiers.cpp
 
 SoldierFactory.o: SoldierFactory.cpp SoldierFactory.h Soldiers.h

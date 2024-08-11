@@ -49,15 +49,6 @@ int Soldiers::getDamagePerSoldier() const{
 void Soldiers::setCurrNumSoldiers(int num){
     this->currSold = num;
 }
-void Soldiers::setHealthPerSoldier(int health){
-    this->healthPerSoldier = health;
-}
-void Soldiers::setDamagePerSoldier(int damage){
-    this->damagePerSoldier = damage;
-}
-void Soldiers::setDefencePerSoldier(int defence){
-    this->defencePerSoldier = defence;
-}
 
 int Soldiers::getDefencePerSoldier() const{
     return this->defencePerSoldier;
@@ -84,7 +75,7 @@ void Soldiers::disengage(){
 }
 
 Memento* Soldiers::militusMemento(){
-    return new Memento(this->healthPerSoldier, this->damagePerSoldier, this->defencePerSoldier, this->type, this->unitName);
+    return new Memento(this->healthPerSoldier, this->damagePerSoldier, this->defencePerSoldier, this->type, this->unitName, this->currSold, this->totalDamageTaken);
 
 }
 
@@ -94,6 +85,8 @@ void Soldiers::vivificaMemento(Memento* mem){
     this->defencePerSoldier = mem->getDefencePerSoldier();
     this->type = mem->getType();
     this->unitName = mem->getUnitName();
+    this->currSold = mem->getcurrSold();
+    this->totalDamageTaken = mem->getDamageTaken();
     
 }
 

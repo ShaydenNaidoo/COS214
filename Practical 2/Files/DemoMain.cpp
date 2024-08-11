@@ -2,6 +2,9 @@
 #include <string>
 
 #include "MainManager.h"
+#include "Soldiers.h"
+#include "Infantry.h"
+#include "Memento.h"
 
 using namespace std;
 
@@ -257,12 +260,13 @@ int main(){
         << "\t-Enter 4 to restore one unit's state\n"
         << "\t-Enter 5 to kill half of your army\n"
         << "\t-Enter 6 to kill half of a unit\n"
-        << "\t-Enter 7 to cancel\n\n"
+        << "\t-Enter 7 to view the current state of the army\n"
+        << "\t-Enter 8 to cancel\n\n"
         << "\033[7;37mPlease enter an option:\033[0m ";
 
         cin >> opt;
 
-        if(opt == 7) break;
+        if(opt == 8) break;
 
         if(opt == 1){
             manager.militusMemento();
@@ -306,9 +310,54 @@ int main(){
 
         }
 
+        if(opt == 5){
+            for(size_t x = 0; x < manager.numberOfUnits(); x++){
+                manager[x]->incrementDamage(100);
+                manager[x]->setCurrNumSoldiers(50);
+
+            }
+
+            cout << "\n\n\033[1;37mCurrent Army State\033[0m\n\n";
+            cout << "\n\n";
+            manager.printUnits();
+            cout << "\n\n";
+        
+        }
+
+        if(opt == 6){
+            cout << "\n\n";
+            for(size_t x = 0; x < manager.numberOfUnits(); x++){
+                cout << "\033[1;37m" << x+1 << ".) " << manager[x]->getUnitName() << "\t(" << manager[x]->getType() << ")\n";
+            }  
+
+            cout << "\n\033[0m\033[7;37mPlease enter a index from above to command:\033[0m ";
+
+            cin >> x;
+
+            manager[x-1]->setCurrNumSoldiers(50);
+            manager[x-1]->incrementDamage(100);
+
+            cout << "\n\n\033[1;37mCurrent Army State\033[0m\n\n";
+            cout << "\n\n";
+            manager.printUnits();
+            cout << "\n\n";
+
+        }
+
+        if(opt == 7){
+            cout << "\n\n\033[1;37mCurrent Army State\033[0m\n\n";
+            cout << "\n\n";
+            manager.printUnits();
+            cout << "\n\n";
+
+        }
+
         
     
     }
+
+    cout << "\n\n\033[1;35mThat Concludes the Demo\033[0m\n\n";
+  
 
 
 

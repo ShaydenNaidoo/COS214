@@ -2,12 +2,12 @@
 #include "Boatman.h"
 #include "Soldiers.h"
 #include "MainManager.h"
-Boatman::Boatman(int health, int damage, int defence, std::string name)
-:Soldiers(health,damage,defence,name,'B'){}
+Boatman::Boatman(int health, int damage, int defence, std::string name, int num)
+:Soldiers(health,damage,defence,name,'B', num){}
 
 
 Boatman::Boatman(const Boatman& other)
-:Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType()){
+:Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType(), other.getCurrNumSoldiers()){
 }
 
 Soldiers* Boatman::clonis(){

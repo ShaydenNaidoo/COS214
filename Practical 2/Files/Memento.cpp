@@ -1,11 +1,13 @@
 #include "Memento.h"
 
-Memento::Memento(int health, int damage, int defence, char type, std::string name){
+Memento::Memento(int health, int damage, int defence, char type, std::string name, int num, int total){
     this->healthPerSoldier = health;
     this->damagePerSoldier = damage;
     this->defencePerSoldier = defence;
     this->type = type;
     this->unitName = name;
+    this->currSold = num;
+    this->totalDamageTaken = total;
 
 }
 
@@ -30,6 +32,15 @@ char Memento::getType(){
 
 std::string Memento::getUnitName(){
     return this->unitName;
+}
+
+int Memento::getcurrSold(){
+    return this->currSold;
+
+}
+
+int Memento::getDamageTaken(){
+    return this->totalDamageTaken;
 }
 
 bool Memento::operator==(Memento * mem){

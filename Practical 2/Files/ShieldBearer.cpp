@@ -1,12 +1,12 @@
 //CONCRETE_PRODUCT
 #include "ShieldBearer.h"
 
-ShieldBearer::ShieldBearer(int health, int damage, int defence, std::string name)
-:Soldiers(health,damage,defence,name,'S'){}
+ShieldBearer::ShieldBearer(int health, int damage, int defence, std::string name, int num)
+:Soldiers(health,damage,defence,name,'S', num){}
 
 ShieldBearer::ShieldBearer(const ShieldBearer& other)
-:Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType()){
-
+:Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType(), other.getCurrNumSoldiers()){
+    
 }
 
 Soldiers* ShieldBearer::clonis(){

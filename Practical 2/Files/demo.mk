@@ -4,7 +4,7 @@ gpp = g++ -c
 DemoMain: $(files)
 	g++ $(files) -o DemoMain
 
-DemoMain.o: DemoMain.cpp SoldierFactory.o InfantryFactory.h ShieldBearerFactory.h BoatmanFactory.h Infantry.h ShieldBearer.h Boatman.h 
+DemoMain.o: DemoMain.cpp SoldierFactory.o InfantryFactory.h ShieldBearerFactory.h BoatmanFactory.h Infantry.h ShieldBearer.h Boatman.h Memento.h
 	$(gpp) DemoMain.cpp
 
 Soldiers.o: Soldiers.cpp Soldiers.h
@@ -31,9 +31,6 @@ ShieldBearer.o: ShieldBearer.cpp ShieldBearer.h Soldiers.h
 Boatman.o: Boatman.cpp Boatman.h Soldiers.h
 	$(gpp) Boatman.cpp
 
-MainManager.o: MainManager.cpp MainManager.h SoldierFactory.h Soldiers.h Memento.h
-	$(gpp) MainManager.cpp
-
 PrototypeRegistry.o: PrototypeRegistry.cpp PrototypeRegistry.h Soldiers.h Infantry.h ShieldBearer.h Boatman.h
 	$(gpp) PrototypeRegistry.cpp
 
@@ -42,6 +39,9 @@ Memento.o: Memento.cpp Memento.h
 
 BattleManager.o: BattleManager.cpp BattleManager.h MainManager.h
 	$(gpp) BattleManager.cpp
+
+MainManager.o: MainManager.cpp MainManager.h SoldierFactory.h Soldiers.h Memento.h
+	$(gpp) MainManager.cpp
 
 run: DemoMain
 	./DemoMain

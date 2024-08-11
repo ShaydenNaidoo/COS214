@@ -11,14 +11,19 @@ class Memento{
         int defencePerSoldier;
         char type;
         std::string unitName;
+        int currSold;
+        int totalDamageTaken = 0;
+
 
     public:
-        Memento(int health, int damage, int defence, char type, std::string name);   
+        Memento(int health, int damage, int defence, char type, std::string name, int num, int total);   
         int getHealthPerSoldier();
         int getDamagePerSoldier();
         int getDefencePerSoldier();
         char getType();
         std::string getUnitName();
+        int getcurrSold();
+        int getDamageTaken();
         bool operator==(Memento* mem);
 
 };

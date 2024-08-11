@@ -4,12 +4,11 @@
 #include <iostream>
 #include <string>
 
-Infantry::Infantry(int health, int damage, int defence, std::string name, int currSold)
-:Soldiers(health, damage, defence, name, 'I', currSold){
-}
+Infantry::Infantry(int health, int damage, int defence, std::string name, int num)
+:Soldiers(health, damage, defence, name, 'I', num){}
 
 Infantry::Infantry(const Infantry& other)
-:Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType()){
+:Soldiers(other.getHealthPerSoldier(), other.getDamagePerSoldier(), other.getDefencePerSoldier(), other.getUnitName(),other.getType(), other.getCurrNumSoldiers()){
 }
 
 Soldiers* Infantry::clonis(){
