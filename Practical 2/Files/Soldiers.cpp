@@ -115,5 +115,4 @@ void Soldiers::printUnit(){
     std::cout << "Damage per Soldier: " << this->damagePerSoldier << std::endl;
     std::cout << "Defence per Soldier: " << this->defencePerSoldier << std::endl;
     std::cout << "Total Damage Taken: " << this->totalDamageTaken << std::endl;
-    std::cout << "State: " << this->state << std::endl;
 }
