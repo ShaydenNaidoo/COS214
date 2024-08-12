@@ -39,6 +39,7 @@ BattleManager::BattleManager(MainManager *army, MainManager *enemy): army(army),
 
 void BattleManager::Battle(){
     int VIC;
+    if(this->k == false)
     for(std::size_t x = 0; x < this->enemy->numberOfUnits(); x++){
         bool flag = true, con = true;
         int opt = 0, y = 0;

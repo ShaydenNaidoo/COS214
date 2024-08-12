@@ -6,6 +6,7 @@
 #include "Soldiers.h"
 #include "MainManager.h"
 #include "PrototypeRegistry.h"
+#include "BattleManager.h"
 
 using namespace std;
 
@@ -32,5 +33,10 @@ int main(){
     std::cout << "Vivifa Memento" << std::endl;
     factory.vivifaMemento();
     factory.printUnit(0);
+
+    BattleManager x;
+    x.kill();
+    x.Battle();
+
     return 0;
 }

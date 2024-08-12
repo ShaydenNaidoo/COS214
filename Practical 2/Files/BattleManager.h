@@ -10,10 +10,12 @@ class BattleManager{
     private:
         MainManager *enemy, *army;
         std::vector<std::size_t> engagedArmy;
+        bool k = false;
 
     public:
         BattleManager();
         BattleManager(MainManager *army, MainManager *enemy);
+        void kill(){k = true;};
         void Battle();
 
 

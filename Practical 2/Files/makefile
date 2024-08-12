@@ -1,10 +1,10 @@
-files = TestingMain.o SoldierFactory.o Soldiers.o InfantryFactory.o ShieldBearerFactory.o BoatmanFactory.o Infantry.o ShieldBearer.o Boatman.o MainManager.o PrototypeRegistry.o Memento.o
+files = TestingMain.o SoldierFactory.o Soldiers.o InfantryFactory.o ShieldBearerFactory.o BoatmanFactory.o Infantry.o ShieldBearer.o Boatman.o MainManager.o PrototypeRegistry.o Memento.o BattleManager.o
 gpp = g++ -c
 
 TestingMain: $(files)
 	g++ $(files) -o TestingMain
 
-TestingMain.o: TestingMain.cpp SoldierFactory.o InfantryFactory.h ShieldBearerFactory.h BoatmanFactory.h Infantry.h ShieldBearer.h Boatman.h 
+TestingMain.o: TestingMain.cpp SoldierFactory.o InfantryFactory.h ShieldBearerFactory.h BoatmanFactory.h Infantry.h ShieldBearer.h Boatman.h BattleManager.o
 	$(gpp) TestingMain.cpp
 
 Soldiers.o: Soldiers.cpp Soldiers.h Memento.h
@@ -39,6 +39,9 @@ PrototypeRegistry.o: PrototypeRegistry.cpp PrototypeRegistry.h Soldiers.h Infant
 
 Memento.o: Memento.cpp Memento.h
 	$(gpp) Memento.cpp
+
+BattleManager.o: BattleManager.cpp BattleManager.h MainManager.h
+	$(gpp) BattleManager.cpp
 
 run: TestingMain
 	./TestingMain
