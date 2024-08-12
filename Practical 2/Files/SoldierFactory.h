@@ -8,7 +8,7 @@ class SoldierFactory{
     private:
         int amountOfSoldiersPerUnit;
 
-    protected:
+    public:
         SoldierFactory(int amountOfSoldiersPerUnit);
         int calculateTotalHealthPerUnit(Soldiers *soldier);
         int calculateTotalDamagePerUnit(Soldiers *soldier);
