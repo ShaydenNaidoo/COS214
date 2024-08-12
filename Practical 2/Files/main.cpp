@@ -15,6 +15,11 @@
 #include "ShieldBearerFactory.h"
 #include "BoatmanFactory.h"
 #include "Infantry.h"
+#include "ShieldBearer.h"
+#include "Boatman.h"
+#include "MainManager.h"
+#include "BattleManager.h"
+#include "Memento.h"
 #include <vector>
 using namespace std;
 
@@ -73,9 +78,5 @@ int main(){
     std::cout << "Vivifa Memento" << std::endl;
     factory.vivifaMemento();
     factory.printUnit(0);
-
-    
- 
-  
     return 0;
 }
