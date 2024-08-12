@@ -7,7 +7,7 @@
 #include "SoldierFactory.h"
 #include "Infantry.h"
 
-class InfantryFactory: public SoldierFactory {
+class InfantryFactory: protected SoldierFactory {
     public:
         InfantryFactory(int amountOfSoldiersPerUnit);
         Soldiers* createUnit(int health, int damage, int defence, std::string name);
