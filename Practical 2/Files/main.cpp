@@ -5,7 +5,6 @@
 #include "ShieldBearer.h"
 #include "Soldiers.h"
 #include "MainManager.h"
-#include "PrototypeRegistry.h"
 #include "BoatmanFactory.h"
 #include "ShieldBearerFactory.h"
 #include "Memento.h"
