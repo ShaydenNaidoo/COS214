@@ -37,6 +37,7 @@ class Soldiers {
 		virtual void execute() = 0;
 		virtual void retreat() =0;
 		virtual void rest() = 0;
+		void printUnit();
 		virtual ~Soldiers(){}
 
 };

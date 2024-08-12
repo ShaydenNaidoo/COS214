@@ -107,3 +107,13 @@ void Soldiers::vivificaMemento(Memento* mem){
     
 }
 
+void Soldiers::printUnit(){
+    std::cout << "Unit Name: " << this->unitName << std::endl;
+    std::cout << "Type: " << this->type << std::endl;
+    std::cout << "Current Number of Soldiers: " << this->currSold << std::endl;
+    std::cout << "Health per Soldier: " << this->healthPerSoldier << std::endl;
+    std::cout << "Damage per Soldier: " << this->damagePerSoldier << std::endl;
+    std::cout << "Defence per Soldier: " << this->defencePerSoldier << std::endl;
+    std::cout << "Total Damage Taken: " << this->totalDamageTaken << std::endl;
+    std::cout << "State: " << this->state << std::endl;
+}
