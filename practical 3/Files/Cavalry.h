@@ -11,7 +11,8 @@ public:
    Cavalry();
    Cavalry(int health, int damage, int defence, std::string name, char terrain, int currSold, int speed, double flankingBonus);
    virtual ~Cavalry();
-    
+    virtual void move();
+    virtual void attack();
 private:
     // Private member variables
     	std::string unitName;

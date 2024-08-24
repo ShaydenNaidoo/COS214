@@ -5,6 +5,9 @@ class RiverbankCavalry: public Cavalry {
 public:
 RiverbankCavalry(int health, int damage, int defence, std::string name, char terrain, int currSold, int speed, double flankingBonus, double rbBonus);
 virtual ~RiverbankCavalry();
+void move();
+void attack();
+
 private:
 double rbBonus;
 };

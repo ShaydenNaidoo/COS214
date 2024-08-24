@@ -5,8 +5,9 @@
 class OpenFieldCavalry: public Cavalry {
 public:
 OpenFieldCavalry(int health, int damage, int defence, std::string name, char terrain, int currSold, int speed, double flankingBonus, double ofBonus);
-
 ~OpenFieldCavalry();
+void move();
+void attack();
 private:
 double ofBonus;
 };

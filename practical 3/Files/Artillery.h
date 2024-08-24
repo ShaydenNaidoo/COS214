@@ -6,11 +6,14 @@
 class Artillery: public LegionUnit {
 public:
     // Constructor
-    Artillery(int health, int damage, int defence, std::string name, char terrain, int currSold, double range, double accuracy);  
+    Artillery(int health, int damage, int defence, std::string name, char terrain, int currSold, double range, double accuracy): LegionUnit(health, damage, defence, name, terrain, currSold) {
+        this->range = range;
+        this->accuracy = accuracy;
+    }
     virtual ~Artillery() ;
     virtual void move();
     virtual void attack();
-private:
+    private:
         double range;
         double accuracy;
 };

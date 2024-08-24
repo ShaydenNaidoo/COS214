@@ -5,6 +5,7 @@
 
 class LegionUnit {
 public:
+    LegionUnit(int health, int damage, int defence, std::string name, char terrain, int currSold);
     virtual void move() =0;
     virtual void attack() = 0;
     int getHealthPerSoldier() const;

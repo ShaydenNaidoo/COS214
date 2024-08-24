@@ -8,6 +8,8 @@ public:
     WoodlandInfantry();
     WoodlandInfantry(int health, int damage, int defence, std::string name, char terrain, int currSold, int hTHCombatBonus, int armorBonus, double wBonus);
     virtual ~WoodlandInfantry();
+    void move();
+    void attack();
 
 private:
 double wBonus;  
