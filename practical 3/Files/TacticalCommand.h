@@ -6,15 +6,9 @@
 // Declare your class and its member functions
 class TacticalCommand {
 public:
-    // Constructor(s)
-    
-    // Destructor
-    
-    // Other member functions
     
 private:
-    // Private member variables
-    
+
 };
 
 #endif // TACTICALCOMMAND_H

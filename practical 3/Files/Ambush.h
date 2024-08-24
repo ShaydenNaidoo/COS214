@@ -1,8 +1,15 @@
 #ifndef AMBUSH_H
 #define AMBUSH_H
+#include "BattleStrategy.h"
 
-// Include any necessary headers here
+class Ambush: public BattleStrategy {
+public:
+  
 
-// Declare your class and its member functions here
+private:
+
+
+};
+
 
 #endif // AMBUSH_H

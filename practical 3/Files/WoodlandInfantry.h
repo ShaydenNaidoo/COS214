@@ -2,15 +2,15 @@
 #define WOODLANDINFANTRY_H
 
 // Include any necessary headers here
-
-class WoodlandInfantry {
+#include "Infantry.h"
+class WoodlandInfantry: public Infantry {
 public:
-    // Constructor(s) and destructor
-
-    // Declare any member functions here
+    WoodlandInfantry();
+    WoodlandInfantry(int health, int damage, int defence, std::string name, char terrain, int currSold, int hTHCombatBonus, int armorBonus, double wBonus);
+    virtual ~WoodlandInfantry();
 
 private:
-    // Declare any member variables here
+double wBonus;  
 
 };
 

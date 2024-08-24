@@ -2,16 +2,18 @@
 #define INFANTRY_H
 
 // Include any necessary headers here
-
-class Infantry {
+#include "LegionUnit.h"
+#include <string>
+#include <iostream>
+class Infantry: public LegionUnit {
 public:
-    // Constructor(s) and destructor
-
-    // Declare any member functions here
+Infantry(int health, int damage, int defence, std::string name, char terrain, int currSold, int hTHCombatBonus, int armorBonus);
 
 private:
-    // Declare any member variables here
-
+  std::string unitName;
+		char terrain;
+        int hTHCombatBonus;
+        int armorBonus;
 };
 
 #endif // INFANTRY_H

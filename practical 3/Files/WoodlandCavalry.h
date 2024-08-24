@@ -1,10 +1,12 @@
 #ifndef WOODLAND_CAVALRY_H
 #define WOODLAND_CAVALRY_H
-
-// Include any necessary headers here
-
-// Define your class or struct here
-
-// Declare any member variables or functions here
+#include "Cavalry.h"
+class WoodlandCavalry: public Cavalry {
+public:
+WoodlandCavalry(int health, int damage, int defence, std::string name, char terrain, int currSold,int speed, double flankingBonus, double wBonus);
+~WoodlandCavalry();
+private:
+double wBonus;
+};
 
 #endif // WOODLAND_CAVALRY_H

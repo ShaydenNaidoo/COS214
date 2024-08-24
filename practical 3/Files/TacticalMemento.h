@@ -2,11 +2,11 @@
 #define TACTICALMEMENTO_H
 
 // Include any necessary headers here
-#include <iostream> // Example header
+#include <iostream> 
 
 // Define your class here
 class TacticalMemento {
-    // Class members and methods go here
+   
 };
 
 #endif // TACTICALMEMENTO_H

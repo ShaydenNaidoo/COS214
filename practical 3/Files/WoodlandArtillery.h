@@ -2,19 +2,16 @@
 #define WOODLAND_ARTILLERY_H
 
 // Include any necessary headers here
-
+#include "Artillery.h"
 // Declare your class and its member functions
-class WoodlandArtillery {
+class WoodlandArtillery: public Artillery {
 public:
-    // Constructor(s)
-    
-    // Destructor
-    
-    // Other member functions
+    WoodlandArtillery();
+    WoodlandArtillery(int health, int damage, int defence, std::string name, char terrain, int currSold, int range, int accuracy, double wBonus);
+    virtual ~WoodlandArtillery();
     
 private:
-    // Private member variables
-    
+double wBonus;
 };
 
 #endif // WOODLAND_ARTILLERY_H

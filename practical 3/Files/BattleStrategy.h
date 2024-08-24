@@ -1,8 +1,15 @@
 #ifndef BATTLESTRATEGY_H
 #define BATTLESTRATEGY_H
 
-// Include any necessary headers here
+class BattleStrategy {
+public:
+    // Constructor(s) and destructor
 
-// Declare your BattleStrategy class here
+    // Declare any member functions here
+
+private:
+    // Declare any member variables here
+
+};
 
 #endif // BATTLESTRATEGY_H

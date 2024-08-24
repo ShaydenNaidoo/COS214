@@ -1,8 +1,12 @@
 #ifndef RIVERBANKINFANTRY_H
 #define RIVERBANKINFANTRY_H
-
-// Include any necessary headers here
-
-// Declare your class and its member functions here
+#include "Infantry.h"
+class RiverbankInfantry: public Infantry {
+public:
+RiverbankInfantry(int health, int damage, int defence, std::string name, char terrain, int currSold, int hTHCombatBonus, int armorBonus);
+virtual ~RiverbankInfantry();
+private:
+double rbBonus;
+};
 
 #endif // RIVERBANKINFANTRY_H

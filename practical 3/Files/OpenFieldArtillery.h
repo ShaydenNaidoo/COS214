@@ -1,8 +1,14 @@
 #ifndef OPENFIELDARTILLERY_H
 #define OPENFIELDARTILLERY_H
 
-// Include any necessary headers here
+#include "Artillery.h"
+class OpenFieldArtillery: public Artillery {
+public:
+OpenFieldArtillery(int health, int damage, int defence, std::string name, char terrain, int currSold, double range, double accuracy, double ofBonus);
+virtual ~OpenFieldArtillery();
+private:
+double ofBonus;
+};
 
-// Declare your class and its member functions here
 
 #endif // OPENFIELDARTILLERY_H
