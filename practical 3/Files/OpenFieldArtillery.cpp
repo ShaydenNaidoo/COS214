@@ -6,10 +6,6 @@
 OpenFieldArtillery::OpenFieldArtillery(int health, int damage, int defence, std::string name, char terrain, int currSold, int range, int accuracy, double ofBonus): Artillery(health, damage, defence, name, terrain, currSold, range, accuracy) {
     this->ofBonus = ofBonus;
 }
-OpenFieldArtillery::~OpenFieldArtillery() {
-    std::cout << "OpenFieldArtillery destructor called" << std::endl;
-}
-
 void OpenFieldArtillery::move() {
     std::cout << "OpenFieldArtillery: is moving" << std::endl;
 }
