@@ -4,6 +4,7 @@
 #include "WoodlandFactory.h"
 #include "OpenFieldFactory.h"
 #include "LegionUnit.h"
+#include "MainManager.h"
 
 using namespace std;
 
@@ -34,8 +35,15 @@ int main(){
 
     }   
 
-/*                                    Main Manager Testing                                                                   */       
+/*                                    Main Manager Testing                                                                   */  
+    MainManager manager();
+    
+    cout << "\n\033[7;37mMain Manager Testing\033[0m\n\n";
 
+    
+
+
+/*                                    Memory Management                                                                   */   
     for(int x = 0; x < 9; x++) delete units[x];
     delete [] units;
 

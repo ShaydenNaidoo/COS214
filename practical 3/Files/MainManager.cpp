@@ -41,6 +41,25 @@ MainManager::~MainManager(){
         delete factory[1];
         delete factory[2];
 
+        factory.clear();
+
     }
+
+    if(legion.empty() != true){
+        std::map<std::size_t, std::vector<LegionUnit*>>::iterator x = legion.begin();
+
+        for(x; x != legion.end(); x++){
+            for(LegionUnit* y: x->second){
+                delete y;
+
+            }
+
+            x->second.clear();
+
+        }
+
+    }
+
+    legion.clear();
 
 }
