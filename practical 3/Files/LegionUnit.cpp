@@ -1,16 +1,15 @@
-#include "Legion.h"
+//ABSTRACT_PRODUCT_INTERFACE
 #include "LegionUnit.h"
 
-#include <iostream>
-#include <string>
-
-LegionUnit::LegionUnit(int health, int damage, int defence, std::string name, char terrain, int currSold) {
+LegionUnit::LegionUnit(int health, int defence, int damage, std::string name, char type, char terrain, int currSold) {
     this->healthPerSoldier = health;
     this->damagePerSoldier = damage;
     this->defencePerSoldier = defence;
     this->name = name;
+    this->type = type;
     this->terrain = terrain;
     this->currSold = currSold;
+
 }
 
 int LegionUnit::getHealthPerSoldier() const {
@@ -41,10 +40,12 @@ int LegionUnit::getCurrNumSoldiers() const {
     return currSold;
 }
 
-void LegionUnit::incrementDamage(int damage) {
-    damagePerSoldier += damage;
+int LegionUnit::getDamageTaken() const {
+    return this->damageTaken;
+
 }
 
-LegionUnit::~LegionUnit() {
-    std::cout << "LegionUnit destructor called" << std::endl;
+void LegionUnit::incrementDamage(int damage) {
+    damageTaken += damage;
 }
+

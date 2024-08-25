@@ -1,16 +1,20 @@
+//CONCRETE_PRODUCT
 #ifndef OPENFIELDARTILLERY_H
 #define OPENFIELDARTILLERY_H
 
 #include "Artillery.h"
+
 class OpenFieldArtillery: public Artillery {
-public:
-OpenFieldArtillery(int health, int damage, int defence, std::string name, char terrain, int currSold, int range, int accuracy, double ofBonus);
-virtual ~OpenFieldArtillery();
-  void move();
+  private:
+    double ofBonus;
+
+  public:
+    OpenFieldArtillery(int health, int damage, int defence, std::string name, int range, int accuracy);
+    void move();
     void attack();
-private:
-double ofBonus;
+    void printUnitDetails();
+		void printDetails();
+  
 };
 
-
-#endif // OPENFIELDARTILLERY_H
+#endif

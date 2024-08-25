@@ -17,7 +17,7 @@ LegionFactory.o: LegionFactory.cpp LegionFactory.h LegionUnit.h
 	$(gpp) LegionFactory.cpp
 
 RiverbankFactory.o: RiverbankFactory.cpp RiverbankFactory.h RiverbankInfantry.h RiverbankCavalry.h RiverbankArtillery.h
-	$(gpp) InfantryFactory.cpp
+	$(gpp) RiverbankFactory.cpp
 
 WoodlandFactory.o: WoodlandFactory.cpp WoodlandFactory.h WoodlandInfantry.h WoodlandCavalry.h WoodlandArtillery.h
 	$(gpp) WoodlandFactory.cpp

@@ -1,31 +1,36 @@
+//ABSTRACT_PRODUCT_INTERFACE
 #ifndef LEGIONUNIT_H
 #define LEGIONUNIT_H
-#include <string>
+
 #include <iostream>
 
 class LegionUnit {
-public:
-    LegionUnit(int health, int damage, int defence, std::string name, char terrain, int currSold);
-    virtual void move() =0;
-    virtual void attack() = 0;
-    int getHealthPerSoldier() const;
-	int getDamagePerSoldier() const;
-	int getDefencePerSoldier()const;
-	std::string getUnitName() const;
-	char getTerrain() const;
-	void setCurrNumSoldiers(int num);
-	int getCurrNumSoldiers() const;
-	void incrementDamage(int damage);
-	int getDamageTaken();
-    virtual ~LegionUnit() ;
-  
-private:
+	private:
         std::string name;
+		char type;
+        char terrain;
 		int currSold;
 		int healthPerSoldier;
 		int defencePerSoldier;
         int damagePerSoldier;
-        char terrain;
+		int damageTaken = 0;
+
+	public:
+		LegionUnit(int health, int defence, int damage, std::string name, char type, char terrain, int currSold);
+		std::string getUnitName() const;
+		char getTerrain() const;
+		int getHealthPerSoldier() const;
+		int getDamagePerSoldier() const;
+		int getDefencePerSoldier()const;
+		int getCurrNumSoldiers() const;
+		int getDamageTaken() const;
+		void setCurrNumSoldiers(int num);
+		void incrementDamage(int damage);
+		virtual void move() =0;
+		virtual void attack() = 0;
+		virtual void printUnitDetails() = 0;
+		virtual void printDetails() = 0;
+	
 };
 
-#endif // LEGIONUNIT_H
+#endif

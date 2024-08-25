@@ -1,14 +1,20 @@
+//CONCRETE_PRODUCT
 #ifndef RIVERBANKINFANTRY_H
 #define RIVERBANKINFANTRY_H
+
 #include "Infantry.h"
+
 class RiverbankInfantry: public Infantry {
-public:
-RiverbankInfantry(int health, int damage, int defence, std::string name, char terrain, int currSold, int hTHCombatBonus, int armorBonus, double rbBonus);
-virtual ~RiverbankInfantry();
-void move();
-void attack();
-private:
-double rbBonus;
+    private:
+        double rbBonus;
+    
+    public:
+        RiverbankInfantry(int health, int defence, int damage, std::string name);
+        void move();
+        void attack();
+        void printDetails();
+        void printUnitDetails();
+
 };
 
-#endif // RIVERBANKINFANTRY_H
+#endif

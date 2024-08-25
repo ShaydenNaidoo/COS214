@@ -5,7 +5,6 @@
 #include "ShieldBearer.h"
 #include "Soldiers.h"
 #include "MainManager.h"
-#include "PrototypeRegistry.h"
 #include "BattleManager.h"
 
 using namespace std;

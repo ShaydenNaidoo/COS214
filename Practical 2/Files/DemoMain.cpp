@@ -7,7 +7,7 @@
 using namespace std;
 
 int main(){
-/*                                                     Background                                                                     */
+/*                                                    Background                                                                     */
     cout << "\t\t\t\t\t\t\t\033[1;37mThe Call of Destiny\033[0m\n"
     << "In the year 100 BC, Rome is a republic on the brink of empire. To the north, hostile barbarian tribes threaten the borders.\n"
     << "To the east, the vast realms of Parthia eye Rome warily. Amidst political chaos, a young Roman legionnaire, Titus Flavius,\n"

@@ -1,15 +1,20 @@
+//CONCRETE_PRODUCT
 #ifndef RIVERBANKCAVALRY_H
 #define RIVERBANKCAVALRY_H
-#include "Cavalry.h"
-class RiverbankCavalry: public Cavalry {
-public:
-RiverbankCavalry(int health, int damage, int defence, std::string name, char terrain, int currSold, int speed, double flankingBonus, double rbBonus);
-virtual ~RiverbankCavalry();
-void move();
-void attack();
 
-private:
-double rbBonus;
+#include "Cavalry.h"
+
+class RiverbankCavalry: public Cavalry {
+    private:
+        double rbBonus;
+
+    public:
+        RiverbankCavalry(int health, int defence, int damage, std::string name, int speed);
+        void move();
+        void attack();
+        void printDetails();
+        void printUnitDetails();
+
 };
 
-#endif // RIVERBANKCAVALRY_H
+#endif

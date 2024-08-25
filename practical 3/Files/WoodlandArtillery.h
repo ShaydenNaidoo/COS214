@@ -1,18 +1,20 @@
+//CONCRETE_PRODUCT
 #ifndef WOODLAND_ARTILLERY_H
 #define WOODLAND_ARTILLERY_H
 
-// Include any necessary headers here
 #include "Artillery.h"
-// Declare your class and its member functions
+
 class WoodlandArtillery: public Artillery {
-public:
-    WoodlandArtillery();
-    WoodlandArtillery(int health, int damage, int defence, std::string name, char terrain, int currSold, int range, int accuracy, double wBonus);
-    virtual ~WoodlandArtillery();
-    void move();
-    void attack();
-private:
-double wBonus;
+    private:
+        double wBonus;
+    
+    public:
+        WoodlandArtillery(int health, int damage, int defence, std::string name, int range, int accuracy);
+        void move();
+        void attack();
+        void printDetails();
+        void printUnitDetails();
+        
 };
 
-#endif // WOODLAND_ARTILLERY_H
+#endif

@@ -1,24 +1,22 @@
+//ABSTRACT_PRODUCT
 #ifndef INFANTRY_H
 #define INFANTRY_H
 
-// Include any necessary headers here
 #include "LegionUnit.h"
-#include <string>
-#include <iostream>
+
 class Infantry: public LegionUnit {
-public:
-Infantry(int health, int damage, int defence, std::string name, char terrain, int currSold, int hTHCombatBonus, int armorBonus);
-
-virtual ~Infantry();
-virtual void move();
-virtual void attack();
-
-private:
-  std::string unitName;
-		char terrain;
-        int hTHCombatBonus;
-        int armorBonus;
+	private:
+		int hTHCombatBonus;
+		int armorBonus;
+	
+	
+	public:
+		Infantry(int health, int damage, int defence, std::string name, char type, char terrain, int currSold, int hTHCombatBonus, int armorBonus);
+		virtual void move() = 0;
+		virtual void attack() = 0;
+		virtual void printUnitDetails() = 0;
+		virtual void printDetails() = 0;
 
 };
 
-#endif // INFANTRY_H
+#endif
