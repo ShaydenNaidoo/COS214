@@ -1,10 +1,10 @@
-files = TestingMain.o LegionUnit.o Cavalry.o Infantry.o Artillery.o RiverbankInfantry.o RiverbankCavalry.o RiverbankArtillery.o WoodlandInfantry.o WoodlandCavalry.o WoodlandArtillery.o OpenFieldInfantry.o OpenFieldCavalry.o OpenFieldArtillery.o LegionFactory.o RiverbankFactory.o WoodlandFactory.o OpenFieldFactory.o
+files = TestingMain.o LegionUnit.o Cavalry.o Infantry.o Artillery.o RiverbankInfantry.o RiverbankCavalry.o RiverbankArtillery.o WoodlandInfantry.o WoodlandCavalry.o WoodlandArtillery.o OpenFieldInfantry.o OpenFieldCavalry.o OpenFieldArtillery.o LegionFactory.o RiverbankFactory.o WoodlandFactory.o OpenFieldFactory.o MainManager.o
 gpp = g++ -c
 
 TestingMain: $(files)
 	g++ $(files) -o TestingMain
 
-TestingMain.o: TestingMain.cpp
+TestingMain.o: TestingMain.cpp MainManager.o
 	$(gpp) TestingMain.cpp
 
 LegionUnit.o: LegionUnit.cpp LegionUnit.h
@@ -57,6 +57,9 @@ WoodlandFactory.o: WoodlandFactory.cpp WoodlandFactory.h WoodlandInfantry.h Wood
 
 OpenFieldFactory.o: OpenFieldFactory.cpp OpenFieldFactory.h OpenFieldInfantry.h OpenFieldCavalry.h OpenFieldArtillery.h
 	$(gpp) OpenFieldFactory.cpp
+
+MainManager.o: MainManager.cpp MainManager.h LegionFactory.h RiverbankFactory.h WoodlandFactory.h OpenFieldFactory.h LegionUnit.h Infantry.h Cavalry.h Artillery.h
+	$(gpp) MainManager.cpp
 
 run: TestingMain
 	./TestingMain

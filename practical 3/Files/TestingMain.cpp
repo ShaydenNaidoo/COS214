@@ -8,7 +8,7 @@
 using namespace std;
 
 int main(){
-/*                                    Concrete Factory Testing                                                                   */    
+/*                                    Concrete Factory & Product Testing                                                                   */    
     LegionUnit **units = new LegionUnit* [9];
     RiverbankFactory riverbankFactory;
     WoodlandFactory woodlandFactory;
@@ -26,7 +26,7 @@ int main(){
     units[7] = openFieldFactory.createCavalry(100, 50, 25, "[O][C]" , 69);
     units[8] = openFieldFactory.createArtillery(100,50,25,"[O][A]", 50, 100);
 
-    cout << "\n\033[7;37mConcrete Factory Testing\033[0m\n\n";
+    cout << "\n\033[7;37mConcrete Factory and Product Testing\033[0m\n\n";
 
     for(int x = 0; x < 9; x++){
         units[x]->printUnitDetails();
