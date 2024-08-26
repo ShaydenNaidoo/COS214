@@ -16,18 +16,24 @@
 #include "Cavalry.h"
 #include "Artillery.h"
 
+#include "TacticalCommand.h"
+
 
 class MainManager {
     private:
         std::vector<LegionFactory*> factory;
         std::map<std::size_t, std::vector<LegionUnit*>> legion;
+        std::size_t specialization;
+        TacticalCommand *command;
+
 
     public:
-        MainManager();
-        bool createInfantry(int health, int defence, int damage, std::string name, std::size_t specialization);
-        bool createCavalry(int health, int defence, int damage, std::string name, int speed, std::size_t specialization);
-        bool createArtillery(int health, int defence, int damage, std::string name, int range, int accuracy, std::size_t specialization);
-       bool CreateLegion(std::size_t specialization);
+        MainManager(std::size_t specialization);
+        bool setSpecialization(std::size_t specialization);
+        std::string getSpecialization();
+        bool createInfantry(int health, int defence, int damage, std::string name);
+        bool createCavalry(int health, int defence, int damage, std::string name, int speed);
+        bool createArtillery(int health, int defence, int damage, std::string name, int range, int accuracy);
         ~MainManager();
 
         void run();

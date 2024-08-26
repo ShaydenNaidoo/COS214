@@ -35,10 +35,11 @@ int main(){
 
     }   
 
-/*                                    Main Manager Testing                                                                   */  
-    MainManager manager();
-    
+/*                                    Main Manager Testing                                                                   */      
     cout << "\n\033[7;37mMain Manager Testing\033[0m\n\n";
+    MainManager manager(0);
+
+    
 
     
 

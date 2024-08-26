@@ -1,14 +1,21 @@
 #ifndef TACTICALCOMMAND_H
 #define TACTICALCOMMAND_H
 
-// Include any necessary headers here
+#include <iostream>
 
-// Declare your class and its member functions
+#include "BattleStrategy.h"
+
+
 class TacticalCommand {
-public:
-    
-private:
+    private:
+        BattleStrategy *strategy;
+
+    public:
+        void setStrategy(BattleStrategy *s);
+        void executeStrategy();
+        void chooseBestStrategy();
+        
 
 };
 
-#endif // TACTICALCOMMAND_H
+#endif

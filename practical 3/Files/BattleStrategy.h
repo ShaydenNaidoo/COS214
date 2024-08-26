@@ -1,15 +1,12 @@
 #ifndef BATTLESTRATEGY_H
 #define BATTLESTRATEGY_H
 
+#include <iostream>
+
 class BattleStrategy {
-public:
-    // Constructor(s) and destructor
-
-    // Declare any member functions here
-
-private:
-    // Declare any member variables here
+    public:
+        virtual void engage() = 0;
 
 };
 
-#endif // BATTLESTRATEGY_H
+#endif

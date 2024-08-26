@@ -1,14 +1,49 @@
 //MAIN_MANAGER
 #include "MainManager.h"
 
-MainManager::MainManager(){
+MainManager::MainManager(std::size_t specialization){
     factory.push_back(new RiverbankFactory());
     factory.push_back(new WoodlandFactory());
     factory.push_back(new OpenFieldFactory());
+    
+    if(specialization < 0 || specialization >= 3) this->specialization = 0;
+    else this->specialization = specialization;
+
+    command = new TacticalCommand();
 
 }
 
-bool MainManager::createInfantry(int health, int defence, int damage, std::string name, std::size_t specialization){
+bool MainManager::setSpecialization(std::size_t specialization){
+    if(specialization < 0 || specialization >= 3) return false;
+
+    this->specialization = specialization;
+
+    return true;
+
+}
+
+std::string MainManager::getSpecialization(){
+    switch (specialization){
+        case 0:
+            return "Riverbank";
+            break;
+
+        case 1:
+            return "Woodland";
+            break;
+
+        case 2:
+            return "Open Field";
+            break;  
+    
+        default:
+            return "    ";
+
+    }
+
+}
+
+bool MainManager::createInfantry(int health, int defence, int damage, std::string name){
     if((health <= 0) || (defence < 0) || (damage < 0) || (name.length() <= 0) || (specialization < 0 || specialization >= 3)) return false;
 
     legion[specialization].push_back(factory[specialization]->createInfantry(health, defence, damage, name));
@@ -17,7 +52,7 @@ bool MainManager::createInfantry(int health, int defence, int damage, std::strin
 
 }
 
-bool MainManager::createCavalry(int health, int defence, int damage, std::string name, int speed, std::size_t specialization){
+bool MainManager::createCavalry(int health, int defence, int damage, std::string name, int speed){
     if((health <= 0) || (defence < 0) || (damage < 0) || (name.length() <= 0) || (speed <= 0) || (specialization < 0 || specialization >= 3)) return false;
 
     legion[specialization].push_back(factory[specialization]->createCavalry(health, defence, damage, name, speed));
@@ -26,7 +61,7 @@ bool MainManager::createCavalry(int health, int defence, int damage, std::string
 
 }
 
-bool MainManager::createArtillery(int health, int defence, int damage, std::string name, int range, int accuracy, std::size_t specialization){
+bool MainManager::createArtillery(int health, int defence, int damage, std::string name, int range, int accuracy){
     if((health <= 0) || (defence < 0) || (damage < 0) || (name.length() <= 0) || (range <= 0) || (accuracy <= 0) || (specialization < 0 || specialization >= 3)) return false;
 
     legion[specialization].push_back(factory[specialization]->createArtillery(health, defence, damage, name, range, accuracy));
@@ -61,5 +96,7 @@ MainManager::~MainManager(){
     }
 
     legion.clear();
+
+    delete command;
 
 }

@@ -1,4 +1,4 @@
-files = TestingMain.o LegionUnit.o Cavalry.o Infantry.o Artillery.o RiverbankInfantry.o RiverbankCavalry.o RiverbankArtillery.o WoodlandInfantry.o WoodlandCavalry.o WoodlandArtillery.o OpenFieldInfantry.o OpenFieldCavalry.o OpenFieldArtillery.o LegionFactory.o RiverbankFactory.o WoodlandFactory.o OpenFieldFactory.o MainManager.o
+files = TestingMain.o LegionUnit.o Cavalry.o Infantry.o Artillery.o RiverbankInfantry.o RiverbankCavalry.o RiverbankArtillery.o WoodlandInfantry.o WoodlandCavalry.o WoodlandArtillery.o OpenFieldInfantry.o OpenFieldCavalry.o OpenFieldArtillery.o LegionFactory.o RiverbankFactory.o WoodlandFactory.o OpenFieldFactory.o TacticalCommand.o BattleStrategy.o Ambush.o Fortification.o Flanking.o MainManager.o
 gpp = g++ -c
 
 TestingMain: $(files)
@@ -58,7 +58,22 @@ WoodlandFactory.o: WoodlandFactory.cpp WoodlandFactory.h WoodlandInfantry.h Wood
 OpenFieldFactory.o: OpenFieldFactory.cpp OpenFieldFactory.h OpenFieldInfantry.h OpenFieldCavalry.h OpenFieldArtillery.h
 	$(gpp) OpenFieldFactory.cpp
 
-MainManager.o: MainManager.cpp MainManager.h LegionFactory.h RiverbankFactory.h WoodlandFactory.h OpenFieldFactory.h LegionUnit.h Infantry.h Cavalry.h Artillery.h
+TacticalCommand.o: TacticalCommand.cpp TacticalCommand.h BattleStrategy.h
+	$(gpp) TacticalCommand.cpp
+
+BattleStrategy.o: BattleStrategy.cpp BattleStrategy.h
+	$(gpp) BattleStrategy.cpp
+
+Ambush.o: Ambush.cpp Ambush.h BattleStrategy.h
+	$(gpp) Ambush.cpp
+
+Fortification.o: Fortification.cpp Fortification.h BattleStrategy.h
+	$(gpp) Fortification.cpp
+
+Flanking.o: Flanking.cpp Flanking.h BattleStrategy.h
+	$(gpp) Flanking.cpp
+
+MainManager.o: MainManager.cpp MainManager.h LegionFactory.h RiverbankFactory.h WoodlandFactory.h OpenFieldFactory.h LegionUnit.h Infantry.h Cavalry.h Artillery.h TacticalCommand.h
 	$(gpp) MainManager.cpp
 
 run: TestingMain
