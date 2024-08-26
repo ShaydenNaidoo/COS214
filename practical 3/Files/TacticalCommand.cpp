@@ -1,8 +1,7 @@
 #include "TacticalCommand.h"
 
 void TacticalCommand::setStrategy(BattleStrategy *s){
-    if(s == nullptr) return;
-
+    delete this->strategy;
     this->strategy = s;
 
 }
@@ -11,5 +10,27 @@ void TacticalCommand::executeStrategy(){
     if(this->strategy == nullptr) return;
 
     this->strategy->engage();
+
+}
+
+void TacticalCommand::chooseBestStrategy(std::size_t specialization){
+    switch(specialization){
+        case 0:
+            this->setStrategy(new Flanking);
+            break;
+        
+        case 1:
+            this->setStrategy(new Ambush);
+            break;
+
+        case 2:
+            this->setStrategy(new Fortification);
+
+    }
+
+}
+
+BattleStrategy* TacticalCommand::getStrategy(){
+    return this->strategy;
 
 }

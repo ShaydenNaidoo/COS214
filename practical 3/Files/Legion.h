@@ -18,4 +18,4 @@ public:
     virtual void printUnitDetails() override;
 };
 
-#endif // LEGION_H
+#endif
