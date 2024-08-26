@@ -32,3 +32,12 @@ void OpenFieldArtillery::printUnitDetails(){
     << "\tCurrent Number of Soldiers: \033[1;37m" << this->getCurrNumSoldiers() << "\033[0m\n";
     
 }
+
+void OpenFieldArtillery::add(UnitComponent* component){
+    std::cout << "OpenFieldArtillery: Cannot add to a leaf" << std::endl;
+}
+
+void OpenFieldArtillery::remove(UnitComponent* component){
+    std::cout << "OpenFieldArtillery: Cannot remove from a leaf" << std::endl;
+}
+

@@ -29,3 +29,12 @@ void RiverbankArtillery::printUnitDetails(){
     << "\tCurrent Number of Soldiers: \033[1;37m" << this->getCurrNumSoldiers() << "\033[0m\n";
     
 }
+
+void RiverbankArtillery::add(UnitComponent* component){
+    std::cout << "RiverbankArtillery: Cannot add to a leaf" << std::endl;
+}
+
+void RiverbankArtillery::remove(UnitComponent* component){
+    std::cout << "RiverbankArtillery: Cannot remove from a leaf" << std::endl;
+}
+

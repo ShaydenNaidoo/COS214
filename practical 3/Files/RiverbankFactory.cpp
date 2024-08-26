@@ -15,3 +15,5 @@ Artillery* RiverbankFactory::createArtillery(int health, int defence, int damage
     return new RiverbankArtillery(health, damage, defence, name, range, accuracy);
 
 }
+
+

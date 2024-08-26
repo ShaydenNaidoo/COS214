@@ -1,4 +1,4 @@
-files = TestingMain.o LegionUnit.o Cavalry.o Infantry.o Artillery.o RiverbankInfantry.o RiverbankCavalry.o RiverbankArtillery.o WoodlandInfantry.o WoodlandCavalry.o WoodlandArtillery.o OpenFieldInfantry.o OpenFieldCavalry.o OpenFieldArtillery.o LegionFactory.o RiverbankFactory.o WoodlandFactory.o OpenFieldFactory.o TacticalCommand.o BattleStrategy.o Ambush.o Fortification.o Flanking.o MainManager.o
+files = TestingMain.o Legion.o LegionUnit.o Cavalry.o Infantry.o Artillery.o RiverbankInfantry.o RiverbankCavalry.o RiverbankArtillery.o WoodlandInfantry.o WoodlandCavalry.o WoodlandArtillery.o OpenFieldInfantry.o OpenFieldCavalry.o OpenFieldArtillery.o LegionFactory.o RiverbankFactory.o WoodlandFactory.o OpenFieldFactory.o MainManager.o
 gpp = g++ -c
 
 TestingMain: $(files)
@@ -9,6 +9,9 @@ TestingMain.o: TestingMain.cpp MainManager.o
 
 LegionUnit.o: LegionUnit.cpp LegionUnit.h
 	$(gpp) LegionUnit.cpp
+
+Legion.o : Legion.cpp Legion.h LegionUnit.h
+	$(gpp) Legion.cpp
 
 Infantry.o: Infantry.cpp Infantry.h LegionUnit.h
 	$(gpp) Infantry.cpp

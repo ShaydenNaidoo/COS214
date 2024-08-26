@@ -30,6 +30,9 @@ class LegionUnit:public UnitComponent {
 		virtual void attack() = 0;
 		virtual void printUnitDetails() = 0;
 		virtual void printDetails() = 0;
+		virtual void add(UnitComponent* component) = 0;
+		virtual void remove(UnitComponent* component) = 0;
+		
 	
 };
 

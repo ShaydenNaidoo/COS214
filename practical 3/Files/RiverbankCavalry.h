@@ -14,7 +14,8 @@ class RiverbankCavalry: public Cavalry {
         void attack();
         void printDetails();
         void printUnitDetails();
-
+        void add(UnitComponent* component);
+        void remove(UnitComponent* component);
 };
 
 #endif

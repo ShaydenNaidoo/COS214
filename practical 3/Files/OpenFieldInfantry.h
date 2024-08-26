@@ -10,11 +10,12 @@ class OpenFieldInfantry: public Infantry {
 
 	public:
 		OpenFieldInfantry( int health, int damage, int defence, std::string name);
-		void move();
-		void attack();
-		void printDetails();
-		void printUnitDetails();
-
+		void move() override;
+		void attack() override;
+		void printDetails() override;
+		void printUnitDetails() override;
+		void add(UnitComponent* component) override;
+		void remove(UnitComponent* component) override;
 };
 
 #endif
