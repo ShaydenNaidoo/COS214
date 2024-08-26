@@ -9,7 +9,7 @@ void Legion::move() {
     }
 }
 
-void Legion::fight() {
+void Legion::attack() {
     for (UnitComponent* component : components) {
         component->fight();
     }
