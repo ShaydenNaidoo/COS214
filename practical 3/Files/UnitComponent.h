@@ -5,12 +5,12 @@
 
 class UnitComponent {
 public:
-    // Declare public member functions here
-
+        virtual void move() = 0;
+    virtual void fight() = 0;
+    virtual void add(UnitComponent* component) = 0;
+    virtual void remove(UnitComponent* component) = 0;
+    virtual ~UnitComponent() {}
 private:
-    // Declare private member variables here
-
-    // Declare private member functions here
 };
 
 #endif // UNITCOMPONENT_H

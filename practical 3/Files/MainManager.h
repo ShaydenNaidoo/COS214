@@ -27,6 +27,7 @@ class MainManager {
         bool createInfantry(int health, int defence, int damage, std::string name, std::size_t specialization);
         bool createCavalry(int health, int defence, int damage, std::string name, int speed, std::size_t specialization);
         bool createArtillery(int health, int defence, int damage, std::string name, int range, int accuracy, std::size_t specialization);
+       bool CreateLegion(std::size_t specialization);
         ~MainManager();
 
         void run();

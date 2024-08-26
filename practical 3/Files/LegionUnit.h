@@ -3,8 +3,8 @@
 #define LEGIONUNIT_H
 
 #include <iostream>
-
-class LegionUnit {
+#include "UnitComponent.h"
+class LegionUnit:public UnitComponent {
 	private:
         std::string name;
 		char type;
