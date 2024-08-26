@@ -31,3 +31,12 @@ void OpenFieldCavalry::printUnitDetails(){
     << "\tCurrent Number of Soldiers: \033[1;37m" << this->getCurrNumSoldiers() << "\033[0m\n";
     
 }
+
+void OpenFieldCavalry::add(UnitComponent* component){
+    std::cout << "OpenFieldCavalry: Cannot add to a leaf" << std::endl;
+}
+
+
+void OpenFieldCavalry::remove(UnitComponent* component){
+    std::cout << "OpenFieldCavalry: Cannot remove from a leaf" << std::endl;
+}

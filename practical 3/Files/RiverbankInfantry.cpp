@@ -34,3 +34,11 @@ void RiverbankInfantry::printUnitDetails(){
     
 }
 
+void RiverbankInfantry::add(UnitComponent* component){
+    std::cout << "RiverbankInfantry: Cannot add to a leaf" << std::endl;
+}
+
+void RiverbankInfantry::remove(UnitComponent* component){
+    std::cout << "RiverbankInfantry: Cannot remove from a leaf" << std::endl;
+}
+

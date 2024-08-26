@@ -4,14 +4,18 @@
 #include "UnitComponent.h"
 
 class Legion : public UnitComponent {
-public:
-    void move() override;
-    void attack() override;
-    void add(UnitComponent* component) override;
-    void remove(UnitComponent* component) override;
-    ~Legion() override;
 private:
     std::vector<UnitComponent*> components;
+
+public:
+    Legion() = default;  // Default constructor
+    virtual ~Legion();   // Virtual destructor
+
+    virtual void move() override;
+    virtual void attack() override;
+    virtual void add(UnitComponent* component) override;
+    virtual void remove(UnitComponent* component) override;
+    virtual void printUnitDetails() override;
 };
 
 #endif // LEGION_H

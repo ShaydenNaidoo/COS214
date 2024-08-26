@@ -14,7 +14,8 @@ class WoodlandArtillery: public Artillery {
         void attack();
         void printDetails();
         void printUnitDetails();
-        
+        void add(UnitComponent* component);
+        void remove(UnitComponent* component);
 };
 
 #endif

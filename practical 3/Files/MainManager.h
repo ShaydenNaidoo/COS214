@@ -15,19 +15,26 @@
 #include "Infantry.h"
 #include "Cavalry.h"
 #include "Artillery.h"
-
+#include "Legion.h"
 
 class MainManager {
     private:
         std::vector<LegionFactory*> factory;
-        std::map<std::size_t, std::vector<LegionUnit*>> legion;
+        // std::map<std::size_t, std::vector<LegionUnit*>> legion;
+    Legion* riverbankLegion; 
+    Legion* woodlandLegion;
+    Legion* openFieldLegion;
 
     public:
         MainManager();
-        bool createInfantry(int health, int defence, int damage, std::string name, std::size_t specialization);
-        bool createCavalry(int health, int defence, int damage, std::string name, int speed, std::size_t specialization);
-        bool createArtillery(int health, int defence, int damage, std::string name, int range, int accuracy, std::size_t specialization);
-       bool CreateLegion(std::size_t specialization);
+        bool createInfantry(int health, int defence, int damage, std::string name, int specialization);
+        bool createCavalry(int health, int defence, int damage, std::string name, int speed, int specialization);
+        bool createArtillery(int health, int defence, int damage, std::string name, int range, int accuracy, int specialization);
+        void LegionInfo();
+        void LegionAttack();
+        void LegionMove();
+        
+       //bool CreateLegion(std::size_t specialization);
         ~MainManager();
 
         void run();

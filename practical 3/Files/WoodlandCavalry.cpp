@@ -29,3 +29,11 @@ void WoodlandCavalry::printUnitDetails(){
     << "\tCurrent Number of Soldiers: \033[1;37m" << this->getCurrNumSoldiers() << "\033[0m\n";
     
 }
+
+void WoodlandCavalry::add(UnitComponent* component){
+    std::cout << "WoodlandCavalry: Cannot add to a leaf" << std::endl;
+}
+
+void WoodlandCavalry::remove(UnitComponent* component){
+    std::cout << "WoodlandCavalry: Cannot remove from a leaf" << std::endl;
+}
