@@ -2,12 +2,12 @@
 #include "MainManager.h"
 #include "Legion.h"
 MainManager::MainManager(){
-    factory.push_back(new RiverbankFactory());
-    factory.push_back(new WoodlandFactory());
-    factory.push_back(new OpenFieldFactory());
-  riverbankLegion = new Legion();
-    woodlandLegion = new Legion();
-    openFieldLegion = new Legion();
+factory.push_back(new RiverbankFactory());
+factory.push_back(new WoodlandFactory());
+factory.push_back(new OpenFieldFactory());
+riverbankLegion = new Legion();
+woodlandLegion = new Legion();
+openFieldLegion = new Legion();
 }
 
 bool MainManager::createInfantry(int health, int defence, int damage, std::string name, int specialization){
