@@ -1,14 +1,25 @@
 #ifndef TACTICALCOMMAND_H
 #define TACTICALCOMMAND_H
 
-// Include any necessary headers here
+#include <iostream>
 
-// Declare your class and its member functions
+#include "BattleStrategy.h"
+#include "Ambush.h"
+#include "Flanking.h"
+#include "Fortification.h"
+
+
 class TacticalCommand {
-public:
-    
-private:
+    private:
+        BattleStrategy *strategy = new Fortification;
+
+    public:
+        void setStrategy(BattleStrategy *s);
+        void executeStrategy();
+        void chooseBestStrategy(std::size_t specialization);
+        BattleStrategy* getStrategy();
+        
 
 };
 
-#endif // TACTICALCOMMAND_H
+#endif

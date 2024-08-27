@@ -5,6 +5,10 @@
 #include "OpenFieldFactory.h"
 #include "LegionUnit.h"
 #include "MainManager.h"
+#include "TacticalCommand.h"
+#include "Ambush.h"
+#include "Flanking.h"
+#include "Fortification.h"
 
 using namespace std;
 
@@ -35,32 +39,86 @@ int main(){
 
 //     }   
 
-// /*                                    Main Manager Testing                                                                   */  
-//     MainManager manager();
+/*                                    Main Manager Testing                                                                   */      
+    MainManager manager(0);
+
+    manager.createInfantry(100,50,25,"[R][I]");
+    manager.createInfantry(100,50,25,"[R][I]");
+    manager.createInfantry(100,50,25,"[R][I]");
+    manager.createInfantry(100,50,25,"[R][I]");
+    manager.createCavalry(100,50,25,"[R][C]", 1);
+    manager.createCavalry(100,50,25,"[R][C]", 1);
+    manager.createCavalry(100,50,25,"[R][C]", 1);
+    manager.createCavalry(100,50,25,"[R][C]", 1);
+    manager.createArtillery(100,50,25,"[R][C]", 25, 1);
+    manager.createArtillery(100,50,25,"[R][C]", 25, 1);
+    manager.createArtillery(100,50,25,"[R][C]", 25, 1);
+    manager.createArtillery(100,50,25,"[R][C]", 25, 1);
+
+    manager.setSpecialization(1);
+
+    manager.createInfantry(100,50,25,"[W][I]");
+    manager.createInfantry(100,50,25,"[W][I]");
+    manager.createInfantry(100,50,25,"[W][I]");
+    manager.createInfantry(100,50,25,"[W][I]");
+    manager.createCavalry(100,50,25,"[W][C]", 1);
+    manager.createCavalry(100,50,25,"[W][C]", 1);
+    manager.createCavalry(100,50,25,"[W][C]", 1);
+    manager.createCavalry(100,50,25,"[W][C]", 1);
+    manager.createArtillery(100,50,25,"[W][C]", 25, 1);
+    manager.createArtillery(100,50,25,"[W][C]", 25, 1);
+    manager.createArtillery(100,50,25,"[W][C]", 25, 1);
+    manager.createArtillery(100,50,25,"[W][C]", 25, 1);
+
+    manager.setSpecialization(2);
+
+    manager.createInfantry(100,50,25,"[O][I]");
+    manager.createInfantry(100,50,25,"[O][I]");
+    manager.createInfantry(100,50,25,"[O][I]");
+    manager.createInfantry(100,50,25,"[O][I]");
+    manager.createCavalry(100,50,25,"[O][C]", 1);
+    manager.createCavalry(100,50,25,"[O][C]", 1);
+    manager.createCavalry(100,50,25,"[O][C]", 1);
+    manager.createCavalry(100,50,25,"[O][C]", 1);
+    manager.createArtillery(100,50,25,"[O][C]", 25, 1);
+    manager.createArtillery(100,50,25,"[O][C]", 25, 1);
+    manager.createArtillery(100,50,25,"[O][C]", 25, 1);
+    manager.createArtillery(100,50,25,"[O][C]", 25, 1);
+       
+    cout << "\n\033[7;37mMain Manager Testing\033[0m\n\n";
+    manager.LegionInfo();
+
+    manager.LegionsMove();
+    manager.LegionsAttack();
+    manager.LegionMove();
+    manager.LegionAttack();
     
-//     cout << "\n\033[7;37mMain Manager Testing\033[0m\n\n";
+    manager.executeStrategy();
+    std::cout << "\t |END|\n\n";
 
-    
+    manager.setStrategy(0);
+    manager.executeStrategy();
+    std::cout << "\t |END|\n\n";
+
+    manager.setStrategy(1);
+    manager.executeStrategy();
+    std::cout << "\t |END|\n\n";
+
+    manager.setStrategy(2);
+    manager.executeStrategy();
+    std::cout << "\t |END|\n\n";
+
+/*                                    Tactical Command Testing                                                                   */   
+    cout << "\n\033[7;37mTactical Command Testing:\033[0m\n\n";
+    TacticalCommand p;
+
+    p.setStrategy(new Ambush);
+    p.executeStrategy();
 
 
-// /*                                    Memory Management                                                                   */   
+/*                                    Memory Management                                                                   */   
 //     for(int x = 0; x < 9; x++) delete units[x];
 //     delete [] units;
 
-  MainManager manager;
-
-    // Create Units
-    manager.createInfantry(100,50,25,"[R][I]",0);
-    manager.createCavalry(120, 60, 40, "[W][C]", 10,1);
-    manager.createArtillery(150, 70, 50, "[OF][A]", 2,10,2);
-
-    // Display Legion Info
-    manager.LegionInfo();
-
-    // Simulate Attacks
-    manager.LegionAttack();
-
-    // Simulate Movements
-    manager.LegionMove();
     return 0;
 }

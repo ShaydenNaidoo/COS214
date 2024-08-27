@@ -29,6 +29,8 @@ void Legion::remove(UnitComponent* component) {
 void Legion::printUnitDetails() {
     for (UnitComponent* component : components) {
         component->printUnitDetails();
+        std::cout << std::endl;
+
     }
 }
 

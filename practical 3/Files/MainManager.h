@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include <vector>
-#include <map>
 
 #include "LegionFactory.h"
 #include "RiverbankFactory.h"
@@ -17,27 +16,41 @@
 #include "Artillery.h"
 #include "Legion.h"
 
+#include "TacticalCommand.h"
+#include "BattleStrategy.h"
+#include "Ambush.h"
+#include "Flanking.h"
+#include "Fortification.h"
+
+
 class MainManager {
     private:
         std::vector<LegionFactory*> factory;
-        // std::map<std::size_t, std::vector<LegionUnit*>> legion;
-    Legion* riverbankLegion; 
-    Legion* woodlandLegion;
-    Legion* openFieldLegion;
+        TacticalCommand *command;
+        Legion* riverbankLegion; 
+        Legion* woodlandLegion;
+        Legion* openFieldLegion;
+        std::size_t specialization;
+
 
     public:
-        MainManager();
-        bool createInfantry(int health, int defence, int damage, std::string name, int specialization);
-        bool createCavalry(int health, int defence, int damage, std::string name, int speed, int specialization);
-        bool createArtillery(int health, int defence, int damage, std::string name, int range, int accuracy, int specialization);
+        MainManager(std::size_t specialization);
+        bool setSpecialization(std::size_t specialization);
+        std::string getSpecialization();
+        bool createInfantry(int health, int defence, int damage, std::string name);
+        bool createCavalry(int health, int defence, int damage, std::string name, int speed);
+        bool createArtillery(int health, int defence, int damage, std::string name, int range, int accuracy);
         void LegionInfo();
         void LegionAttack();
         void LegionMove();
-        
-       //bool CreateLegion(std::size_t specialization);
+        void LegionsAttack();
+        void LegionsMove();
+        void setStrategy(int num);
+        void chooseBestStrategy();
+        void executeStrategy();
+
         ~MainManager();
 
-        void run();
 };
 
 #endif
