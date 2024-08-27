@@ -8,19 +8,15 @@
 //     << "Infantry units have begun their attack\n"
 //     << "Cavalry Units have begun their attack\n";
     
-<<<<<<< HEAD
-}
+
+void Flanking::engage(LegionFactory* factory,   Legion* legion){
+    UnitComponent* cavalry  = factory->createCavalry(100, 50, 50, "Flanking Cavalry", 50);
+    legion->add(cavalry);
+    std::cout << "A new team of Cavalry units has been dispatched to flank the enemy.\n";
+} 
 
 bool Flanking::operator==(char x){
     if(x == 'f') return true;
     else return false;
     
 }
-=======
-// }
-void Flanking::engage(LegionFactory* factory,   Legion* legion){
-    UnitComponent* cavalry  = factory->createCavalry(100, 50, 50, "Flanking Cavalry", 50);
-    legion->add(cavalry);
-    std::cout << "A new team of Cavalry units has been dispatched to flank the enemy.\n";
-} 
->>>>>>> 9fd9439f8f097de2f12a0686354935c85d32c825
