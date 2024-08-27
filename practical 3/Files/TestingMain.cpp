@@ -109,11 +109,11 @@ int main(){
     std::cout << "\t |END|\n\n";
 
 /*                                    Tactical Command Testing                                                                   */   
-    cout << "\n\033[7;37mTactical Command Testing:\033[0m\n\n";
-    TacticalCommand p;
+    // cout << "\n\033[7;37mTactical Command Testing:\033[0m\n\n";
+    // TacticalCommand p;
 
-    p.setStrategy(new Ambush);
-    p.executeStrategy();
+    // p.setStrategy(new Ambush);
+    // p.executeStrategy();
 
 
 /*                                    Memory Management                                                                   */   

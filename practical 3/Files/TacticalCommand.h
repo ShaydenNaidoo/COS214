@@ -7,15 +7,15 @@
 #include "Ambush.h"
 #include "Flanking.h"
 #include "Fortification.h"
-
-
+#include "LegionFactory.h"
+#include "Legion.h"
 class TacticalCommand {
     private:
         BattleStrategy *strategy = new Fortification;
 
     public:
         void setStrategy(BattleStrategy *s);
-        void executeStrategy();
+        void executeStrategy(LegionFactory* factory, Legion* legion);
         void chooseBestStrategy(std::size_t specialization);
         BattleStrategy* getStrategy();
         

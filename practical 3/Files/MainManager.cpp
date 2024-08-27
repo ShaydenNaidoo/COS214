@@ -220,7 +220,24 @@ void MainManager::chooseBestStrategy(){
 }
 
 void MainManager::executeStrategy(){
-    this->command->executeStrategy();
+    switch (specialization)
+    {
+    case 0:
+        this->command->executeStrategy(this->factory[this->specialization], this->riverbankLegion);
+        break;
+    
+    case 1:
+        this->command->executeStrategy(this->factory[this->specialization], this->woodlandLegion);
+        break;
+
+    case 2:
+        this->command->executeStrategy(this->factory[this->specialization], this->openFieldLegion);
+        break;
+        
+    default:
+        break;
+    }
+    
 
 }
 

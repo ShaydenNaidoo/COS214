@@ -6,13 +6,6 @@ void TacticalCommand::setStrategy(BattleStrategy *s){
 
 }
 
-void TacticalCommand::executeStrategy(){
-    if(this->strategy == nullptr) return;
-
-    this->strategy->engage();
-
-}
-
 void TacticalCommand::chooseBestStrategy(std::size_t specialization){
     switch(specialization){
         case 0:
@@ -33,4 +26,8 @@ void TacticalCommand::chooseBestStrategy(std::size_t specialization){
 BattleStrategy* TacticalCommand::getStrategy(){
     return this->strategy;
 
+}
+void TacticalCommand::executeStrategy(LegionFactory* factory,Legion* legion ){
+    if(this->strategy == nullptr) return;
+    this->strategy->engage(factory,legion);
 }
