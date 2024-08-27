@@ -35,6 +35,7 @@ void Legion::printUnitDetails() {
 }
 
 
+
 Legion::~Legion() {
     for (UnitComponent* component : components) {
         delete component;

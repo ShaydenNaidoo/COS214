@@ -7,3 +7,9 @@ void Ambush::engage(){
     << "Infantry units have begun their attack\n";
 
 }
+
+bool Ambush::operator==(char x){
+    if(x == 'A') return true;
+    else return false;
+    
+}

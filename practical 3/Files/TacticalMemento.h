@@ -1,12 +1,16 @@
 #ifndef TACTICALMEMENTO_H
 #define TACTICALMEMENTO_H
 
-// Include any necessary headers here
-#include <iostream> 
+#include "BattleStrategy.h"
 
-// Define your class here
 class TacticalMemento {
+    private:
+        BattleStrategy *strategy;
+
+    public:
+        void storeStrategy(BattleStrategy *strategy);
+        BattleStrategy* getStrategy();
    
 };
 
-#endif // TACTICALMEMENTO_H
+#endif

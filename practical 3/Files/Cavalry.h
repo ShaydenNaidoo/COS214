@@ -16,7 +16,24 @@ class Cavalry: public LegionUnit {
         virtual void attack() = 0;
         virtual void printUnitDetails() = 0;
 		virtual void printDetails() = 0;
+        
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #endif
