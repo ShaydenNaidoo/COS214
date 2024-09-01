@@ -10,7 +10,7 @@ MainManager::MainManager(std::size_t specialization){
     else this->specialization = specialization;
 
     command = new TacticalCommand();
-    command->chooseBestStrategy(this->specialization);
+    // command->chooseBestStrategy(this->specialization);
 
     riverbankLegion = new Legion();
     woodlandLegion = new Legion();
@@ -24,6 +24,16 @@ bool MainManager::setSpecialization(std::size_t specialization){
     this->command->chooseBestStrategy(this->specialization);
 
     return true;
+
+}
+
+void MainManager::setMemento(std::string label){
+    this->command->setMemento(label);
+
+}
+
+void MainManager::getMemento(std::string label){
+    this->command->getMemento(label);
 
 }
 

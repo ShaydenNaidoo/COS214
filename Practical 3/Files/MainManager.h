@@ -46,6 +46,8 @@ class MainManager {
         void LegionsAttack();
         void LegionsMove();
         void setStrategy(int num);
+        void setMemento(std::string label);
+        void getMemento(std::string label);
         void chooseBestStrategy();
         void executeStrategy();
 

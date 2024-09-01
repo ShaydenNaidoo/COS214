@@ -93,7 +93,7 @@ int main(){
     manager.LegionMove();
     manager.LegionAttack();
     
-    // manager.executeStrategy();
+    manager.executeStrategy();
     // std::cout << "\t |END|\n\n";
 
     manager.setStrategy(0);
@@ -108,17 +108,18 @@ int main(){
     manager.executeStrategy();
     std::cout << "\t |END|\n\n";
 
-/*                                    Tactical Command Testing                                                                   */   
-    // cout << "\n\033[7;37mTactical Command Testing:\033[0m\n\n";
-    // TacticalCommand p;
+    // manager.setMemento("MemTest");
+    // manager.getMemento("MemTest");
+    // manager.chooseBestStrategy();
+    // manager.executeStrategy();
+    
 
-    // p.setStrategy(new Ambush);
-    // p.executeStrategy();
+
 
 
 /*                                    Memory Management                                                                   */   
-//     for(int x = 0; x < 9; x++) delete units[x];
-//     delete [] units;
+    // for(int x = 0; x < 9; x++) delete units[x];
+    // delete [] units;
 
     return 0;
 }

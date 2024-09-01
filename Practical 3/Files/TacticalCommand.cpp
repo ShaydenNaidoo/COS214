@@ -32,8 +32,7 @@ void TacticalCommand::setMemento(std::string label){
 
 void TacticalCommand::getMemento(std::string label){
     this->planner->restoreMemento(this->archive->removeTacticalMemento(label));
-    delete this->strategy;
-    this->strategy = this->planner->getStrategy();
+    this->setStrategy(this->planner->getStrategy());
 
 }
 
@@ -45,6 +44,7 @@ void TacticalCommand::executeStrategy(LegionFactory* factory,Legion* legion ){
 TacticalCommand::~TacticalCommand(){
     delete strategy;
     delete planner;
+    delete archive;
 
 }
 

@@ -29,12 +29,13 @@ std::string WarArchives::bestStrategy(std::size_t specialization){
                 if(x->second->getStrategy()->operator==('F')) return x->first;
                 break;
 
-            default:
-                return "";
-
         }
     
     }
+
+    return "";
+
+
 
 }
 
