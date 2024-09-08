@@ -13,7 +13,7 @@ dfTravel(FarmUnitComposite* root);
     FarmUnitComposite* firstFarm();
     FarmUnitComposite* nextFarm();
     bool isDone();
-    //FarmUnitComposite* currentFarm();
+    FarmUnitComposite* currentFarm();
 private:
     // Member variables
     std::stack<FarmUnitComposite*> farmUnits;

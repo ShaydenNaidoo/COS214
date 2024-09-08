@@ -54,7 +54,6 @@ bool dfTravel::isDone(){
     return farmUnits.empty();
 }
 
-// Optional currentFarm() function
-// FarmUnitComposite* dfTravel::currentFarm() {
-//     return current;
-// }
+FarmUnitComposite* dfTravel::currentFarm() {
+    return current;
+}
