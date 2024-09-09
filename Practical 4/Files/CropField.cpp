@@ -3,7 +3,4 @@
 #include <string>
 using namespace std;
 
-CropField::CropField() {
-    cropType = "";
-    totalCapacity = 0;
-}
+
