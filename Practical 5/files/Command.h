@@ -7,7 +7,7 @@
 
 
 class Command {
-virtual void execute()=0;
+virtual void performAction()=0;
 
 };
 

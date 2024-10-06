@@ -12,7 +12,8 @@ private:
     Light *light;
 public:
     ToggleLightOn(Light *light);
-    void execute() override;
+    void performAction() override;
+
 };
 
 

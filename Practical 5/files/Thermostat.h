@@ -14,12 +14,11 @@ private:
     bool isOn;
 public:
     Thermostat();
-    void Heat();
-    void Cool();
     void turnOn();
     void turnOff();
     std::string getStatus() override;
     std::string getDeviceType() override;
+    int getTemperature();
 };
 
 

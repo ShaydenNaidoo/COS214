@@ -7,5 +7,13 @@
 Light::Light() {
     this->isOn = false;
 }
+void Light::turnOn() {
+    this->isOn = true;
+    this->status = "On";
+}
 
+void Light::turnOff() {
+    this->isOn = false;
+    this->status = "Off";
+}
 

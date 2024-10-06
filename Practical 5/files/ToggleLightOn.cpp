@@ -3,3 +3,13 @@
 //
 
 #include "ToggleLightOn.h"
+
+ToggleLightOn::ToggleLightOn(Light *light) {
+    this->light = light;
+}
+
+void ToggleLightOn::performAction() {
+    light->turnOn();
+    std::cout << "Light is now " << light->getStatus() << std::endl;
+}
+

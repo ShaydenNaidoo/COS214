@@ -7,7 +7,7 @@ class ToggleThermostatOn: public Command{
     Thermostat *thermostat;
 public:
     ToggleThermostatOn(Thermostat *thermostat);
-    void execute();
+    void performAction() override;
 };
 
 #endif // TOGGLETHERMOSTATON_H
