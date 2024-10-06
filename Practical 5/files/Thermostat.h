@@ -16,6 +16,7 @@ public:
     void turnOff();
     std::string getStatus() override;
     std::string getDeviceType() override;
+    void setTemperature(int temp);
     int getTemperature();
 };
 

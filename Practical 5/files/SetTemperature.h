@@ -1,14 +1,19 @@
 #ifndef SETTEMPERATURE_H
 #define SETTEMPERATURE_H
 
+#include "Command.h"
+#include "SmartDevice.h"
 #include "Thermostat.h"
-#include "LegacyThermostat.h"
+#include "SmartThermostatAdapter.h"
+class SetTemperature : public Command {
+    private:
+    SmartDevice* device;
+    int temperature;
 
-class SetTemperature : public Thermostat, private LegacyThermostat {
 public:
-    SetTemperature(*);
-    virtual ~SetTemperature();
-    //void setTemp(double temperature) override;
+  SetTemperature(SmartDevice* device, int temp);
+
+    void performAction() override ;
 };
 
 #endif // SETTEMPERATURE_H

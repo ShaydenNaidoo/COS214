@@ -6,8 +6,21 @@
 #define UNTITLED1_SMARTTHERMOSTATADAPTER_H
 
 #include "SmartDevice.h"
-class SmartThermostatAdapter: public SmartDevice {
+#include "LegacyThermostat.h"
 
+class SmartThermostatAdapter: public SmartDevice {
+private:
+    LegacyThermostat* legacyThermostat;
+
+public:
+    SmartThermostatAdapter(LegacyThermostat* legacyThermostat);
+    void setTemperature(int temp);
+
+    int getTemperature();
+
+    std::string getStatus() override ;
+
+    std::string getDeviceType()override;
 };
 
 
