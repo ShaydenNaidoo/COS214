@@ -9,11 +9,18 @@ Light::Light() {
 }
 void Light::turnOn() {
     this->isOn = true;
-    this->status = "On";
 }
 
 void Light::turnOff() {
     this->isOn = false;
-    this->status = "Off";
 }
 
+std::string Light::getStatus() {
+    return isOn ? "On" : "Off";
+}
+
+
+
+std::string Light::getDeviceType() {
+    return "Light";
+}

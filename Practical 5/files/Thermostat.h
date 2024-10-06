@@ -8,9 +8,7 @@
 #include "SmartDevice.h"
 class Thermostat: public SmartDevice {
 private:
-    bool temp;
     int currtemp;
-    std::string status;
     bool isOn;
 public:
     Thermostat();

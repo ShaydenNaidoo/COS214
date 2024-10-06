@@ -9,11 +9,9 @@
 class DoorLock: public SmartDevice {
 private:
     bool isLocked;
-    std::string status;
 public:
     DoorLock();
     std::string getStatus() override;
-    void performAction() override;
     void Lock();
     void Unlock();
     std::string getDeviceType() override;

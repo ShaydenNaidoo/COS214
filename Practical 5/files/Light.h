@@ -10,11 +10,9 @@
 class Light: public SmartDevice {
 private:
     bool isOn;
-    std::string status;
 public:
     Light();
     std::string getStatus() override;
-    void performAction() override;
     void turnOn();
     void turnOff();
     std::string getDeviceType() override;

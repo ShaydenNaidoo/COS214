@@ -7,7 +7,19 @@
 
 #include "LegacyDevice.h"
 class LegacyThermostat: public LegacyDevice {
+private:
+    int temperature;
+    bool isOn;
+    
+public:
+    LegacyThermostat();
+    void on() override;
+    void off() override;
 
+    void increaseTemperature();
+    void decreaseTemperature();
+
+    int getCurrentTemp() ;
 };
 
 

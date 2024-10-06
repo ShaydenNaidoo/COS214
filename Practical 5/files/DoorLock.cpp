@@ -6,27 +6,18 @@
 
 DoorLock::DoorLock() {
     isLocked = true;
-    status = "Locked";
 }
 
 std::string DoorLock::getStatus() {
-    return status;
+    return isLocked ? "Locked" : "Unlocked";
 }
 
-void DoorLock::performAction() {
-    if (isLocked) {
-        Unlock();
-    } else {
-        Lock();
-    }
-}
 
 void DoorLock::Lock() {
     isLocked = true;
-    status = "Locked";
+
 }
 
 void DoorLock::Unlock() {
     isLocked = false;
-    status = "Unlocked";
 }
