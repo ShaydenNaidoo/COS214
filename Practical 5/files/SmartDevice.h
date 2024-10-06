@@ -9,6 +9,10 @@ protected:
     std::string deviceType;
     std::string state;
 public:
+    SmartDevice(std::string deviceType) : deviceType(deviceType) {
+        state = "off";
+    }
+    
     virtual std::string getStatus() = 0;
     virtual void performAction() = 0;
 

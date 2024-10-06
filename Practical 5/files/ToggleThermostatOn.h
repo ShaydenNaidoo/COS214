@@ -1,12 +1,13 @@
 #ifndef TOGGLETHERMOSTATON_H
 #define TOGGLETHERMOSTATON_H
 #include "Thermostat.h"
+#include "SmartDevice.h"
 #include "Command.h"
 class ToggleThermostatOn: public Command{
     private:
-    Thermostat *thermostat;
+      SmartDevice *device;
 public:
-    ToggleThermostatOn(Thermostat *thermostat);
+    ToggleThermostatOn(SmartDevice* device);
     void performAction() override;
 };
 

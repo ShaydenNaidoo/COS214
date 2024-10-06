@@ -3,12 +3,14 @@
 
 #include "Thermostat.h"
 #include "Command.h"
+#include "SmartDevice.h"
+
 class ToggleThermostatOff: public Command{
     private:
-    Thermostat *thermostat;
+    SmartDevice *device;
 public:
-    ToggleThermostatOff(Thermostat *thermostat);
-    void execute();
+    ToggleThermostatOff(SmartDevice* device);
+    void performAction() override;
 };
 
 #endif // TOGGLETHERMOSTATOFF_H
