@@ -2,5 +2,6 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         "iostream": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/shayden/COS214/Practical 5/files/googletest/googletest"
 }

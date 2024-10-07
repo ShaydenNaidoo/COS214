@@ -3,7 +3,10 @@
 //
 
 #include "SmartThermostatAdapter.h"
-    SmartThermostatAdapter::SmartThermostatAdapter(LegacyThermostat* legacyThermostat) : legacyThermostat(legacyThermostat) {}
+    
+        SmartThermostatAdapter::SmartThermostatAdapter(LegacyThermostat* legacyThermostat):SmartDevice("AdaptedThermostat") {
+            this->legacyThermostat = legacyThermostat;
+        }
 
   void SmartThermostatAdapter::setTemperature(int temp) {
         int currentTemp = legacyThermostat->getCurrentTemp();
@@ -14,6 +17,8 @@
                 legacyThermostat->decreaseTemperature();
             }
             currentTemp = legacyThermostat->getCurrentTemp();
+        std::cout << "Smart Thermostat Adapter is now " << getStatus() << std::endl;
+        std::cout << "Temperature is now " << getTemperature() << std::endl;
         }
     }
 

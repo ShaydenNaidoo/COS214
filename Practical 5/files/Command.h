@@ -7,6 +7,7 @@
 
 
 class Command {
+public:
 virtual void performAction()=0;
 
 };

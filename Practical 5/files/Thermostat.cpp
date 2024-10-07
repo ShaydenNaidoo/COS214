@@ -3,8 +3,9 @@
 //
 
 #include "Thermostat.h"
+#include <iostream>
 
-Thermostat::Thermostat() {
+Thermostat::Thermostat():SmartDevice("Thermostat") {
     isOn = false;
     currtemp = 0;
 }
@@ -33,4 +34,8 @@ std::string Thermostat::getDeviceType() {
 
 int Thermostat::getTemperature() {
     return currtemp;
+}
+
+void Thermostat::setTemperature(int temperature) {
+    currtemp = temperature;
 }

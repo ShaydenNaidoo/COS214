@@ -3,8 +3,8 @@
 //
 
 #include "Light.h"
-
-Light::Light() {
+#include "SmartDevice.h"
+Light::Light():SmartDevice("Light") {
     this->isOn = false;
 }
 void Light::turnOn() {

@@ -4,7 +4,7 @@
 
 #include "DoorLock.h"
 
-DoorLock::DoorLock() {
+DoorLock::DoorLock():SmartDevice("DoorLock") {
     isLocked = true;
 }
 
@@ -12,6 +12,9 @@ std::string DoorLock::getStatus() {
     return isLocked ? "Locked" : "Unlocked";
 }
 
+std::string DoorLock::getDeviceType() {
+    return "DoorLock";
+}
 
 void DoorLock::Lock() {
     isLocked = true;

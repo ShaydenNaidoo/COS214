@@ -17,6 +17,7 @@ public:
     void setTemperature(int temp);
 
     int getTemperature();
+   
 
     std::string getStatus() override ;
 
