@@ -16,7 +16,7 @@ void Light::turnOff() {
 }
 
 std::string Light::getStatus() {
-    return isOn ? "On" : "Off";
+    return isOn ? "ON" : "OFF";
 }
 
 

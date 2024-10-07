@@ -22,9 +22,9 @@ void Thermostat::turnOff() {
 
 std::string Thermostat::getStatus() {
     if (isOn) {
-        return "On";
+        return "ON";
     } else {
-        return "Off";
+        return "OFF";
     }
 }
 

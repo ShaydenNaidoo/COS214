@@ -16,10 +16,10 @@ public:
     void on() override;
     void off() override;
 
-    void increaseTemperature();
-    void decreaseTemperature();
-    bool currentStatus();
-    int getCurrentTemp() ;
+    virtual void increaseTemperature();
+    virtual void  decreaseTemperature();
+    virtual bool currentStatus();
+    virtual int getCurrentTemp() ;
 };
 
 

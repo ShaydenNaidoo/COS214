@@ -8,6 +8,8 @@
 
 class Command {
 public:
+virtual void addProcedure(Command* command)=0;
+virtual void removeProcedure(Command* command)=0;
 virtual void performAction()=0;
 
 };
