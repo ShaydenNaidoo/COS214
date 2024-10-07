@@ -19,24 +19,25 @@ void LegacyThermostat::off() {
 }
 
 void LegacyThermostat::increaseTemperature() {
-    if (isOn&&temperature<30) {
+    if (isOn) {
         temperature++;
         std::cout << "Temperature is now " << temperature << std::endl;
-    }else{
-        std::cout << "Temperature is at maximum" << std::endl;
     }
 }
 
 void LegacyThermostat::decreaseTemperature() {
-    if (isOn && temperature > 0) {
+    if (isOn) {
         temperature--;
         std::cout << "Temperature is now " << temperature << std::endl;
-    }else {
-        std::cout << "Temperature is at minimum" << std::endl;
     }
+}
+
+bool LegacyThermostat::currentStatus() {
+    return isOn;
 }
 
 int LegacyThermostat::getCurrentTemp() {
     return temperature;
 }
+
 

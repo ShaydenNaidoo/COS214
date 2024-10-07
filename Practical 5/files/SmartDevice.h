@@ -7,14 +7,10 @@
 class SmartDevice {
 protected:
     std::string deviceType;
-    std::string state;
 public:
-    SmartDevice(std::string deviceType) : deviceType(deviceType) {
-        state = "off";
-    }
+    SmartDevice(std::string deviceType) : deviceType(deviceType) {}
     virtual std::string getStatus() = 0;
     virtual std::string getDeviceType() = 0;
-    //virtual ~SmartDevice() = default;
 };
 
 

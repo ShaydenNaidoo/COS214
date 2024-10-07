@@ -17,10 +17,9 @@ public:
     void setTemperature(int temp);
 
     int getTemperature();
-   
-
-    std::string getStatus() override ;
-
+    void turnOn();
+    void turnOff();
+    std::string getStatus() override;
     std::string getDeviceType()override;
 };
 

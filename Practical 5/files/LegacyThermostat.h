@@ -18,7 +18,7 @@ public:
 
     void increaseTemperature();
     void decreaseTemperature();
-
+    bool currentStatus();
     int getCurrentTemp() ;
 };
 

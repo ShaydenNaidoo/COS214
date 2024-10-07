@@ -11,7 +11,7 @@ class ToggleLightOn: public Command{
 private:
     Light *light;
 public:
-    ToggleLightOn(Light *light);
+    ToggleLightOn(Light* light);
     void performAction() override;
 
 };
