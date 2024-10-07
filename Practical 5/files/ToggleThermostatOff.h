@@ -11,6 +11,9 @@ class ToggleThermostatOff: public Command{
 public:
     ToggleThermostatOff(SmartDevice* device);
     void performAction() override;
+    void addProcedure(Command* command) override;
+    void removeProcedure(Command* command) override;
+    
 };
 
 #endif // TOGGLETHERMOSTATOFF_H

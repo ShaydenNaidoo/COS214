@@ -11,6 +11,9 @@ public:
     UnlockDoor(DoorLock *doorLock);
     virtual ~UnlockDoor();
     void performAction() override;
+    void addProcedure(Command* command) override;
+    void removeProcedure(Command* command) override;
+    
 };
 
 #endif // UNLOCKDOOR_H

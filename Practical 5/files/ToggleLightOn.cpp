@@ -13,3 +13,10 @@ void ToggleLightOn::performAction() {
     std::cout << "Light is now " << light->getStatus() << std::endl;
 }
 
+void ToggleLightOn::addProcedure(Command *command) {
+}
+
+void ToggleLightOn::removeProcedure(Command *command) {
+}
+
+

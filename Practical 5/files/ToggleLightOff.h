@@ -14,6 +14,8 @@ private:
 public:
     ToggleLightOff(Light *light);
     void performAction() override;
+    void addProcedure(Command* command) override;
+    void removeProcedure(Command* command) override;
 };
 
 

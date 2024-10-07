@@ -49,11 +49,11 @@ TEST(SmartDeviceTests, LightCommands) {
     Command* toggleLightOn = new ToggleLightOn(light);
     Command* toggleLightOff = new ToggleLightOff(light);
 
-    // Test turning on the light
+  
     toggleLightOn->performAction();
        EXPECT_EQ(light->getStatus(), "ON");
 
-    // Test turning off the light
+ 
     toggleLightOff->performAction();
      EXPECT_EQ(light->getStatus(), "OFF");
 

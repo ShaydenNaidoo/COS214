@@ -25,3 +25,13 @@ void ToggleThermostatOn::performAction() {
         }
     
 }
+
+void ToggleThermostatOn::addProcedure(Command* command) {
+    // Do nothing
+}
+
+void ToggleThermostatOn::removeProcedure(Command* command) {
+    // Do nothing
+}
+
+

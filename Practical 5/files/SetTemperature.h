@@ -14,6 +14,8 @@ public:
   SetTemperature(SmartDevice* device, int temp);
 
     void performAction() override ;
+    void addProcedure(Command* command) override;
+    void removeProcedure(Command* command) override;
 };
 
 #endif // SETTEMPERATURE_H

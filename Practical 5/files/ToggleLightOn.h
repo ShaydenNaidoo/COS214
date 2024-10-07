@@ -13,7 +13,8 @@ private:
 public:
     ToggleLightOn(Light* light);
     void performAction() override;
-
+    void addProcedure(Command* command) override;
+    void removeProcedure(Command* command) override;
 };
 
 

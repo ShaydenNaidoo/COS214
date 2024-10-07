@@ -12,3 +12,10 @@ void ToggleLightOff::performAction() {
     light->turnOff();
     std::cout << "Light is now " << light->getStatus() << std::endl;
 }
+
+void ToggleLightOff::addProcedure(Command *command) {
+}
+
+void ToggleLightOff::removeProcedure(Command *command) {
+}
+

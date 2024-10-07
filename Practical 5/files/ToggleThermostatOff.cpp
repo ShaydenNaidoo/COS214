@@ -22,3 +22,13 @@
             std::cout << "Error: Device type not recognized for thermostat action." << std::endl;
         }
     }
+
+    void ToggleThermostatOff::addProcedure(Command* command) {
+        // Do nothing
+    }
+
+    void ToggleThermostatOff::removeProcedure(Command* command) {
+        // Do nothing
+    }
+
+    
