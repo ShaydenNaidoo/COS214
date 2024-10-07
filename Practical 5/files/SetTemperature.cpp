@@ -11,10 +11,12 @@ void SetTemperature::performAction() {
     } else {
         SmartThermostatAdapter* adapter = dynamic_cast<SmartThermostatAdapter*>(device);
         if (adapter != nullptr) {
+            std::cout << "Setting temperature to " << temperature << "°C" << " via adapter." << std::endl;
             adapter->setTemperature(temperature);
         }
     }
 }
+
 void SetTemperature::addProcedure(Command* command) {
     // Do nothing
 }

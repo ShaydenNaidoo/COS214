@@ -13,3 +13,9 @@ void UnlockDoor::performAction() {
     doorLock->Unlock();
     std::cout << "Door is now " << doorLock->getStatus() << std::endl;
 }
+
+void UnlockDoor::addProcedure(Command* command) {
+}
+
+void UnlockDoor::removeProcedure(Command* command) {
+}

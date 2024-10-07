@@ -15,7 +15,7 @@
         }
         // Try to cast to a SmartThermostatIntegrator (Legacy Thermostat)
         else if (auto legacyThermostat = dynamic_cast<SmartThermostatAdapter*>(device)) {
-            legacyThermostat->setTemperature(10);  // For legacy, simulate turning off by lowering the temperature
+            legacyThermostat->setTemperature(20);  
             std::cout << "Legacy Thermostat has been turned off. Current temperature is: " << legacyThermostat->getTemperature() << std::endl;
         }
         else {

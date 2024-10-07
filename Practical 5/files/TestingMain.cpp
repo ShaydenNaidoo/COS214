@@ -16,6 +16,10 @@
 #include "LegacyThermostat.h"
 #include "UnlockDoor.h"
 #include "SmartThermostatAdapter.h"
+#include "MacroRoutine.h"
+#include "TurnOffAllLights.h"
+#include "LockAllDoors.h"
+
 int main() {
     // Task 1: Testing Command Pattern
 
@@ -44,7 +48,7 @@ int main() {
     Command* lockDoor = new LockDoor(doorLock);
     Command* unlockDoor = new UnlockDoor(doorLock);
 
-    std::cout << "\n=== Testing Smart Door Lock (Task 1) ===" << std::endl;
+    std::cout << "\n=== Testing Smart Door Lock (Component 1) ===" << std::endl;
     lockDoor->performAction();   // Lock the door
     unlockDoor->performAction(); // Unlock the door
 
@@ -57,12 +61,52 @@ int main() {
     Command* toggleSmartThermostatOff = new ToggleThermostatOff(smartThermostatAdapter);
     Command* setSmartThermostatTemp = new SetTemperature(smartThermostatAdapter, 22);
 
-    std::cout << "\n=== Testing Legacy Thermostat through Adapter (Task 2) ===" << std::endl;
+    std::cout << "\n=== Testing Legacy Thermostat through Adapter (Component 2) ===" << std::endl;
     toggleSmartThermostatOn->performAction();   // Turn on the legacy thermostat through the adapter
     setSmartThermostatTemp->performAction();    // Set temperature to 22 through the adapter
     toggleSmartThermostatOff->performAction();  // Turn off the legacy thermostat through the adapter
 
+std::cout << "\n=== TestingMacroRoutines the Composite Command (Component 3) ===" << std::endl;
+    // Set up devices
+    Light* light1 = new Light();
+    Light* light2 = new Light();
+    std::vector<Light*> lights = { light1, light2 };
+
+    DoorLock* door1 = new DoorLock();
+    DoorLock* door2 = new DoorLock();
+    std::vector<DoorLock*> doors = { door1, door2 };
+
+    // Create commands for automation
+    TurnOffAllLights* turnOffAllLights = new TurnOffAllLights();
+    for (auto light : lights) {
+        Command* turnOffCommand = new ToggleLightOff(light);
+        turnOffAllLights->addProcedure(turnOffCommand);
+    }
+
+    LockAllDoors* lockAllDoors = new LockAllDoors();
+    for (auto door : doors) {
+        Command* lockCommand = new LockDoor(door);
+        lockAllDoors->addProcedure(lockCommand);
+    }
+
+    // Create macro routine
+    MacroRoutine* goodNightRoutine = new MacroRoutine();
+    goodNightRoutine->addProcedure(turnOffAllLights);
+    goodNightRoutine->addProcedure(lockAllDoors);
+
+    std::cout << "\n=== Testing Automation Routine (Goodnight) ===" << std::endl;
+    goodNightRoutine->performAction(); // Execute the macro routine
+
     // Clean up
+    delete light1;
+    delete light2;
+    delete door1;
+    delete door2;
+    delete turnOffAllLights;
+    delete lockAllDoors;
+    delete goodNightRoutine;
+
+
     delete thermostat;
     delete toggleThermostatOn;
     delete toggleThermostatOff;

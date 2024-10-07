@@ -17,7 +17,7 @@ void Thermostat::turnOn() {
 
 void Thermostat::turnOff() {
     isOn = false;
-    currtemp = 0;
+    currtemp = 25;
 }
 
 std::string Thermostat::getStatus() {
