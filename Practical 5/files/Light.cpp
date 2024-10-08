@@ -24,3 +24,8 @@ std::string Light::getStatus() {
 std::string Light::getDeviceType() {
     return "Light";
 }
+
+void Light::update() {
+    turnOff();
+}
+

@@ -1,8 +1,8 @@
 # Object files for the main application
-files = TestingMain.o Command.o DoorLock.o LegacyDevice.o LegacyThermostat.o Light.o LockDoor.o SetTemperature.o SmartDevice.o SmartThermostatAdapter.o Thermostat.o ToggleLightOff.o ToggleLightOn.o ToggleThermostatOff.o ToggleThermostatOn.o UnlockDoor.o
+files = TestingMain.o Command.o DoorLock.o LegacyDevice.o LegacyThermostat.o Light.o LockDoor.o SetTemperature.o SmartDevice.o SmartThermostatAdapter.o Thermostat.o ToggleLightOff.o ToggleLightOn.o ToggleThermostatOff.o ToggleThermostatOn.o UnlockDoor.o TurnOffAllLights.o LockAllDoors.o MacroRoutine.o Alarm.o Sensor.o
 
 # Object files for the unit tests
-test_files = UnitTests.o Command.o DoorLock.o LegacyDevice.o LegacyThermostat.o Light.o LockDoor.o SetTemperature.o SmartDevice.o SmartThermostatAdapter.o Thermostat.o ToggleLightOff.o ToggleLightOn.o ToggleThermostatOff.o ToggleThermostatOn.o UnlockDoor.o
+test_files = UnitTests.o Command.o DoorLock.o LegacyDevice.o LegacyThermostat.o Light.o LockDoor.o SetTemperature.o SmartDevice.o SmartThermostatAdapter.o Thermostat.o ToggleLightOff.o ToggleLightOn.o ToggleThermostatOff.o ToggleThermostatOn.o UnlockDoor.o TurnOffAllLights.o LockAllDoors.o MacroRoutine.o Alarm.o Sensor.o
 
 # Compiler and flags
 gpp = g++ -g -c
@@ -66,6 +66,22 @@ ToggleThermostatOn.o: ToggleThermostatOn.cpp
 
 UnlockDoor.o: UnlockDoor.cpp
 	$(gpp) UnlockDoor.cpp
+
+
+TurnOffAllLights.o: TurnOffAllLights.cpp
+	$(gpp) TurnOffAllLights.cpp
+
+LockAllDoors.o: LockAllDoors.cpp
+	$(gpp) LockAllDoors.cpp
+
+MacroRoutine.o: MacroRoutine.cpp
+	$(gpp) MacroRoutine.cpp
+
+Sensor.o: Sensor.cpp
+	$(gpp) Sensor.cpp
+
+Alarm.o: Alarm.cpp
+	$(gpp) Alarm.cpp
 
 # Other common targets
 run: Main

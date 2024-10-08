@@ -16,6 +16,7 @@ public:
     void turnOn();
     void turnOff();
     std::string getDeviceType() override;
+    void update() override;
 };
 
 

@@ -11,6 +11,7 @@ public:
     SmartDevice(std::string deviceType) : deviceType(deviceType) {}
     virtual std::string getStatus() = 0;
     virtual std::string getDeviceType() = 0;
+    virtual void update() = 0;
 };
 
 

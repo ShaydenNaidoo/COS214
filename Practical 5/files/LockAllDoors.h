@@ -8,13 +8,15 @@
 
 class LockAllDoors : public MacroRoutine {
 private:
-    std::vector<Command*> doorLockCommands; // Store lock door commands
+    std::vector<Command*> lockCommands; // Store lock door commands
 
 public:
-    LockAllDoors();
+  LockAllDoors(); // Constructor
     void addProcedure(Command* command) override;
+    
     void removeProcedure(Command* command) override;
     void performAction() override;
+
 };
 
 #endif // LOCKALLDOORS_H

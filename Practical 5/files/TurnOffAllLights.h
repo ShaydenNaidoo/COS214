@@ -12,8 +12,7 @@ private:
 
 public:
     // Constructor
-    TurnOffAllLights();
-
+    TurnOffAllLights(); 
     // Add a turn off light command
     void addProcedure(Command* command) override;
 

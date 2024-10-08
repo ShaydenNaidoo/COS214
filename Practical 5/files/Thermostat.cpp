@@ -39,3 +39,6 @@ int Thermostat::getTemperature() {
 void Thermostat::setTemperature(int temperature) {
     currtemp = temperature;
 }
+
+void Thermostat::update() {
+}

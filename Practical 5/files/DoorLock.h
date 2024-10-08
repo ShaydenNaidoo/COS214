@@ -16,6 +16,7 @@ public:
     void Unlock();
     
     std::string getDeviceType() override;
+    void update() override;
 };
 
 

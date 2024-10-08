@@ -17,6 +17,7 @@ private:
     std::vector<Command*> procedures;
 
 public:
+    MacroRoutine();
     virtual void addProcedure(Command* command);
     virtual void removeProcedure(Command* command);
     virtual void performAction() override;

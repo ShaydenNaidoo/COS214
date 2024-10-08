@@ -5,8 +5,8 @@
 // Constructor
 TurnOffAllLights::TurnOffAllLights() {
     // Empty constructor as lightOffCommands will be managed dynamically
+    
 }
-
 // Add a turn off light command
 void TurnOffAllLights::addProcedure(Command* command) {
     lightOffCommands.push_back(command);
@@ -29,3 +29,4 @@ void TurnOffAllLights::performAction() {
         command->performAction();
     }
 }
+

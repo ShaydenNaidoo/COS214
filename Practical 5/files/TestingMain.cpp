@@ -19,20 +19,20 @@
 #include "MacroRoutine.h"
 #include "TurnOffAllLights.h"
 #include "LockAllDoors.h"
+#include "Sensor.h"
+#include "Alarm.h"
 
 int main() {
-    // Task 1: Testing Command Pattern
 
-    // Thermostat (Smart Device)
     SmartDevice* thermostat = new Thermostat();
     Command* toggleThermostatOn = new ToggleThermostatOn(thermostat);
     Command* toggleThermostatOff = new ToggleThermostatOff(thermostat);
     Command* setTemperature = new SetTemperature(thermostat, 25);
 
     std::cout << "=== Testing Smart Thermostat (Task 1) ===" << std::endl;
-    toggleThermostatOn->performAction();  // Turn on the thermostat
-    setTemperature->performAction();      // Set temperature to 25
-    toggleThermostatOff->performAction(); // Turn off the thermostat
+    toggleThermostatOn->performAction();  
+    setTemperature->performAction();     
+    toggleThermostatOff->performAction(); 
 
     // Light (Smart Device)
     Light* light = new Light();
@@ -40,8 +40,8 @@ int main() {
     Command* toggleLightOff = new ToggleLightOff(light);
 
     std::cout << "\n=== Testing Smart Light (Task 1) ===" << std::endl;
-    toggleLightOn->performAction();  // Turn on the light
-    toggleLightOff->performAction(); // Turn off the light
+    toggleLightOn->performAction(); 
+    toggleLightOff->performAction(); 
 
     // Door Lock (Smart Device)
     DoorLock* doorLock = new DoorLock();
@@ -49,11 +49,10 @@ int main() {
     Command* unlockDoor = new UnlockDoor(doorLock);
 
     std::cout << "\n=== Testing Smart Door Lock (Component 1) ===" << std::endl;
-    lockDoor->performAction();   // Lock the door
-    unlockDoor->performAction(); // Unlock the door
+    lockDoor->performAction();   
+    unlockDoor->performAction(); 
 
-    // Task 2: Testing Adapter Pattern
-    // Using the adapter to control the legacy thermostat through smart commands
+
     LegacyThermostat* legacyThermostat = new LegacyThermostat();
     SmartDevice* smartThermostatAdapter = new SmartThermostatAdapter(legacyThermostat);
 
@@ -62,12 +61,11 @@ int main() {
     Command* setSmartThermostatTemp = new SetTemperature(smartThermostatAdapter, 22);
 
     std::cout << "\n=== Testing Legacy Thermostat through Adapter (Component 2) ===" << std::endl;
-    toggleSmartThermostatOn->performAction();   // Turn on the legacy thermostat through the adapter
-    setSmartThermostatTemp->performAction();    // Set temperature to 22 through the adapter
-    toggleSmartThermostatOff->performAction();  // Turn off the legacy thermostat through the adapter
+    toggleSmartThermostatOn->performAction();   
+    setSmartThermostatTemp->performAction();    
+    toggleSmartThermostatOff->performAction();  
 
 std::cout << "\n=== TestingMacroRoutines the Composite Command (Component 3) ===" << std::endl;
-    // Set up devices
     Light* light1 = new Light();
     Light* light2 = new Light();
     std::vector<Light*> lights = { light1, light2 };
@@ -76,7 +74,6 @@ std::cout << "\n=== TestingMacroRoutines the Composite Command (Component 3) ===
     DoorLock* door2 = new DoorLock();
     std::vector<DoorLock*> doors = { door1, door2 };
 
-    // Create commands for automation
     TurnOffAllLights* turnOffAllLights = new TurnOffAllLights();
     for (auto light : lights) {
         Command* turnOffCommand = new ToggleLightOff(light);
@@ -89,15 +86,32 @@ std::cout << "\n=== TestingMacroRoutines the Composite Command (Component 3) ===
         lockAllDoors->addProcedure(lockCommand);
     }
 
-    // Create macro routine
+
     MacroRoutine* goodNightRoutine = new MacroRoutine();
     goodNightRoutine->addProcedure(turnOffAllLights);
     goodNightRoutine->addProcedure(lockAllDoors);
 
     std::cout << "\n=== Testing Automation Routine (Goodnight) ===" << std::endl;
-    goodNightRoutine->performAction(); // Execute the macro routine
+    goodNightRoutine->performAction(); 
 
-    // Clean up
+   
+    std::cout << "\n===  Sensor Observations and Notifications (Component 4) ===" << std::endl;
+
+    Alarm* alarm = new Alarm();
+    alarm->addDevice(light1);
+    alarm->addDevice(door1);
+
+    alarm->triggerAlarm(); 
+    std::cout<<"Light 1 is now "<<light1->getStatus()<<std::endl;
+    std::cout<<"Door 1 is now "<<door1->getStatus()<<std::endl;
+  
+
+
+
+
+
+
+    delete alarm;
     delete light1;
     delete light2;
     delete door1;

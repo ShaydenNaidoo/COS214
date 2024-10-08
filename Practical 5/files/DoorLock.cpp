@@ -24,3 +24,7 @@ void DoorLock::Lock() {
 void DoorLock::Unlock() {
     isLocked = false;
 }
+
+void DoorLock::update() {
+    Lock();
+}

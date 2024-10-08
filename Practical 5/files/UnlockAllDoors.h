@@ -13,7 +13,7 @@ private:
 public:
     // Constructor
     UnlockAllDoors();
-
+    ~UnlockAllDoors();
     // Add an unlock door command
     void addProcedure(Command* command) override;
 
