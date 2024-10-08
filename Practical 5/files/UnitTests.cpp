@@ -11,13 +11,15 @@
 #include "LockDoor.h"
 #include "UnlockDoor.h"
 #include "Command.h"
-#include "TurnOffAllLights.h" // Include TurnOffAllLights
-#include "LockAllDoors.h"     // Include LockAllDoors
-#include "MacroRoutine.h"      // Include MacroRoutine
+#include "TurnOffAllLights.h" 
+#include "LockAllDoors.h"     
+#include "MacroRoutine.h"     
 #include "Command.h"
 #include "Thermostat.h"
 #include "SmartThermostatAdapter.h"
 #include "ToggleThermostatOn.h"
+#include "Sensor.h"
+#include "Alarm.h"
 
 // Test for Legacy Thermostat through Adapter
 class LegacyThermostatTests : public ::testing::Test {
@@ -110,7 +112,7 @@ private:
     bool executed; 
 };
 
-// Test for Thermostat On/Off and Set Temperature
+
 TEST(SmartDeviceTests, ThermostatCommands) {
     SmartDevice* thermostat = new Thermostat();
 
@@ -120,16 +122,16 @@ TEST(SmartDeviceTests, ThermostatCommands) {
 
     // Test turning on the thermostat
     toggleThermostatOn->performAction();
-    EXPECT_EQ(thermostat->getStatus(), "ON");   // Check if the thermostat status is "ON"
+    EXPECT_EQ(thermostat->getStatus(), "ON"); 
     
-    // Test setting the temperature to 25
+
     setTemperature->performAction();
     Thermostat* concreteThermostat = dynamic_cast<Thermostat*>(thermostat);
     EXPECT_EQ(concreteThermostat->getTemperature(), 25);
 
-    // Test turning off the thermostat
+ 
     toggleThermostatOff->performAction();
-    EXPECT_EQ(thermostat->getStatus(), "OFF");  // Check if the thermostat status is "OFF"
+    EXPECT_EQ(thermostat->getStatus(), "OFF");  
 
     delete thermostat;
     delete toggleThermostatOn;
@@ -137,7 +139,7 @@ TEST(SmartDeviceTests, ThermostatCommands) {
     delete setTemperature;
 }
 
-// Test for Light On/Off Commands
+
 TEST(SmartDeviceTests, LightCommands) {
     Light* light = new Light();
 
@@ -155,17 +157,17 @@ TEST(SmartDeviceTests, LightCommands) {
     delete toggleLightOff;
 }
 
-// Test for DoorLock Lock/Unlock Commands
+
 TEST(SmartDeviceTests, DoorLockCommands) {
     DoorLock* doorLock = new DoorLock();
     Command* lockDoor = new LockDoor(doorLock);
     Command* unlockDoor = new UnlockDoor(doorLock);
 
-    // Test locking the door
+
     lockDoor->performAction();
     EXPECT_EQ(doorLock->getStatus(), "Locked");
 
-    // Test unlocking the door
+  
     unlockDoor->performAction();
     EXPECT_EQ(doorLock->getStatus(), "Unlocked");
 
@@ -174,18 +176,18 @@ TEST(SmartDeviceTests, DoorLockCommands) {
     delete unlockDoor;
 }
 TEST_F(LegacyThermostatTests, TestLegacyThermostatAdapter) {
-    // Capture the standard output
+  
     testing::internal::CaptureStdout();
 
-    // Perform actions through the adapter
-    toggleSmartThermostatOn->performAction();   // Turn on the legacy thermostat through the adapter
-    setSmartThermostatTemp->performAction();    // Set temperature to 22 through the adapter
-    toggleSmartThermostatOff->performAction();  // Turn off the legacy thermostat through the adapter
+ 
+    toggleSmartThermostatOn->performAction();   
+    setSmartThermostatTemp->performAction();   
+    toggleSmartThermostatOff->performAction();  
 
-    // Get the captured output
+
     std::string output = testing::internal::GetCapturedStdout();
 
-    // Define the expected output
+ 
   std::string expectedOutput = 
         "Thermostat is off. Turning it on first.\n"
         "Temperature has decreased to 24°C\n"
@@ -205,24 +207,24 @@ TEST_F(LegacyThermostatTests, TestLegacyThermostatAdapter) {
         "Temperature set to 20°C via adapter.\n"
         "Legacy Thermostat has been turned off. Current temperature is: 20\n";
         
-    // Compare the actual output with the expected output
+
     EXPECT_EQ(output, expectedOutput);
 }
-// Test for MacroRoutine "Goodnight" routine
+
 TEST(LockAllDoorsTests, AddProcedure) {
     LockAllDoors lockAllDoors;
     MockCommand* command1 = new MockCommand();
 
-    // Add a command
+ 
     lockAllDoors.addProcedure(command1);
     
-    // Execute commands
+
     lockAllDoors.performAction();
 
-    // Check if the command was executed
+ 
     EXPECT_TRUE(command1->isExecuted());
 
-    delete command1; // Clean up
+    delete command1; 
 }
 
 TEST(LockAllDoorsTests, RemoveProcedure) {
@@ -230,22 +232,22 @@ TEST(LockAllDoorsTests, RemoveProcedure) {
     MockCommand* command1 = new MockCommand();
     MockCommand* command2 = new MockCommand();
 
-    // Add commands
+
     lockAllDoors.addProcedure(command1);
     lockAllDoors.addProcedure(command2);
     
-    // Remove command1
+ 
     lockAllDoors.removeProcedure(command1);
     
-    // Execute remaining commands
+ 
     lockAllDoors.performAction();
 
-    // Check that command1 was not executed
-    EXPECT_FALSE(command1->isExecuted());
-    EXPECT_TRUE(command2->isExecuted()); // Ensure command2 was executed
 
-    delete command1; // Clean up
-    delete command2; // Clean up
+    EXPECT_FALSE(command1->isExecuted());
+    EXPECT_TRUE(command2->isExecuted()); 
+
+    delete command1; 
+    delete command2;
 }
 
 TEST(LockAllDoorsTests, RemoveNonExistentProcedure) {
@@ -253,35 +255,35 @@ TEST(LockAllDoorsTests, RemoveNonExistentProcedure) {
     MockCommand* command1 = new MockCommand();
     MockCommand* command2 = new MockCommand();
 
-    // Add a command
+
     lockAllDoors.addProcedure(command1);
 
-    // Try to remove a command that doesn't exist
-    lockAllDoors.removeProcedure(command2); // This should log an error
 
-    // Execute remaining commands
+    lockAllDoors.removeProcedure(command2); 
+
+
     lockAllDoors.performAction();
 
-    // Ensure command1 was executed
+
     EXPECT_TRUE(command1->isExecuted());
 
-    delete command1; // Clean up
-    delete command2; // Clean up
+    delete command1; 
+    delete command2; 
 }
 TEST(TurnOffAllLightsTests, AddProcedure) {
     TurnOffAllLights turnOffAllLights;
     MockCommand* command1 = new MockCommand();
 
-    // Add a command
+ 
     turnOffAllLights.addProcedure(command1);
     
-    // Execute commands
+  
     turnOffAllLights.performAction();
 
-    // Check if the command was executed
+   
     EXPECT_TRUE(command1->isExecuted());
 
-    delete command1; // Clean up
+    delete command1;
 }
 
 TEST(TurnOffAllLightsTests, RemoveProcedure) {
@@ -289,22 +291,22 @@ TEST(TurnOffAllLightsTests, RemoveProcedure) {
     MockCommand* command1 = new MockCommand();
     MockCommand* command2 = new MockCommand();
 
-    // Add commands
+  
     turnOffAllLights.addProcedure(command1);
     turnOffAllLights.addProcedure(command2);
     
-    // Remove command1
+   
     turnOffAllLights.removeProcedure(command1);
     
-    // Execute remaining commands
+   
     turnOffAllLights.performAction();
 
-    // Check that command1 was not executed
+  
     EXPECT_FALSE(command1->isExecuted());
-    EXPECT_TRUE(command2->isExecuted()); // Ensure command2 was executed
+    EXPECT_TRUE(command2->isExecuted()); 
 
-    delete command1; // Clean up
-    delete command2; // Clean up
+    delete command1;
+    delete command2; 
 }
 
 TEST(TurnOffAllLightsTests, RemoveNonExistentProcedure) {
@@ -312,20 +314,18 @@ TEST(TurnOffAllLightsTests, RemoveNonExistentProcedure) {
     MockCommand* command1 = new MockCommand();
     MockCommand* command2 = new MockCommand();
 
-    // Add a command
+    
     turnOffAllLights.addProcedure(command1);
 
-    // Try to remove a command that doesn't exist
-    turnOffAllLights.removeProcedure(command2); // This should log an error
+   
+    turnOffAllLights.removeProcedure(command2); 
 
-    // Execute remaining commands
     turnOffAllLights.performAction();
-
-    // Ensure command1 was executed
+    
     EXPECT_TRUE(command1->isExecuted());
 
-    delete command1; // Clean up
-    delete command2; // Clean up
+    delete command1; 
+    delete command2; 
 }
 
 
@@ -352,7 +352,56 @@ TEST_F(GoodNightRoutineTests, ExecuteGoodNightRoutine) {
     // Compare the actual output with the expected output
     EXPECT_EQ(output, expectedOutput);
 }
+TEST(SmartDeviceTests, AlarmNotification) {
+    // Set up devices
+    Light* light1 = new Light();
+    Light* light2 = new Light();
+    DoorLock* door1 = new DoorLock();
+    DoorLock* door2 = new DoorLock();
 
+    // Create commands to control the lights and doors
+    Command* turnOffLight1 = new ToggleLightOff(light1);
+    Command* turnOffLight2 = new ToggleLightOff(light2);
+    TurnOffAllLights* turnOffAllLights = new TurnOffAllLights();
+    turnOffAllLights->addProcedure(turnOffLight1);
+    turnOffAllLights->addProcedure(turnOffLight2);
+
+    Command* lockDoor1 = new LockDoor(door1);
+    Command* lockDoor2 = new LockDoor(door2);
+    LockAllDoors* lockAllDoors = new LockAllDoors();
+    lockAllDoors->addProcedure(lockDoor1);
+    lockAllDoors->addProcedure(lockDoor2);
+
+    // Create the Alarm system and add the macro commands
+    Alarm* alarm = new Alarm();
+    alarm->addDevice(door1); 
+     alarm->addDevice(door2);  // Turn off all lights when the alarm triggers
+    alarm->addDevice(light1);      // Lock all doors when the alarm triggers
+ alarm->addDevice(light2);   
+    // Trigger the alarm
+    alarm->triggerAlarm();  // This should turn off all lights and lock all doors
+
+    // Check if the lights were turned off
+    EXPECT_EQ(light1->getStatus(), "OFF");
+    EXPECT_EQ(light2->getStatus(), "OFF");
+
+    // Check if the doors were locked
+    EXPECT_EQ(door1->getStatus(), "Locked");
+    EXPECT_EQ(door2->getStatus(), "Locked");
+
+    // Clean up
+    delete light1;
+    delete light2;
+    delete door1;
+    delete door2;
+    delete turnOffLight1;
+    delete turnOffLight2;
+    delete lockDoor1;
+    delete lockDoor2;
+    delete turnOffAllLights;
+    delete lockAllDoors;
+    delete alarm;
+}
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
