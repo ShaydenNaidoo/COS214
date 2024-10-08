@@ -11,15 +11,9 @@ private:
     std::vector<Command*> lightOffCommands;
 
 public:
-    // Constructor
     TurnOffAllLights(); 
-    // Add a turn off light command
     void addProcedure(Command* command) override;
-
-    // Remove a turn off light command
     void removeProcedure(Command* command) override;
-
-    // Execute all turn off light commands
     void performAction() override;
 };
 

@@ -14,9 +14,9 @@ void ToggleThermostatOn::performAction() {
             std::cout << "Thermostat is now " << thermostat->getStatus() << std::endl;
             std::cout << "Temperature is now " << thermostat->getTemperature() << "°C" << std::endl;
         }
-        // Try to cast to a SmartThermostatIntegrator (Legacy Thermostat)
+
         else if (auto legacyThermostat = dynamic_cast<SmartThermostatAdapter*>(device)) {
-            legacyThermostat->setTemperature(20);  // For legacy, set a temperature (e.g., turn on with a default temp)
+            legacyThermostat->setTemperature(20);  
             std::cout << "Legacy Thermostat is now " << legacyThermostat->getStatus() << std::endl;
             std::cout << "Temperature is now " << legacyThermostat->getTemperature() << "°C" << std::endl;
         }

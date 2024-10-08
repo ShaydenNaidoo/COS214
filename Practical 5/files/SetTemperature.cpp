@@ -18,8 +18,8 @@ void SetTemperature::performAction() {
 }
 
 void SetTemperature::addProcedure(Command* command) {
-    // Do nothing
+
 }
 void SetTemperature::removeProcedure(Command* command) {
-    // Do nothing
+
 }
