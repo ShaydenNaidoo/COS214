@@ -2,8 +2,8 @@
 // Created by shnai on 2024/10/05.
 //
 
-#ifndef UNTITLED1_DOORLOCK_H
-#define UNTITLED1_DOORLOCK_H
+#ifndef DOORLOCK_H
+#define DOORLOCK_H
 
 #include "SmartDevice.h"
 class DoorLock: public SmartDevice {
@@ -20,4 +20,4 @@ public:
 };
 
 
-#endif //UNTITLED1_DOORLOCK_H
+#endif //DOORLOCK_H

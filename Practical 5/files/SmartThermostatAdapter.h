@@ -2,8 +2,8 @@
 // Created by shnai on 2024/10/05.
 //
 
-#ifndef UNTITLED1_SMARTTHERMOSTATADAPTER_H
-#define UNTITLED1_SMARTTHERMOSTATADAPTER_H
+#ifndef SMARTTHERMOSTATADAPTER_H
+#define SMARTTHERMOSTATADAPTER_H
 
 #include "SmartDevice.h"
 #include "LegacyThermostat.h"
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //UNTITLED1_SMARTTHERMOSTATADAPTER_H
+#endif //SMARTTHERMOSTATADAPTER_H

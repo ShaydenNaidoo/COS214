@@ -1,6 +1,6 @@
 
-#ifndef UNTITLED1_SMARTDEVICE_H
-#define UNTITLED1_SMARTDEVICE_H
+#ifndef SMARTDEVICE_H
+#define SMARTDEVICE_H
 
 #include <string>
 #include <iostream>
@@ -15,4 +15,4 @@ public:
 };
 
 
-#endif //UNTITLED1_SMARTDEVICE_H
+#endif //SMARTDEVICE_H

@@ -2,8 +2,8 @@
 // Created by shnai on 2024/10/06.
 //
 
-#ifndef UNTITLED1_TOGGLELIGHTON_H
-#define UNTITLED1_TOGGLELIGHTON_H
+#ifndef TOGGLELIGHTON_H
+#define TOGGLELIGHTON_H
 
 #include "Command.h"
 #include "Light.h"
@@ -18,4 +18,4 @@ public:
 };
 
 
-#endif //UNTITLED1_TOGGLELIGHTON_H
+#endif //TOGGLELIGHTON_H

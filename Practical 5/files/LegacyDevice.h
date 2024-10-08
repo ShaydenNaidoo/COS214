@@ -2,8 +2,8 @@
 // Created by shnai on 2024/10/05.
 //
 
-#ifndef UNTITLED1_LEGACYDEVICE_H
-#define UNTITLED1_LEGACYDEVICE_H
+#ifndef LEGACYDEVICE_H
+#define LEGACYDEVICE_H
 
 class LegacyDevice {
 public:
@@ -12,4 +12,4 @@ public:
 };
 
 
-#endif //UNTITLED1_LEGACYDEVICE_H
+#endif //LEGACYDEVICE_H

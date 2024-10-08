@@ -2,8 +2,8 @@
 // Created by shnai on 2024/10/05.
 //
 
-#ifndef UNTITLED1_LIGHT_H
-#define UNTITLED1_LIGHT_H
+#ifndef LIGHT_H
+#define LIGHT_H
 #include <string>
 #include <iostream>
 #include "SmartDevice.h"
@@ -20,4 +20,4 @@ public:
 };
 
 
-#endif //UNTITLED1_LIGHT_H
+#endif //LIGHT_H
