@@ -331,25 +331,24 @@ TEST(TurnOffAllLightsTests, RemoveNonExistentProcedure) {
 
 
 TEST_F(GoodNightRoutineTests, ExecuteGoodNightRoutine) {
-    // Capture the standard output
+  
     testing::internal::CaptureStdout();
 
-    // Execute the good night routine
+ 
     goodNightRoutine->performAction();
 
-    // Get the captured output
+   
     std::string output = testing::internal::GetCapturedStdout();
 
-    // Define the expected output
+
     std::string expectedOutput = 
         "Executing turn off all lights procedure...\n"
         "Light is now OFF\n"
         "Light is now OFF\n"
         "Executing lock all doors procedure...\n"
         "Door is now Locked\n"
-        "Door is now Locked\n";  // Adjust this line if you have more doors
+        "Door is now Locked\n";  
 
-    // Compare the actual output with the expected output
     EXPECT_EQ(output, expectedOutput);
 }
 TEST(SmartDeviceTests, AlarmNotification) {
@@ -359,7 +358,7 @@ TEST(SmartDeviceTests, AlarmNotification) {
     DoorLock* door1 = new DoorLock();
     DoorLock* door2 = new DoorLock();
 
-    // Create commands to control the lights and doors
+
     Command* turnOffLight1 = new ToggleLightOff(light1);
     Command* turnOffLight2 = new ToggleLightOff(light2);
     TurnOffAllLights* turnOffAllLights = new TurnOffAllLights();
@@ -372,24 +371,24 @@ TEST(SmartDeviceTests, AlarmNotification) {
     lockAllDoors->addProcedure(lockDoor1);
     lockAllDoors->addProcedure(lockDoor2);
 
-    // Create the Alarm system and add the macro commands
+ 
     Alarm* alarm = new Alarm();
     alarm->addDevice(door1); 
-     alarm->addDevice(door2);  // Turn off all lights when the alarm triggers
-    alarm->addDevice(light1);      // Lock all doors when the alarm triggers
+     alarm->addDevice(door2); 
+    alarm->addDevice(light1);      
  alarm->addDevice(light2);   
-    // Trigger the alarm
-    alarm->triggerAlarm();  // This should turn off all lights and lock all doors
 
-    // Check if the lights were turned off
+    alarm->triggerAlarm();  
+
+   
     EXPECT_EQ(light1->getStatus(), "OFF");
     EXPECT_EQ(light2->getStatus(), "OFF");
 
-    // Check if the doors were locked
+    
     EXPECT_EQ(door1->getStatus(), "Locked");
     EXPECT_EQ(door2->getStatus(), "Locked");
 
-    // Clean up
+   
     delete light1;
     delete light2;
     delete door1;
